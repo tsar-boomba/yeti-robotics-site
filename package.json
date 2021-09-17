@@ -3,8 +3,10 @@
 	"description": "A TypeScript Gatsby project",
 	"version": "1.0.0",
 	"private": true,
-	"author": "Isaiah Gamble <itg.2048@gmail.com>",
-	"license": "MIT",
+	"authors": [
+		"Isaiah Gamble <itg.2048@gmail.com>",
+		"Varun Warrier"
+	],
 	"scripts": {
 		"start": "gatsby develop",
 		"build": "gatsby build",
