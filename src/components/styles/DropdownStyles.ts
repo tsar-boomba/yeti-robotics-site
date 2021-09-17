@@ -24,7 +24,6 @@ export const DropdownButton = styled.a`
 export const Menu = styled.div`
 	display: flex;
 	flex-flow: column;
-	box-sizing: border-box;
 	position: absolute;
 	top: 100%;
 	color: ${colors.secondary};

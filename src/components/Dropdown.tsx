@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import { colors } from '../styles/colors';
+import React, { useEffect, useRef, useState } from 'react';
 import { useAppSelector } from '../store/hooks';
 import { BorderTop, DropdownButton, Menu, MenuItemWrapper } from './styles/DropdownStyles';
 
@@ -13,6 +14,7 @@ interface DropdownProps {
 
 const Dropdown: React.FC<DropdownProps> = ({ title, href, items }) => {
 	const headerShown = useAppSelector((state) => state.header.shown);
+	const dropdownRef = useRef<HTMLDivElement>(null);
 	const [visible, setVisible] = useState(false);
 
 	useEffect(() => {
@@ -21,9 +23,15 @@ const Dropdown: React.FC<DropdownProps> = ({ title, href, items }) => {
 		}
 	}, [headerShown]);
 
+	useEffect(() => {
+		if (window.location.pathname === href) {
+			dropdownRef.current.style.borderTop = `solid 3px ${colors.primaryHovered}`;
+		}
+	}, []);
+
 	return (
 		<React.Fragment>
-			<div>
+			<div ref={dropdownRef}>
 				<DropdownButton
 					href={href}
 					onMouseOver={() => setVisible(true)}

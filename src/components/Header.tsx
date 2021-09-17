@@ -12,7 +12,7 @@ const Header: React.FC = () => {
 	const { windowWidth } = useDimensions();
 	const { headerRef } = useHidingHeader(
 		() => dispatch(showHeader()),
-		() => dispatch(hideHeader())
+		() => dispatch(hideHeader()),
 	);
 
 	return (
@@ -26,7 +26,7 @@ const Header: React.FC = () => {
 					<>
 						<Dropdown
 							title='Amenities'
-							href='/amenities'
+							href='/'
 							items={[
 								{ title: 'Clubhouse', href: '/amenities/clubhouse' },
 								{ title: 'Fitness Center', href: '/amenities/fitness-center' },
