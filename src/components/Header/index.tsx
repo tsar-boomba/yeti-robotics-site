@@ -1,11 +1,11 @@
 import React from 'react';
-import { useAppDispatch } from '../store/hooks';
-import { hideHeader, showHeader } from '../store/slices/headerSlice';
-import { HeaderWrapper, LogoWrapper, Logo } from './styles/HeaderStyles';
-import Dropdown from './Dropdown';
-import ClickableDropdown from './ClickableDropdown';
-import { useDimensions } from '../hooks/useDimensions';
-import { useHidingHeader } from '../hooks/useHidingHeader';
+import { useAppDispatch } from '../../store/hooks';
+import { hideHeader, showHeader } from '../../store/slices/headerSlice';
+import { HeaderWrapper, LogoWrapper, Logo } from './HeaderStyles';
+import Dropdown from '../Dropdown';
+import ClickableDropdown from '../ClickableDropdown';
+import { useDimensions } from '../../hooks/useDimensions';
+import { useHidingHeader } from '../../hooks/useHidingHeader';
 
 const Header: React.FC = () => {
 	const dispatch = useAppDispatch();

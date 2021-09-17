@@ -7,7 +7,7 @@ import {
 	InteractiveWrapper,
 	ChildrenMenu,
 	Child,
-} from './styles/ClickableDropdownStyles';
+} from './ClickableDropdownStyles';
 
 interface ClickableDropDownItemProps {
 	item: {

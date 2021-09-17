@@ -1,8 +1,8 @@
 import React from 'react';
-import Footer from './Footer';
-import Header from './Header';
-import PageContainer from './PageContainer';
-import { MainContainer } from './styles/LayoutStyles';
+import Footer from '../Footer';
+import Header from '../Header';
+import PageContainer from '../PageContainer';
+import { MainContainer } from './LayoutStyles';
 
 interface LayoutProps {
 	children?: React.ReactNode;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { PageContainerWrapper } from './styles/PageContainerStyles';
+import { PageContainerWrapper } from './PageContainerStyles';
 
 interface PageContainerProps {
 	children: (JSX.Element | React.FC)[];

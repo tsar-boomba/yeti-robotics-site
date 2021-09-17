@@ -1,5 +1,5 @@
 import React from 'react';
-import { GridStyle } from './styles/GridStyles';
+import { GridStyle } from './GridStyles';
 
 interface GridProps {
 	children?: (string | JSX.Element)[] | JSX.Element;

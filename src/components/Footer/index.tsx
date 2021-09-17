@@ -6,8 +6,8 @@ import {
 	CommunicationsText,
 	SocialMediaWrapper,
 	SocialMediaIconWrapper,
-} from './styles/FooterStyles';
-import { faTwitter, faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
+} from './FooterStyles';
+import { faTwitter, faFacebook, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Footer: React.FC = () => {
@@ -35,6 +35,12 @@ const Footer: React.FC = () => {
 							href='https://www.instagram.com/highlandcreeknews/'
 						>
 							<FontAwesomeIcon size='lg' icon={faInstagram} />
+						</SocialMediaIconWrapper>
+						<SocialMediaIconWrapper
+							type='social'
+							href='https://www.instagram.com/highlandcreeknews/'
+						>
+							<FontAwesomeIcon size='lg' icon={faYoutube} />
 						</SocialMediaIconWrapper>
 					</SocialMediaWrapper>
 				</CommunicationsWrapper>

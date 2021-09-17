@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { colors } from '../../styles/colors';
 
-export const DropdownButton = styled.a`
+export const DropdownButton = styled.div`
 	position: relative;
 	display: flex;
 	justify-content: center;
@@ -15,6 +15,7 @@ export const DropdownButton = styled.a`
 	background-color: ${colors.primary};
 	z-index: 9999;
 	cursor: pointer;
+	border-top: inherit;
 	&:hover {
 		color: ${colors.secondaryHovered};
 		background-color: ${colors.primary};
@@ -43,7 +44,7 @@ export const BorderTop = styled.div`
 	z-index: 10001;
 `;
 
-export const MenuItemWrapper = styled.a`
+export const MenuItemWrapper = styled.div`
 	display: flex;
 	flex-flow: row-wrap;
 	background-color: ${colors.primaryHovered};

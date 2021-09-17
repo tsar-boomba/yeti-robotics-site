@@ -1,7 +1,8 @@
-import { colors } from '../styles/colors';
-import React, { useEffect, useRef, useState } from 'react';
-import { useAppSelector } from '../store/hooks';
-import { BorderTop, DropdownButton, Menu, MenuItemWrapper } from './styles/DropdownStyles';
+import { colors } from '../../styles/colors';
+import React, { useEffect, useState } from 'react';
+import { useAppSelector } from '../../store/hooks';
+import { BorderTop, DropdownButton, Menu, MenuItemWrapper } from './DropdownStyles';
+import { Link } from 'gatsby';
 
 interface DropdownProps {
 	title: string;
@@ -14,7 +15,6 @@ interface DropdownProps {
 
 const Dropdown: React.FC<DropdownProps> = ({ title, href, items }) => {
 	const headerShown = useAppSelector((state) => state.header.shown);
-	const dropdownRef = useRef<HTMLAnchorElement>(null);
 	const [visible, setVisible] = useState(false);
 
 	useEffect(() => {
@@ -23,47 +23,39 @@ const Dropdown: React.FC<DropdownProps> = ({ title, href, items }) => {
 		}
 	}, [headerShown]);
 
-	useEffect(() => {
-		if (window.location.pathname === href) {
-			dropdownRef.current.style.borderTop = `solid 5px ${colors.primaryHovered}`;
-		}
-	}, []);
-
 	return (
-		<React.Fragment>
+		<>
 			<div>
-				<DropdownButton
-					href={href}
-					ref={dropdownRef}
+				<Link
+					to={href}
+					activeStyle={{ BorderTop: `5px solid ${colors.primaryHovered}` }}
 					onMouseOver={() => setVisible(true)}
 					onMouseLeave={() => setVisible(false)}
 				>
-					{title}
-				</DropdownButton>
+					<DropdownButton>{title}</DropdownButton>
+				</Link>
 				{visible && (
 					<Menu>
 						<BorderTop
-							onClick={(e) => e.stopPropagation()}
 							onMouseEnter={() => setVisible(true)}
 							onMouseLeave={() => setVisible(false)}
 						/>
 						{items.map((item, index) => {
 							return (
-								<MenuItemWrapper
-									href={item.href}
-									onClick={(e) => e.stopPropagation()}
+								<Link
+									to={item.href}
 									onMouseEnter={() => setVisible(true)}
 									onMouseLeave={() => setVisible(false)}
 									key={index}
 								>
-									{item.title}
-								</MenuItemWrapper>
+									<MenuItemWrapper>{item.title}</MenuItemWrapper>
+								</Link>
 							);
 						})}
 					</Menu>
 				)}
 			</div>
-		</React.Fragment>
+		</>
 	);
 };
 

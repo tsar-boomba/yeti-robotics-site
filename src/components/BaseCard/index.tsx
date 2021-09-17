@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardTitle, CardText } from './styles/BasceCardStyles';
+import { Card, CardTitle, CardText } from './BasceCardStyles';
 
 interface BaseCardProps {
 	title: string;

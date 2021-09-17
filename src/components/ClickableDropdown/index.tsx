@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { DropdownWrapper, DropdownMenu } from './styles/ClickableDropdownStyles';
+import { DropdownWrapper, DropdownMenu } from './ClickableDropdownStyles';
 import ClickableDropdownItem from './ClickableDropdownItem';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import { useClickedOutside } from '../hooks/useClickedOutide';
+import { useClickedOutside } from '../../hooks/useClickedOutide';
 import { AnimatePresence, motion } from 'framer-motion';
-import { useAppSelector } from '../store/hooks';
+import { useAppSelector } from '../../store/hooks';
 
 interface ClickableDropdownProps {
 	items: {
@@ -70,11 +70,12 @@ const ClickableDropdown: React.FC<ClickableDropdownProps> = ({ items }) => {
 		open: { opacity: 1, height: 'auto' },
 		closed: { opacity: 0, height: 0 },
 	};
+
 	return (
 		<>
 			<DropdownWrapper ref={menuRef} onClick={menuClick}>
 				<FontAwesomeIcon icon={faBars} />
-				<AnimatePresence>
+				<AnimatePresence initial={false} exitBeforeEnter={true}>
 					{visible && (
 						<DropdownMenu>
 							<motion.menu
