@@ -1,16 +1,13 @@
 import React from 'react';
 import { PageProps } from 'gatsby';
+import Layout from '@/components/Layout';
 
-import Title from '../components/Title';
-
-const Home: React.FC<PageProps> = () => (
-	<main>
-		<Title>Hello TypeScript!</Title>
-		<p>A TypeScript starter for Gatsby. Great for advanced users.</p>
-		<p>
-			Follow me on Twitter (<a href="https://twitter.com/jpedroschmitz">@jpedroschmitz</a>)
-		</p>
-	</main>
-);
+const Home: React.FC<PageProps> = () => {
+	return (
+		<Layout>
+			<h1>Hello World</h1>
+		</Layout>
+	);
+};
 
 export default Home;
