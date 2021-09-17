@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useAppSelector } from '../store/hooks';
-import { DropdownButton, Menu, MenuItemWrapper } from './styles/DropdownStyles';
+import { BorderTop, DropdownButton, Menu, MenuItemWrapper } from './styles/DropdownStyles';
 
 interface DropdownProps {
 	title: string;
@@ -13,7 +13,7 @@ interface DropdownProps {
 
 const Dropdown: React.FC<DropdownProps> = ({ title, href, items }) => {
 	const headerShown = useAppSelector((state) => state.header.shown);
-	const [visible, setVisible] = useState(false);
+	const [visible, setVisible] = useState(true);
 
 	useEffect(() => {
 		if (visible && !headerShown) {
@@ -22,15 +22,22 @@ const Dropdown: React.FC<DropdownProps> = ({ title, href, items }) => {
 	}, [headerShown]);
 
 	return (
-		<>
-			<DropdownButton
-				href={href}
-				onMouseOver={() => setVisible(true)}
-				onMouseLeave={() => setVisible(false)}
-			>
-				{title}
+		<React.Fragment>
+			<div>
+				<DropdownButton
+					href={href}
+					onMouseOver={() => setVisible(true)}
+					onMouseLeave={() => setVisible(false)}
+				>
+					{title}
+				</DropdownButton>
 				{visible && (
 					<Menu>
+						<BorderTop
+							onClick={(e) => e.stopPropagation()}
+							onMouseEnter={() => setVisible(true)}
+							onMouseLeave={() => setVisible(false)}
+						/>
 						{items.map((item, index) => {
 							return (
 								<MenuItemWrapper
@@ -46,8 +53,8 @@ const Dropdown: React.FC<DropdownProps> = ({ title, href, items }) => {
 						})}
 					</Menu>
 				)}
-			</DropdownButton>
-		</>
+			</div>
+		</React.Fragment>
 	);
 };
 

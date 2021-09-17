@@ -5,17 +5,15 @@ export const DropdownButton = styled.a`
 	position: relative;
 	display: flex;
 	justify-content: center;
-	margin: 5px;
 	margin-right: 30px;
 	padding-top: 2rem;
 	padding-bottom: 2rem;
 	font-size: 16px;
 	font-weight: bold;
-	border: 0px;
 	transition: background-color 0.15s ease, color 0.15s ease;
 	color: ${colors.secondary};
 	background-color: ${colors.primary};
-	z-index: 999;
+	z-index: 9999;
 	cursor: pointer;
 	&:hover {
 		color: ${colors.secondaryHovered};
@@ -26,12 +24,24 @@ export const DropdownButton = styled.a`
 export const Menu = styled.div`
 	display: flex;
 	flex-flow: column;
+	box-sizing: border-box;
 	position: absolute;
-	top: 98%;
+	top: 100%;
 	color: ${colors.secondary};
 	justify-content: center;
-	border-top: 2px solid #000000;
-	box-shadow: 0px 0px 8px 4px ${colors.secondary};
+	margin: 0;
+	z-index: 10000;
+`;
+
+export const BorderTop = styled.div`
+	position: relative;
+	background-color: #000000;
+	top: 0;
+	height: 2px;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	z-index: 10001;
 `;
 
 export const MenuItemWrapper = styled.a`
