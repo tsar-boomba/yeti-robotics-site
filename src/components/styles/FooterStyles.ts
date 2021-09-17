@@ -39,6 +39,6 @@ export const SocialMediaIconWrapper = styled.a`
 	&:hover,
 	&:active,
 	&:focus {
-		color: ${colors.secondaryHovered};
+		color: ${colors.primaryHovered};
 	}
 `;

@@ -22,19 +22,19 @@ const Footer: React.FC = () => {
 					</CommunicationsText>
 					<SocialMediaWrapper>
 						<SocialMediaIconWrapper type='social' href='https://twitter.com/HCCANEWS'>
-							<FontAwesomeIcon icon={faTwitter} />
+							<FontAwesomeIcon size='lg' icon={faTwitter} />
 						</SocialMediaIconWrapper>
 						<SocialMediaIconWrapper
 							type='social'
 							href='https://www.facebook.com/Highland-Creek-Community-Association-Events-Activities-136735343100583/'
 						>
-							<FontAwesomeIcon icon={faFacebook} />
+							<FontAwesomeIcon size='lg' icon={faFacebook} />
 						</SocialMediaIconWrapper>
 						<SocialMediaIconWrapper
 							type='social'
 							href='https://www.instagram.com/highlandcreeknews/'
 						>
-							<FontAwesomeIcon icon={faInstagram} />
+							<FontAwesomeIcon size='lg' icon={faInstagram} />
 						</SocialMediaIconWrapper>
 					</SocialMediaWrapper>
 				</CommunicationsWrapper>

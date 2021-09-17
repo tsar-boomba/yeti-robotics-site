@@ -1,5 +1,5 @@
 import React from 'react';
-import { useAppSelector, useAppDispatch } from '../store/hooks';
+import { useAppDispatch } from '../store/hooks';
 import { hideHeader, showHeader } from '../store/slices/headerSlice';
 import { HeaderWrapper, LogoWrapper, Logo } from './styles/HeaderStyles';
 import Dropdown from './Dropdown';

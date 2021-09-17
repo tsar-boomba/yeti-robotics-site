@@ -46,7 +46,7 @@ export const BorderTop = styled.div`
 export const MenuItemWrapper = styled.a`
 	display: flex;
 	flex-flow: row-wrap;
-	background-color: #24654a;
+	background-color: ${colors.primaryHovered};
 	padding: 10px;
 	padding-top: 1rem;
 	padding-bottom: 1rem;
@@ -56,6 +56,6 @@ export const MenuItemWrapper = styled.a`
 	transition: background-color 0.15s ease, color 0.15s ease;
 	&:hover {
 		color: ${colors.secondaryHovered};
-		background-color: ${colors.primaryHovered};
+		background-color: ${colors.primary};
 	}
 `;

@@ -14,7 +14,7 @@ interface DropdownProps {
 
 const Dropdown: React.FC<DropdownProps> = ({ title, href, items }) => {
 	const headerShown = useAppSelector((state) => state.header.shown);
-	const dropdownRef = useRef<HTMLDivElement>(null);
+	const dropdownRef = useRef<HTMLAnchorElement>(null);
 	const [visible, setVisible] = useState(false);
 
 	useEffect(() => {
@@ -25,15 +25,16 @@ const Dropdown: React.FC<DropdownProps> = ({ title, href, items }) => {
 
 	useEffect(() => {
 		if (window.location.pathname === href) {
-			dropdownRef.current.style.borderTop = `solid 3px ${colors.primaryHovered}`;
+			dropdownRef.current.style.borderTop = `solid 5px ${colors.primaryHovered}`;
 		}
 	}, []);
 
 	return (
 		<React.Fragment>
-			<div ref={dropdownRef}>
+			<div>
 				<DropdownButton
 					href={href}
+					ref={dropdownRef}
 					onMouseOver={() => setVisible(true)}
 					onMouseLeave={() => setVisible(false)}
 				>
