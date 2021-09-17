@@ -19,6 +19,7 @@
 				"avoidEscape": true
 			}
 		],
+		"@typescript-eslint/explicit-module-boundary-types": "off",
 		"indent": ["error", "tab", { "SwitchCase": 1 }],
 		"prettier/prettier": [
 			"error",

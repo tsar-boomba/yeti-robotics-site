@@ -1,7 +1,8 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { DropdownWrapper, DropdownMenu } from './styles/ClickableDropdownStyles';
 import ClickableDropdownItem from './ClickableDropdownItem';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { useClickedOutside } from '../hooks/useClickedOutide';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useAppSelector } from '../store/hooks';
@@ -48,7 +49,6 @@ const ClickableDropdown: React.FC<ClickableDropdownProps> = ({ items }) => {
 				setPrevVisible(false);
 			}
 		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [headerShown]);
 	// Reccomended deps break this logic
 
@@ -73,7 +73,7 @@ const ClickableDropdown: React.FC<ClickableDropdownProps> = ({ items }) => {
 	return (
 		<>
 			<DropdownWrapper ref={menuRef} onClick={menuClick}>
-				<FontAwesomeIcon icon='bars' />
+				<FontAwesomeIcon icon={faBars} />
 				<AnimatePresence>
 					{visible && (
 						<DropdownMenu>
