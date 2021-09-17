@@ -1,6 +1,4 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-// Not needed, but ES Lint will not shut up
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 /**
  *
@@ -16,12 +14,12 @@ export const useHidingHeader = <T extends HTMLElement = HTMLElement>(
 	headerHidden: () => void = () => {
 		return;
 	},
-	animationLength: number = 0.3
+	animationLength = 0.3,
 ) => {
 	const headerRef = useRef<T>(null);
 
 	useEffect(() => {
-		const header = headerRef.current!;
+		const header = headerRef.current;
 		//making sure transition and position are correct
 		header.style.position = 'fixed';
 		header.style.transition = `top ${animationLength}s`;
@@ -33,7 +31,7 @@ export const useHidingHeader = <T extends HTMLElement = HTMLElement>(
 		let lastState = false;
 
 		//header goes away on scroll down
-		window.addEventListener('scroll', (e) => {
+		window.addEventListener('scroll', () => {
 			//getting height of header including margin
 			const headerHeight =
 				header.offsetHeight +
@@ -41,7 +39,7 @@ export const useHidingHeader = <T extends HTMLElement = HTMLElement>(
 				parseFloat(window.getComputedStyle(header).getPropertyValue('margin-bottom'));
 
 			//where the current scroll went
-			let end = window.scrollY;
+			const end = window.scrollY;
 
 			if (end > lastScroll) {
 				//scroll down

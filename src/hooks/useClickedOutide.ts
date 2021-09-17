@@ -1,6 +1,4 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-// wants handleclick as useEffect dep, not neccessary
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 
 export const useClickedOutside = <T extends HTMLElement = HTMLDivElement>(
 	clickedInside: () => void = () => {
@@ -8,11 +6,11 @@ export const useClickedOutside = <T extends HTMLElement = HTMLDivElement>(
 	},
 	clickedOutside: () => void = () => {
 		return;
-	}
+	},
 ) => {
 	const ref = useRef<T>(null);
 
-	const handleClick = (e: any) => {
+	const handleClick = (e) => {
 		if (ref.current !== null) {
 			if (ref.current.contains(e.target)) {
 				clickedInside();
