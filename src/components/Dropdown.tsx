@@ -13,7 +13,7 @@ interface DropdownProps {
 
 const Dropdown: React.FC<DropdownProps> = ({ title, href, items }) => {
 	const headerShown = useAppSelector((state) => state.header.shown);
-	const [visible, setVisible] = useState(true);
+	const [visible, setVisible] = useState(false);
 
 	useEffect(() => {
 		if (visible && !headerShown) {
