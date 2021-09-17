@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 import { Card, CardTitle, CardText } from './styles/BasceCardStyles';
 
 interface BaseCardProps {
