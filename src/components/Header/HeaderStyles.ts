@@ -3,9 +3,10 @@ import { colors } from '../../styles/colors';
 
 export const HeaderWrapper = styled.header`
 	display: flex;
-	flex-flow: row;
+	flex-flow: row wrap;
 	width: 100%;
 	align-items: center;
+	justify-content: space-around;
 	background-color: ${colors.primary};
 	padding: 0px;
 	overflow: visible;

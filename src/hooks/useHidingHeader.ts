@@ -8,11 +8,11 @@ import { useEffect, useRef } from 'react';
  * @returns an object with headerRef to be attached to your header and headerShown to let you know if the header is shown or not
  */
 export const useHidingHeader = <T extends HTMLElement = HTMLElement>(
-	headerShown: () => void = () => {
-		return;
+	headerShown: () => boolean = () => {
+		return true;
 	},
-	headerHidden: () => void = () => {
-		return;
+	headerHidden: () => boolean = () => {
+		return true;
 	},
 	animationLength = 0.3,
 ) => {
@@ -33,10 +33,6 @@ export const useHidingHeader = <T extends HTMLElement = HTMLElement>(
 		//header goes away on scroll down
 		window.addEventListener('scroll', () => {
 			//getting height of header including margin
-			const headerHeight =
-				header.offsetHeight +
-				parseFloat(window.getComputedStyle(header).getPropertyValue('margin-top')) +
-				parseFloat(window.getComputedStyle(header).getPropertyValue('margin-bottom'));
 
 			//where the current scroll went
 			const end = window.scrollY;
@@ -44,12 +40,10 @@ export const useHidingHeader = <T extends HTMLElement = HTMLElement>(
 			if (end > lastScroll) {
 				//scroll down
 				if (lastState) {
-					header.style.top = `-${headerHeight + 20}px`;
-					headerHidden();
 					lastState = false;
+					const hideIt = headerHidden();
+					if (!hideIt) return;
 				}
-			} else {
-				//scroll up
 				if (end <= 0) {
 					//top of page
 					header.style.boxShadow = `0px 0px 0px 0px`;
@@ -57,10 +51,19 @@ export const useHidingHeader = <T extends HTMLElement = HTMLElement>(
 					//not top of page
 					header.style.boxShadow = `0px 20px 8px 0px #0000001f`;
 				}
+			} else {
+				//scroll up
 				if (!lastState) {
-					header.style.top = '0';
-					headerShown();
 					lastState = true;
+					const showIt = headerShown();
+					if (!showIt) return;
+				}
+				if (end <= 0) {
+					//top of page
+					header.style.boxShadow = `0px 0px 0px 0px`;
+				} else {
+					//not top of page
+					header.style.boxShadow = `0px 20px 8px 0px #0000001f`;
 				}
 			}
 			lastScroll = end;

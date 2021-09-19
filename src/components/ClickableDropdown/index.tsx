@@ -1,11 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { DropdownWrapper, DropdownMenu } from './ClickableDropdownStyles';
 import ClickableDropdownItem from './ClickableDropdownItem';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { useClickedOutside } from '../../hooks/useClickedOutide';
 import { AnimatePresence, motion } from 'framer-motion';
-import { useAppSelector } from '../../store/hooks';
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
+import {
+	hideClickableDropdown,
+	setClickableVisible,
+	showClickableDropdown,
+} from '../../store/slices/dropdownSlice';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 interface ClickableDropdownProps {
 	items: {
@@ -19,31 +24,34 @@ interface ClickableDropdownProps {
 }
 
 const ClickableDropdown: React.FC<ClickableDropdownProps> = ({ items }) => {
+	const dispatch = useAppDispatch();
 	const headerShown = useAppSelector((state) => state.header.shown);
-	const [visible, setVisible] = useState(false);
+	const visible = useAppSelector((state) => state.dropdown.clickable.shown);
 	const [visibleId, setVisibleId] = useState(-1);
 	const [prevVisible, setPrevVisible] = useState(false);
-	const menuRef = useClickedOutside<HTMLMenuElement>(undefined, () => {
-		setVisible(false);
+	const buttonRef = useRef<HTMLDivElement>(null);
+	const menuRef = useClickedOutside<HTMLMenuElement>(undefined, (e) => {
+		if (buttonRef.current.contains(e.target)) return;
+		dispatch(hideClickableDropdown());
 	});
 
-	const menuClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+	const menuClick = (e: React.MouseEvent) => {
 		e.preventDefault();
 		if (visible) {
-			setVisible(false);
+			dispatch(hideClickableDropdown());
 		} else if (!visible) {
-			setVisible(true);
+			dispatch(showClickableDropdown());
 		}
 	};
 
 	//hides menu when header disappears, but retains previous state
 	useEffect(() => {
 		if (headerShown) {
-			setVisible(prevVisible);
+			dispatch(setClickableVisible(prevVisible));
 		}
 		if (!headerShown) {
 			if (visible) {
-				setVisible(false);
+				dispatch(hideClickableDropdown());
 				setPrevVisible(true);
 			} else {
 				setPrevVisible(false);
@@ -55,27 +63,22 @@ const ClickableDropdown: React.FC<ClickableDropdownProps> = ({ items }) => {
 	//animation variants
 	const menu = {
 		open: {
-			opacity: 1,
 			height: 'auto',
-			transition: {
-				duration: 0.4,
-				ease: [0.04, 0.62, 0.23, 0.98],
-				staggerChildren: 0.2,
-			},
 		},
-		closed: { opacity: 0, height: 0 },
+		closed: { height: 0 },
 	};
 
 	const title = {
-		open: { opacity: 1, height: 'auto' },
-		closed: { opacity: 0, height: 0 },
+		open: { height: 'auto' },
+		closed: { height: 0 },
 	};
-
 	return (
 		<>
-			<DropdownWrapper ref={menuRef} onClick={menuClick}>
-				<FontAwesomeIcon icon={faBars} />
-				<AnimatePresence initial={false} exitBeforeEnter={true}>
+			<div ref={buttonRef}>
+				<FontAwesomeIcon icon={faBars} onClick={menuClick} />
+			</div>
+			<AnimatePresence>
+				<DropdownWrapper ref={menuRef} onClick={menuClick}>
 					{visible && (
 						<DropdownMenu>
 							<motion.menu
@@ -107,8 +110,8 @@ const ClickableDropdown: React.FC<ClickableDropdownProps> = ({ items }) => {
 							</motion.menu>
 						</DropdownMenu>
 					)}
-				</AnimatePresence>
-			</DropdownWrapper>
+				</DropdownWrapper>
+			</AnimatePresence>
 		</>
 	);
 };

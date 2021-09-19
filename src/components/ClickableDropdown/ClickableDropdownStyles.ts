@@ -6,24 +6,24 @@ export const DropdownWrapper = styled.menu`
 	position: relative;
 	display: flex;
 	justify-content: center;
-	margin: 10px;
-	padding: 1rem;
+	width: 100%;
 	font-size: 16px;
 	font-weight: bold;
 	color: ${colors.secondary};
 	border-color: black;
 	background-color: ${colors.primary};
 	z-index: 999;
-	border: 0;
+	padding: 0;
+	margin-bottom: 0;
 	cursor: pointer;
+	box-shadow: 0px 0px 8px 0px ${colors.secondary};
 	-webkit-tap-highlight-color: transparent;
 `;
 
 export const DropdownMenu = styled.div`
 	display: flex;
 	flex-flow: column;
-	position: absolute;
-	top: 100%;
+	flex-grow: 1;
 	color: ${colors.secondary};
 `;
 
@@ -37,7 +37,7 @@ export const TitleWrapper = styled.div`
 	align-items: center;
 `;
 
-export const Title = styled.a`
+export const Title = styled.div`
 	padding-left: 5px;
 	padding-right: 5px;
 `;
