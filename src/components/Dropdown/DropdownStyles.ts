@@ -59,7 +59,7 @@ export const Menu = styled.div`
 export const MenuItemWrapper = styled.div`
 	display: flex;
 	flex-flow: row-wrap;
-	background-color: #24654a;
+	background-color: #63f6ff;
 	padding: 10px;
 	padding-top: 1rem;
 	padding-bottom: 1rem;

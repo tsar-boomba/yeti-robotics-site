@@ -10,8 +10,8 @@ interface IciclesProps {
 
 const Icicles: React.FC<IciclesProps> = ({
 	parentRef,
-	heightConstrains = { min: 20, max: 60 },
-	sideConstrains = { min: 5, max: 20 },
+	heightConstrains = { min: 30, max: 60 },
+	sideConstrains = { min: 10, max: 40 },
 }) => {
 	const getParentWidth = () => parentRef.current?.offsetWidth;
 	const [icicles, setIcicles] = useState<{ height: number; sides: number }[]>([]);

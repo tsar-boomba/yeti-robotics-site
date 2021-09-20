@@ -6,13 +6,19 @@ interface IcicleProps {
 }
 
 const Icicle: React.FC<IcicleProps> = ({ values }) => {
+	const generateClip = (max: number, min: number) =>
+		Math.floor(Math.random() * (max - min + 1) + min);
+
 	return (
 		<>
 			<IcicleStyle
 				style={{
-					borderTopWidth: values.height,
-					borderLeftWidth: values.sides,
-					borderRightWidth: values.sides,
+					width: values.sides,
+					height: values.height,
+					clipPath: `polygon(${generateClip(20, 0)} 0, 50% 100%, ${generateClip(
+						100,
+						80,
+					)}% 0)`,
 				}}
 			/>
 		</>

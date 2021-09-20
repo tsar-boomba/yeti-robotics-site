@@ -18,10 +18,10 @@ export const HeaderWrapper = styled.header`
 `;
 
 export const LogoWrapper = styled.a`
-	margin-top: 5px;
-	margin-left: 20px;
-	padding-bottom: 21px;
-	margin-right: 50px;
+	padding-left: 50px;
+	padding-right: 50px;
+	background: transparent
+		linear-gradient(90deg, rgba(205, 252, 255, 1) 80%, rgba(84, 182, 229, 1) 100%);
 	color: ${colors.secondary};
 	font-family: 'Times New Roman', Times, serif;
 	font-size: 48px;

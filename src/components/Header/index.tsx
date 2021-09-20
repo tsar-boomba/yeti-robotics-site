@@ -7,6 +7,7 @@ import ClickableDropdown from '../ClickableDropdown';
 import { useDimensions } from '../../hooks/useDimensions';
 import { useHidingHeader } from '../../hooks/useHidingHeader';
 import Icicles from '../Icicles';
+import { StaticImage } from 'gatsby-plugin-image';
 
 const Header: React.FC = () => {
 	const dispatch = useAppDispatch();
@@ -42,7 +43,18 @@ const Header: React.FC = () => {
 		<>
 			<HeaderWrapper ref={headerRef}>
 				<LogoWrapper ref={logoIciclesRef} href='/'>
-					{windowWidth >= 440 ? <Logo src='/images/hclogo.png' alt='hc logo' /> : 'HC'}
+					{windowWidth >= 440 ? (
+						<StaticImage
+							src='../../images/yeti-logo-with-text.png'
+							height={82}
+							width={150}
+							placeholder='tracedSVG'
+							layout='fixed'
+							alt='YETI Logo'
+						/>
+					) : (
+						'YETI'
+					)}
 					{/* <Icicles parentRef={logoIciclesRef} /> */}
 				</LogoWrapper>
 				{/* Changes header based on window's width */}

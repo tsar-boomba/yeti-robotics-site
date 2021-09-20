@@ -2,11 +2,13 @@ import styled from 'styled-components';
 import { colors } from '../../styles/colors';
 
 export const IcicleStyle = styled.div`
-	width: 0;
-	height: 0;
-	border-style: solid;
-	border-color: ${colors.primary} transparent transparent transparent;
-	--webkit-transform: rotate(360deg);
+	width: 15px;
+	height: 40px;
+	border: 0;
+	background: rgb(0, 52, 255)
+		linear-gradient(0deg, rgba(205, 252, 255, 1) 0%, rgba(84, 182, 229, 1) 78%);
+	clip-path: polygon(0 0, 50% 100%, 100% 0);
+	-webkit-transform: rotate(360deg);
 `;
 
 export const IcicleWrapper = styled.div`
