@@ -49,19 +49,20 @@ const Header: React.FC = () => {
 				{windowWidth >= 1400 ? (
 					<>
 						<Dropdown
-							title='Amenities'
-							href='/'
+							title='About YETI'
+							href='/about'
 							items={[
-								{ title: 'Clubhouse', href: '/amenities/clubhouse' },
-								{ title: 'Fitness Center', href: '/amenities/fitness-center' },
+								{ title: 'What is YETI?', href: '/about/who-we-are' },
+								{ title: 'Join The Team', href: '/about/join' },
 							]}
 						/>
 						<Dropdown
-							title='Community Info'
-							href='/community-info'
+							title='Our Leadership'
+							href='/leaders'
 							items={[
-								{ title: 'ID Cards', href: '/community-info/id-cards' },
-								{ title: 'Adult Care', href: '/community-info/adult-care' },
+								{ title: 'Student Leaders', href: '/leaders/student-leaders' },
+								{ title: 'Technical Mentors', href: '/leaders/tech-mentors' },
+								{ title: 'Business Mentors', href: '/leaders/business-mentors'}
 							]}
 						/>
 					</>
@@ -69,19 +70,20 @@ const Header: React.FC = () => {
 					<ClickableDropdown
 						items={[
 							{
-								title: 'Amenities',
-								href: '/amenities',
+								title: 'About YETI',
+								href: '/about',
 								children: [
-									{ title: 'Clubhouse', href: '/amenities/clubhouse' },
-									{ title: 'Fitness Center', href: '/amenities/fitness-center' },
+									{ title: 'What is YETI?', href: '/about/who-we-are' },
+									{ title: 'Join The Team', href: '/about/join' },
 								],
 							},
 							{
-								title: 'Community Info',
-								href: '/community-info',
+								title: 'Our Leadership',
+								href: '/leaders',
 								children: [
-									{ title: 'ID Cards', href: '/community-info/id-cards' },
-									{ title: 'Adult Care', href: '/community-info/adult-care' },
+									{ title: 'Student Leaders', href: '/leaders/student-leaders' },
+								{ title: 'Technical Mentors', href: '/leaders/tech-mentors' },
+								{ title: 'Business Mentors', href: '/leaders/business-mentors'},
 								],
 							},
 						]}
