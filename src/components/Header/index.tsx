@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useRef } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { showHeader } from '../../store/slices/headerSlice';
-import { HeaderWrapper, LogoWrapper, Logo } from './HeaderStyles';
+import { HeaderWrapper, LogoWrapper } from './HeaderStyles';
 import Dropdown from '../Dropdown';
 import ClickableDropdown from '../ClickableDropdown';
 import { useDimensions } from '../../hooks/useDimensions';
