@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { showHeader } from '../../store/slices/headerSlice';
 import { HeaderWrapper, LogoWrapper, Logo } from './HeaderStyles';
@@ -6,9 +6,11 @@ import Dropdown from '../Dropdown';
 import ClickableDropdown from '../ClickableDropdown';
 import { useDimensions } from '../../hooks/useDimensions';
 import { useHidingHeader } from '../../hooks/useHidingHeader';
+import Icicles from '../Icicles';
 
 const Header: React.FC = () => {
 	const dispatch = useAppDispatch();
+	const logoIciclesRef = useRef<HTMLAnchorElement>(null);
 	const clickableDropdownStatus = useAppSelector((state) => state.dropdown.clickable.shown);
 	const { windowWidth } = useDimensions();
 	const showHeaderCB = useCallback(() => {
@@ -39,8 +41,9 @@ const Header: React.FC = () => {
 	return (
 		<>
 			<HeaderWrapper ref={headerRef}>
-				<LogoWrapper href='/'>
+				<LogoWrapper ref={logoIciclesRef} href='/'>
 					{windowWidth >= 440 ? <Logo src='/images/hclogo.png' alt='hc logo' /> : 'HC'}
+					{/* <Icicles parentRef={logoIciclesRef} /> */}
 				</LogoWrapper>
 				{/* Changes header based on window's width */}
 				{windowWidth >= 1400 ? (
@@ -84,6 +87,8 @@ const Header: React.FC = () => {
 						]}
 					/>
 				)}
+				<Icicles parentRef={headerRef} />
+				<Icicles parentRef={headerRef} />
 			</HeaderWrapper>
 		</>
 	);

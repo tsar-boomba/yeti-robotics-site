@@ -20,7 +20,7 @@ export const HeaderWrapper = styled.header`
 export const LogoWrapper = styled.a`
 	margin-top: 5px;
 	margin-left: 20px;
-	margin-bottom: 5px;
+	padding-bottom: 21px;
 	margin-right: 50px;
 	color: ${colors.secondary};
 	font-family: 'Times New Roman', Times, serif;

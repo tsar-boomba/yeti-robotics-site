@@ -4,6 +4,7 @@ import { useAppSelector } from '../../store/hooks';
 import { BorderTop, DropdownButton, DropdownWrapper, Menu } from './DropdownStyles';
 import { Link } from 'gatsby';
 import DropdownItem from './DropdownItem';
+import Icicles from '../Icicles';
 
 interface DropdownProps {
 	title: string;
@@ -16,6 +17,7 @@ interface DropdownProps {
 
 const Dropdown: React.FC<DropdownProps> = ({ title, href, items }) => {
 	const headerShown = useAppSelector((state) => state.header.shown);
+	const menuIciclesRef = useRef<HTMLDivElement>(null);
 	const parentButtonRef = useRef<HTMLDivElement>(null);
 	const [visible, setVisible] = useState(false);
 
@@ -25,7 +27,7 @@ const Dropdown: React.FC<DropdownProps> = ({ title, href, items }) => {
 		}
 	}, [headerShown]);
 
-	//This adds the boder over a dropdown when it's pages are active
+	//This adds the border over a dropdown when it's pages are active
 	useLayoutEffect(() => {
 		if (location.pathname === '/') {
 			parentButtonRef.current.style.height = '0';
@@ -56,7 +58,7 @@ const Dropdown: React.FC<DropdownProps> = ({ title, href, items }) => {
 					</DropdownButton>
 				</Link>
 				{visible && (
-					<Menu>
+					<Menu ref={menuIciclesRef}>
 						<BorderTop
 							onMouseEnter={() => setVisible(true)}
 							onMouseLeave={() => setVisible(false)}
@@ -71,10 +73,10 @@ const Dropdown: React.FC<DropdownProps> = ({ title, href, items }) => {
 								/>
 							);
 						})}
+						<Icicles parentRef={menuIciclesRef} />
 					</Menu>
 				)}
 			</DropdownWrapper>
-			<span style={{ width: '30px' }}></span>
 		</>
 	);
 };
