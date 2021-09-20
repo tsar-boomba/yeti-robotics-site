@@ -18,8 +18,7 @@ export const HeaderWrapper = styled.header`
 `;
 
 export const LogoWrapper = styled.a`
-	padding-left: 50px;
-	padding-right: 50px;
+	padding: 5px 50px 0 50px;
 	background: transparent
 		linear-gradient(90deg, rgba(205, 252, 255, 1) 80%, rgba(84, 182, 229, 1) 100%);
 	color: ${colors.secondary};

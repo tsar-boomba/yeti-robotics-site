@@ -4,13 +4,13 @@ import { colors } from '../../styles/colors';
 export const FooterWrapper = styled.footer`
 	display: flex;
 	width: 100%;
-	flex-flow: row;
+	flex-flow: row wrap;
 	align-items: center;
 	justify-content: center;
+	align-self: flex-end;
 	color: ${colors.light};
 	background-color: ${colors.primary};
 	padding: 10px;
-	overflow: visible;
 	align-self: flex-end;
 `;
 
@@ -21,12 +21,10 @@ export const CommunicationsWrapper = styled.div`
 
 export const CommunicationsTitle = styled.h1`
 	margin: 0;
-	font-family: 'Bookman', URW Bookman L, serif
 `;
 
 export const CommunicationsText = styled.p`
 	width: 70%;
-	font-family: 'Georgia', serif
 `;
 
 export const SocialMediaWrapper = styled.div`
@@ -41,6 +39,6 @@ export const SocialMediaIconWrapper = styled.a`
 	&:hover,
 	&:active,
 	&:focus {
-		color: ${colors.primaryHovered};
+		color: ${colors.secondaryHovered};
 	}
 `;

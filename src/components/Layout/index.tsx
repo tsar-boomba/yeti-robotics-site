@@ -11,13 +11,11 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children, style }) => {
 	return (
-		<React.Fragment>
-			<PageContainer>
-				<Header />
-				<MainContainer style={style}>{children}</MainContainer>
-				<Footer />
-			</PageContainer>
-		</React.Fragment>
+		<PageContainer>
+			<Header />
+			<MainContainer style={style}>{children}</MainContainer>
+			<Footer />
+		</PageContainer>
 	);
 };
 

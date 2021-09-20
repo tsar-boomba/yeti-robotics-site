@@ -31,7 +31,7 @@ const Header: React.FC = () => {
 
 	useEffect(() => {
 		if (clickableDropdownStatus) {
-			headerRef.current.style.position = 'static';
+			headerRef.current.style.position = 'relative';
 			headerRef.current.style.boxShadow = '0px 0px 0px 0px';
 		} else {
 			headerRef.current.style.position = 'fixed';

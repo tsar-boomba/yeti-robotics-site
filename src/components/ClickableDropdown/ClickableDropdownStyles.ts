@@ -69,7 +69,7 @@ export const ChildrenMenu = styled.div`
 	width: 100%;
 `;
 
-export const Child = styled.a`
+export const Child = styled.div`
 	display: flex;
 	flex-grow: 1;
 	position: relative;
