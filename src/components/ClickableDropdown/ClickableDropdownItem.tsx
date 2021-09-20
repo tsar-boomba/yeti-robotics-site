@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
+import { Link } from 'gatsby';
 import {
 	TitleWrapper,
 	Title,
@@ -45,15 +46,10 @@ const ClickableDropdownItem: React.FC<ClickableDropDownItemProps> = ({ item, cur
 	//animation variants
 	const childAnimation = {
 		open: {
-			opacity: 1,
-			top: '100%',
-			transition: {
-				ease: [0.04, 0.62, 0.23, 0.98],
-			},
+			height: 'auto',
 		},
 		closed: {
-			opacity: 0,
-			top: 0,
+			height: 0,
 		},
 	};
 
@@ -61,9 +57,9 @@ const ClickableDropdownItem: React.FC<ClickableDropDownItemProps> = ({ item, cur
 		<>
 			<TitleWrapper>
 				<InteractiveWrapper>
-					<Title href={item.href} onClick={(e) => e.stopPropagation()}>
-						{item.title}
-					</Title>
+					<Link to={item.href}>
+						<Title onClick={(e) => e.stopPropagation()}>{item.title}</Title>
+					</Link>
 					<ExpandButton onClick={handleOpen}>{thisOpen ? '-' : '+'}</ExpandButton>
 				</InteractiveWrapper>
 				{thisOpen && (
@@ -77,9 +73,11 @@ const ClickableDropdownItem: React.FC<ClickableDropDownItemProps> = ({ item, cur
 								variants={childAnimation}
 								style={{ padding: 0, margin: 0 }}
 							>
-								<Child href={child.href} onClick={(e) => e.stopPropagation()}>
-									{child.title}
-								</Child>
+								<Link to={child.href}>
+									<Child onClick={(e) => e.stopPropagation()}>
+										{child.title}
+									</Child>
+								</Link>
 							</motion.div>
 						))}
 					</ChildrenMenu>

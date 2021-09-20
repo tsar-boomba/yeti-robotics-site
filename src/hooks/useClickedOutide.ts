@@ -1,24 +1,25 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useRef } from 'react';
 
 export const useClickedOutside = <T extends HTMLElement = HTMLDivElement>(
-	clickedInside: () => void = () => {
+	clickedInside: (e?: any) => void = () => {
 		return;
 	},
-	clickedOutside: () => void = () => {
+	clickedOutside: (e?: any) => void = () => {
 		return;
 	},
 ) => {
 	const ref = useRef<T>(null);
 
-	const handleClick = (e) => {
+	const handleClick = (e: any) => {
 		if (ref.current !== null) {
 			if (ref.current.contains(e.target)) {
-				clickedInside();
+				clickedInside(e);
 				return;
 			}
 		}
 		// outside click
-		clickedOutside();
+		clickedOutside(e);
 	};
 
 	useEffect(() => {

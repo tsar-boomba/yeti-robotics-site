@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 import headerReducer from './slices/headerSlice';
+import dropdownReducer from './slices/dropdownSlice';
 
 const createStore = () =>
 	configureStore({
 		reducer: {
 			header: headerReducer,
+			dropdown: dropdownReducer,
 		},
 	});
 

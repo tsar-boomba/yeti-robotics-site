@@ -3,9 +3,10 @@ import { colors } from '../../styles/colors';
 
 export const HeaderWrapper = styled.header`
 	display: flex;
-	flex-flow: row;
+	flex-flow: row wrap;
 	width: 100%;
 	align-items: center;
+	justify-content: space-around;
 	background-color: ${colors.primary};
 	padding: 0px;
 	overflow: visible;
@@ -19,7 +20,7 @@ export const HeaderWrapper = styled.header`
 export const LogoWrapper = styled.a`
 	margin-top: 5px;
 	margin-left: 20px;
-	margin-bottom: 5px;
+	padding-bottom: 21px;
 	margin-right: 50px;
 	color: ${colors.secondary};
 	font-family: 'Times New Roman', Times, serif;
