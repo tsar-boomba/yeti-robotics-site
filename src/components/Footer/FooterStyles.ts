@@ -21,10 +21,12 @@ export const CommunicationsWrapper = styled.div`
 
 export const CommunicationsTitle = styled.h1`
 	margin: 0;
+	font-family: 'Bookman', URW Bookman L, serif
 `;
 
 export const CommunicationsText = styled.p`
 	width: 70%;
+	font-family: 'Georgia', serif
 `;
 
 export const SocialMediaWrapper = styled.div`

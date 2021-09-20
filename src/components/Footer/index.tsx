@@ -15,30 +15,29 @@ const Footer: React.FC = () => {
 		<>
 			<FooterWrapper>
 				<CommunicationsWrapper>
-					<CommunicationsTitle>Stay in touch</CommunicationsTitle>
+					<CommunicationsTitle>Stay Up-To-Date</CommunicationsTitle>
 					<CommunicationsText>
-						Sign up for our newsletter, like us on Facebook, and follow us on Instagram
-						and Twitter!
+						Make sure to keep up with YETI events through our social media!
 					</CommunicationsText>
 					<SocialMediaWrapper>
-						<SocialMediaIconWrapper type='social' href='https://twitter.com/HCCANEWS'>
+						<SocialMediaIconWrapper type='social' href='https://twitter.com/YETI_Robotics'>
 							<FontAwesomeIcon size='lg' icon={faTwitter} />
 						</SocialMediaIconWrapper>
 						<SocialMediaIconWrapper
 							type='social'
-							href='https://www.facebook.com/Highland-Creek-Community-Association-Events-Activities-136735343100583/'
+							href='https://www.facebook.com/YETI3506/'
 						>
 							<FontAwesomeIcon size='lg' icon={faFacebook} />
 						</SocialMediaIconWrapper>
 						<SocialMediaIconWrapper
 							type='social'
-							href='https://www.instagram.com/highlandcreeknews/'
+							href='https://www.instagram.com/yetirobotics/'
 						>
 							<FontAwesomeIcon size='lg' icon={faInstagram} />
 						</SocialMediaIconWrapper>
 						<SocialMediaIconWrapper
 							type='social'
-							href='https://www.instagram.com/highlandcreeknews/'
+							href='https://www.youtube.com/user/YETIRobotics3506'
 						>
 							<FontAwesomeIcon size='lg' icon={faYoutube} />
 						</SocialMediaIconWrapper>
