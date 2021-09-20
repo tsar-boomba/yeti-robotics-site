@@ -62,7 +62,7 @@ const Header: React.FC = () => {
 							items={[
 								{ title: 'Student Leaders', href: '/leaders/student-leaders' },
 								{ title: 'Technical Mentors', href: '/leaders/tech-mentors' },
-								{ title: 'Business Mentors', href: '/leaders/business-mentors'}
+								{ title: 'Business Mentors', href: '/leaders/business-mentors' },
 							]}
 						/>
 					</>
@@ -82,8 +82,11 @@ const Header: React.FC = () => {
 								href: '/leaders',
 								children: [
 									{ title: 'Student Leaders', href: '/leaders/student-leaders' },
-								{ title: 'Technical Mentors', href: '/leaders/tech-mentors' },
-								{ title: 'Business Mentors', href: '/leaders/business-mentors'},
+									{ title: 'Technical Mentors', href: '/leaders/tech-mentors' },
+									{
+										title: 'Business Mentors',
+										href: '/leaders/business-mentors',
+									},
 								],
 							},
 						]}
