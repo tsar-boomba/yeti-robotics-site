@@ -66,12 +66,13 @@ const ClickableDropdown: React.FC<ClickableDropdownProps> = ({ items }) => {
 			height: 'auto',
 			transition: {
 				staggerChildren: 0.1,
-				delayChildren: 0.05,
+				delayChildren: 0.2,
 			},
 		},
 		closed: {
 			height: 0,
 			transition: {
+				duration: 0.85,
 				staggerChildren: 0.1,
 				staggerDirection: -1,
 			},
@@ -79,42 +80,48 @@ const ClickableDropdown: React.FC<ClickableDropdownProps> = ({ items }) => {
 	};
 
 	const title: Variants = {
-		open: { opacity: 1 },
-		closed: { opacity: 0 },
+		open: {
+			y: 0,
+			opacity: 1,
+		},
+		closed: {
+			y: -10,
+			opacity: 0,
+		},
 	};
+
 	return (
 		<>
 			<DropdownButtonWrapper ref={buttonRef}>
 				<FontAwesomeIcon icon={faBars} size='2x' onClick={menuClick} />
 			</DropdownButtonWrapper>
 			<DropdownWrapper ref={menuRef} onClick={menuClick}>
-				<AnimatePresence>
+				<AnimatePresence initial={false}>
 					{visible && (
-						<DropdownMenu>
-							<motion.div
-								initial='closed'
-								animate='open'
-								exit='closed'
-								variants={menu}
-								style={{ padding: 0, margin: 0 }}
-							>
-								{items.map((item, index) => {
-									return (
-										<motion.div
-											key={index}
-											variants={title}
-											style={{ padding: 0, margin: 0 }}
-										>
-											<ClickableDropdownItem
-												item={item}
-												currId={[visibleId, setVisibleId]}
-												id={index}
-											/>
-										</motion.div>
-									);
-								})}
-							</motion.div>
-						</DropdownMenu>
+						<motion.menu
+							key='menu'
+							initial='closed'
+							animate='open'
+							exit='closed'
+							variants={menu}
+							style={DropdownMenu}
+						>
+							{items.map((item, index) => {
+								return (
+									<motion.div
+										key={index}
+										variants={title}
+										transition={{ duration: 0.1 }}
+									>
+										<ClickableDropdownItem
+											item={item}
+											currId={[visibleId, setVisibleId]}
+											id={index}
+										/>
+									</motion.div>
+								);
+							})}
+						</motion.menu>
 					)}
 				</AnimatePresence>
 			</DropdownWrapper>

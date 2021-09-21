@@ -1,3 +1,4 @@
+import { MotionStyle } from 'framer-motion';
 import styled from 'styled-components';
 import { colors } from '../../styles/colors';
 
@@ -17,7 +18,7 @@ export const DropdownWrapper = styled.menu`
 	font-weight: bold;
 	color: ${colors.secondary};
 	border-color: black;
-	background-color: #63f6ff;
+	background-color: #4bcdd5;
 	z-index: 999;
 	padding: 0;
 	margin: 0;
@@ -26,12 +27,14 @@ export const DropdownWrapper = styled.menu`
 	-webkit-tap-highlight-color: transparent;
 `;
 
-export const DropdownMenu = styled.div`
-	display: flex;
-	flex-flow: column;
-	flex-grow: 1;
-	color: ${colors.secondary};
-`;
+export const DropdownMenu: MotionStyle = {
+	margin: 0,
+	padding: 0,
+	display: 'flex',
+	flexFlow: 'column',
+	flexGrow: 1,
+	color: colors.secondary,
+};
 
 //ClickableDropdownItem Styles
 export const TitleWrapper = styled.div`

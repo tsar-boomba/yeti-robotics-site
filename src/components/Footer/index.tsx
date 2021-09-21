@@ -20,7 +20,10 @@ const Footer: React.FC = () => {
 						Make sure to keep up with YETI events through our social media!
 					</CommunicationsText>
 					<SocialMediaWrapper>
-						<SocialMediaIconWrapper type='social' href='https://twitter.com/YETI_Robotics'>
+						<SocialMediaIconWrapper
+							type='social'
+							href='https://twitter.com/YETI_Robotics'
+						>
 							<FontAwesomeIcon size='lg' icon={faTwitter} />
 						</SocialMediaIconWrapper>
 						<SocialMediaIconWrapper
