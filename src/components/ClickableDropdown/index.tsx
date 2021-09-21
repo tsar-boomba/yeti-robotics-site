@@ -66,7 +66,7 @@ const ClickableDropdown: React.FC<ClickableDropdownProps> = ({ items }) => {
 			height: 'auto',
 			transition: {
 				staggerChildren: 0.1,
-				delayChildren: 0.2,
+				delayChildren: 0.05,
 			},
 		},
 		closed: {
@@ -88,7 +88,7 @@ const ClickableDropdown: React.FC<ClickableDropdownProps> = ({ items }) => {
 				<FontAwesomeIcon icon={faBars} size='2x' onClick={menuClick} />
 			</DropdownButtonWrapper>
 			<DropdownWrapper ref={menuRef} onClick={menuClick}>
-				<AnimatePresence initial={false}>
+				<AnimatePresence>
 					{visible && (
 						<DropdownMenu>
 							<motion.div

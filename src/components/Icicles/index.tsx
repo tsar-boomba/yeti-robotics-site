@@ -32,7 +32,7 @@ const Icicles: React.FC<IciclesProps> = ({
 				);
 				if (curr + height > max) {
 					const shortenedwidth = max - curr;
-					if (shortenedwidth < 20) break;
+					if (shortenedwidth < widthConstrains.min) break;
 					icicleValues.push({ height: height, width: shortenedwidth });
 					break;
 				}
