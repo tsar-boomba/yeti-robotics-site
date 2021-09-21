@@ -10,7 +10,6 @@ export const DropdownWrapper = styled.div`
 	justify-content: center;
 	margin: 0;
 	padding: 0;
-	z-index: -1;
 	transition: background-color 0.15s ease, color 0.15s ease;
 	&:hover {
 		color: ${colors.secondaryHovered};

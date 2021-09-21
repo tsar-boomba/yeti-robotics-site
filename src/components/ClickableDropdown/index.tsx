@@ -3,7 +3,7 @@ import { DropdownWrapper, DropdownMenu, DropdownButtonWrapper } from './Clickabl
 import ClickableDropdownItem from './ClickableDropdownItem';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useClickedOutside } from '../../hooks/useClickedOutide';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion, Variants } from 'framer-motion';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import {
 	hideClickableDropdown,
@@ -61,24 +61,26 @@ const ClickableDropdown: React.FC<ClickableDropdownProps> = ({ items }) => {
 	// Reccomended deps break this logic
 
 	//animation variants
-	const menu = {
+	const menu: Variants = {
 		open: {
+			height: 'auto',
 			transition: {
 				staggerChildren: 0.1,
 				delayChildren: 0.2,
 			},
 		},
 		closed: {
+			height: 0,
 			transition: {
 				staggerChildren: 0.1,
-				staggerDirection: 1,
+				staggerDirection: -1,
 			},
 		},
 	};
 
-	const title = {
-		open: { y: 0, opacity: 1, transition: { y: { stiffness: 1000, velocity: -100 } } },
-		closed: { y: 50, opacity: 0, transition: { y: { stiffness: 1000 } } },
+	const title: Variants = {
+		open: { opacity: 1 },
+		closed: { opacity: 0 },
 	};
 	return (
 		<>
@@ -100,9 +102,6 @@ const ClickableDropdown: React.FC<ClickableDropdownProps> = ({ items }) => {
 									return (
 										<motion.div
 											key={index}
-											initial='closed'
-											animate='open'
-											exit='closed'
 											variants={title}
 											style={{ padding: 0, margin: 0 }}
 										>
