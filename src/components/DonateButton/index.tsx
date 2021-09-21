@@ -1,13 +1,27 @@
-import { motion } from "framer-motion";
-import React from "react";
-import { DonateButtonStyle } from "./DonateButtonStyles";
+import { motion } from 'framer-motion';
+import React, { useRef } from 'react';
+import { DonateButtonStyle } from './DonateButtonStyles';
+import Icicles from '../Icicles';
 
 const DonateButton = () => {
-    return(
-        <motion.div whileTap={{scale:0.9}} whileHover={{scale:1.1}}>
-        <DonateButtonStyle>Donate!</DonateButtonStyle>
-        </motion.div>
-    );
-}
+	const buttonRef = useRef<HTMLAnchorElement>(null);
+
+	return (
+		<motion.a
+			whileTap={{ scale: 0.9 }}
+			whileHover={{ scale: 1.1 }}
+			ref={buttonRef}
+			style={DonateButtonStyle}
+		>
+			Donate
+			<Icicles
+				parentRef={buttonRef}
+				heightConstrains={{ max: 60, min: 15 }}
+				widthConstrains={{ max: 10, min: 5 }}
+				top='90%'
+			/>
+		</motion.a>
+	);
+};
 
 export default DonateButton;

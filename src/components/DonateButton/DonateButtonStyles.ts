@@ -1,17 +1,15 @@
-import styled from "styled-components";
-import { colors } from "../../styles/colors";
+import { MotionStyle } from 'framer-motion';
+import { colors } from '../../styles/colors';
 
-export const DonateButtonStyle = styled.button`
-    border: 0;
-    position: absolute;
-    top: 60px;
-    right: 40px;
-    background-color: ${colors.primary};
-    color: ${colors.secondary};
-    padding: 10px;
-    border-radius: 10px;
-    transition: background-color 0.3s ease;
-    :hover{
-        background-color: ${colors.primaryHovered};
-    }
-`
+export const DonateButtonStyle: MotionStyle = {
+	position: 'absolute',
+	top: 60,
+	right: 40,
+	backgroundColor: colors.primary,
+	color: colors.secondary,
+	padding: 10,
+	borderRadius: 10,
+	cursor: 'pointer',
+	fontSize: 48,
+	fontWeight: 'bold',
+};
