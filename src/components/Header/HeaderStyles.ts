@@ -17,11 +17,11 @@ export const HeaderWrapper = styled.header`
 	box-shadow: 0;
 `;
 
-export const LogoWrapper = styled.a`
+export const LogoWrapper = styled.div`
 	padding: 5px 50px 0 50px;
 	background: transparent
 		linear-gradient(90deg, rgba(205, 252, 255, 1) 80%, rgba(84, 182, 229, 1) 100%);
-	color: ${colors.secondary};
+	color: ${colors.primary};
 	font-family: 'Times New Roman', Times, serif;
 	font-size: 48px;
 	font-weight: bold;

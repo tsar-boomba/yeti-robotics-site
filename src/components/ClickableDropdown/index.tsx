@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { DropdownWrapper, DropdownMenu } from './ClickableDropdownStyles';
+import { DropdownWrapper, DropdownMenu, DropdownButtonWrapper } from './ClickableDropdownStyles';
 import ClickableDropdownItem from './ClickableDropdownItem';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useClickedOutside } from '../../hooks/useClickedOutide';
@@ -29,7 +29,7 @@ const ClickableDropdown: React.FC<ClickableDropdownProps> = ({ items }) => {
 	const visible = useAppSelector((state) => state.dropdown.clickable.shown);
 	const [visibleId, setVisibleId] = useState(-1);
 	const [prevVisible, setPrevVisible] = useState(false);
-	const buttonRef = useRef<HTMLDivElement>(null);
+	const buttonRef = useRef<HTMLButtonElement>(null);
 	const menuRef = useClickedOutside<HTMLMenuElement>(undefined, (e) => {
 		if (buttonRef.current.contains(e.target)) return;
 		dispatch(hideClickableDropdown());
@@ -62,9 +62,7 @@ const ClickableDropdown: React.FC<ClickableDropdownProps> = ({ items }) => {
 
 	//animation variants
 	const menu = {
-		open: {
-			height: 'auto',
-		},
+		open: { height: 'auto' },
 		closed: { height: 0 },
 	};
 
@@ -74,9 +72,9 @@ const ClickableDropdown: React.FC<ClickableDropdownProps> = ({ items }) => {
 	};
 	return (
 		<>
-			<div ref={buttonRef}>
-				<FontAwesomeIcon icon={faBars} onClick={menuClick} />
-			</div>
+			<DropdownButtonWrapper ref={buttonRef}>
+				<FontAwesomeIcon icon={faBars} size='2x' onClick={menuClick} />
+			</DropdownButtonWrapper>
 			<AnimatePresence>
 				<DropdownWrapper ref={menuRef} onClick={menuClick}>
 					{visible && (

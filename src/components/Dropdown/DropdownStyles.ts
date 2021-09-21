@@ -10,6 +10,11 @@ export const DropdownWrapper = styled.div`
 	justify-content: center;
 	margin: 0;
 	padding: 0;
+	transition: background-color 0.15s ease, color 0.15s ease;
+	&:hover {
+		color: ${colors.secondaryHovered};
+		background-color: ${colors.secondaryPrimay};
+	}
 `;
 
 export const DropdownButton = styled.div`
@@ -20,17 +25,11 @@ export const DropdownButton = styled.div`
 	justify-content: center;
 	padding-top: 2rem;
 	padding-bottom: 2rem;
-	font-size: 16px;
+	font-size: 24px;
 	font-weight: bold;
-	transition: background-color 0.15s ease, color 0.15s ease;
 	color: ${colors.secondary};
-	background-color: ${colors.primary};
 	z-index: 2;
 	cursor: pointer;
-	&:hover {
-		color: ${colors.secondaryHovered};
-		background-color: ${colors.primary};
-	}
 `;
 
 export const BorderTop = styled.div`
@@ -52,14 +51,13 @@ export const Menu = styled.div`
 	top: 100%;
 	color: ${colors.secondary};
 	justify-content: center;
-	box-shadow: 0px 0px 8px 4px ${colors.secondary};
 	z-index: 3;
 `;
 
 export const MenuItemWrapper = styled.div`
 	display: flex;
 	flex-flow: row-wrap;
-	background-color: #63f6ff;
+	background-color: #4bcdd5;
 	padding: 10px;
 	padding-top: 1rem;
 	padding-bottom: 1rem;

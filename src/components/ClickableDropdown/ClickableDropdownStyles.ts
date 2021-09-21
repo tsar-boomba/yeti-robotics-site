@@ -2,6 +2,12 @@ import styled from 'styled-components';
 import { colors } from '../../styles/colors';
 
 //ClickableDropdown Styles
+export const DropdownButtonWrapper = styled.button`
+	border: 0;
+	flex-grow: 1;
+	background: transparent;
+`;
+
 export const DropdownWrapper = styled.menu`
 	position: relative;
 	display: flex;
@@ -11,12 +17,12 @@ export const DropdownWrapper = styled.menu`
 	font-weight: bold;
 	color: ${colors.secondary};
 	border-color: black;
-	background-color: ${colors.primary};
+	background-color: #63f6ff;
 	z-index: 999;
 	padding: 0;
-	margin-bottom: 0;
+	margin: 0;
+	border-top: 2px solid #000000;
 	cursor: pointer;
-	box-shadow: 0px 0px 8px 0px ${colors.secondary};
 	-webkit-tap-highlight-color: transparent;
 `;
 
@@ -62,7 +68,7 @@ export const InteractiveWrapper = styled.div`
 	flex-flow: row;
 	border-bottom: 2px solid black;
 	width: 100%;
-	background-color: ${colors.primary};
+	background-color: #4bcdd5;
 `;
 
 export const ChildrenMenu = styled.div`
@@ -76,5 +82,5 @@ export const Child = styled.div`
 	top: 100%;
 	padding: 5px;
 	border-bottom: 1px solid black;
-	background-color: #24654a;
+	background-color: ${colors.primary};
 `;

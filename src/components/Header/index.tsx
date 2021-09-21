@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { showHeader } from '../../store/slices/headerSlice';
 import { HeaderWrapper, LogoWrapper } from './HeaderStyles';
@@ -8,10 +8,10 @@ import { useDimensions } from '../../hooks/useDimensions';
 import { useHidingHeader } from '../../hooks/useHidingHeader';
 import Icicles from '../Icicles';
 import { StaticImage } from 'gatsby-plugin-image';
+import { Link } from 'gatsby';
 
 const Header: React.FC = () => {
 	const dispatch = useAppDispatch();
-	const logoIciclesRef = useRef<HTMLAnchorElement>(null);
 	const clickableDropdownStatus = useAppSelector((state) => state.dropdown.clickable.shown);
 	const { windowWidth } = useDimensions();
 	const showHeaderCB = useCallback(() => {
@@ -42,60 +42,116 @@ const Header: React.FC = () => {
 	return (
 		<>
 			<HeaderWrapper ref={headerRef}>
-				<LogoWrapper ref={logoIciclesRef} href='/'>
-					{windowWidth >= 440 ? (
+				<LogoWrapper>
+					<Link to='/'>
 						<StaticImage
 							src='../../images/yeti-logo-with-text.png'
 							height={82}
 							width={150}
-							placeholder='tracedSVG'
-							layout='fixed'
+							placeholder='blurred'
 							alt='YETI Logo'
 						/>
-					) : (
-						'YETI'
-					)}
-					{/* <Icicles parentRef={logoIciclesRef} /> */}
+					</Link>
 				</LogoWrapper>
+
 				{/* Changes header based on window's width */}
-				{windowWidth >= 1400 ? (
+				{windowWidth >= 1250 ? (
 					<>
-						<Dropdown title='About YETI' href='/about' items={[]} />
+						<Dropdown title='About' href='/about' items={[]} />
+						<Dropdown title='Join Us' href='/join' items={[]} />
+						<Dropdown title='Outreach' href='/outreach' items={[]} />
 						<Dropdown
-							title='Our Leadership'
+							title='Robots'
+							href='/robots'
+							items={[
+								{ title: 'Polaris 2019', href: '/robots/2019' },
+								{ title: 'Avalanche 2018', href: '/robots/2018' },
+								{ title: 'Permafrost 2017', href: '/robots/2017' },
+								{ title: 'Black Ice 2016', href: '/robots/2016' },
+								{ title: 'Frostbyte 2015', href: '/robots/2015' },
+								{ title: 'Fluffy 2014', href: '/robots/2014' },
+								{ title: 'Momo 2013', href: '/robots/2013' },
+								{ title: 'Chompa 2012', href: '/robots/2012' },
+								{ title: 'Wampa 2011', href: '/robots/2011' },
+							]}
+						/>
+						<Dropdown
+							title='Leadership'
 							href='/leaders'
 							items={[
 								{ title: 'Student Leaders', href: '/leaders/student-leaders' },
-								{ title: 'Technical Mentors', href: '/leaders/tech-mentors' },
+								{ title: 'Technical Mentors', href: '/leaders/technical-mentors' },
 								{ title: 'Business Mentors', href: '/leaders/business-mentors' },
 							]}
 						/>
+						<Dropdown title='Sponsors' href='/sponsors' items={[]} />
+						<Dropdown title='Contact' href='/contact' items={[]} />
 					</>
 				) : (
-					<ClickableDropdown
-						items={[
-							{
-								title: 'About YETI',
-								href: '/about',
-								children: [
-									{ title: 'What is YETI?', href: '/about/who-we-are' },
-									{ title: 'Join The Team', href: '/about/join' },
-								],
-							},
-							{
-								title: 'Our Leadership',
-								href: '/leaders',
-								children: [
-									{ title: 'Student Leaders', href: '/leaders/student-leaders' },
-									{ title: 'Technical Mentors', href: '/leaders/tech-mentors' },
-									{
-										title: 'Business Mentors',
-										href: '/leaders/business-mentors',
-									},
-								],
-							},
-						]}
-					/>
+					<>
+						<ClickableDropdown
+							items={[
+								{
+									title: 'About YETI',
+									href: '/about',
+									children: [],
+								},
+								{
+									title: 'About',
+									href: '/about',
+									children: [],
+								},
+								{
+									title: 'Outreach',
+									href: '/outreach',
+									children: [],
+								},
+								{
+									title: 'Robots',
+									href: '/robots',
+									children: [
+										{ title: 'Polaris 2019', href: '/robots/2019' },
+										{ title: 'Avalanche 2018', href: '/robots/2018' },
+										{ title: 'Permafrost 2017', href: '/robots/2017' },
+										{ title: 'Black Ice 2016', href: '/robots/2016' },
+										{ title: 'Frostbyte 2015', href: '/robots/2015' },
+										{ title: 'Fluffy 2014', href: '/robots/2014' },
+										{ title: 'Momo 2013', href: '/robots/2013' },
+										{ title: 'Chompa 2012', href: '/robots/2012' },
+										{ title: 'Wampa 2011', href: '/robots/2011' },
+									],
+								},
+								{
+									title: 'Our Leadership',
+									href: '/leaders',
+									children: [
+										{
+											title: 'Student Leaders',
+											href: '/leaders/student-leaders',
+										},
+										{
+											title: 'Technical Mentors',
+											href: '/leaders/tech-mentors',
+										},
+										{
+											title: 'Business Mentors',
+											href: '/leaders/business-mentors',
+										},
+									],
+								},
+								{
+									title: 'Sponsors',
+									href: '/sponsors',
+									children: [],
+								},
+								{
+									title: 'Contact',
+									href: '/contact',
+									children: [],
+								},
+							]}
+						/>
+					</>
 				)}
 				<Icicles parentRef={headerRef} />
 				<Icicles parentRef={headerRef} />
