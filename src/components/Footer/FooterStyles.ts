@@ -11,7 +11,6 @@ export const FooterWrapper = styled.footer`
 	color: ${colors.light};
 	background-color: ${colors.primary};
 	padding: 10px;
-	align-self: flex-end;
 `;
 
 export const CommunicationsWrapper = styled.div`
@@ -21,6 +20,7 @@ export const CommunicationsWrapper = styled.div`
 
 export const CommunicationsTitle = styled.h1`
 	margin: 0;
+	font-size: 30px;
 `;
 
 export const CommunicationsText = styled.p`

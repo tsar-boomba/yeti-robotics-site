@@ -15,10 +15,7 @@ const Footer: React.FC = () => {
 		<>
 			<FooterWrapper>
 				<CommunicationsWrapper>
-					<CommunicationsTitle>Stay Up-To-Date</CommunicationsTitle>
-					<CommunicationsText>
-						Make sure to keep up with YETI events through our social media!
-					</CommunicationsText>
+					<CommunicationsTitle>Follow us on Social Media</CommunicationsTitle>
 					<SocialMediaWrapper>
 						<SocialMediaIconWrapper
 							type='social'
