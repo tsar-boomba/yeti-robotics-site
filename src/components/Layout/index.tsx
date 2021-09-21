@@ -1,6 +1,7 @@
 import React from 'react';
 import Footer from '../Footer';
 import Header from '../Header';
+import DonateButton from '../DonateButton'
 import PageContainer from '../PageContainer';
 import { MainContainer } from './LayoutStyles';
 
@@ -13,7 +14,7 @@ const Layout: React.FC<LayoutProps> = ({ children, style }) => {
 	return (
 		<PageContainer>
 			<Header />
-			<MainContainer style={style}>{children}</MainContainer>
+			<MainContainer style={style}><DonateButton />{children}</MainContainer>
 			<Footer />
 		</PageContainer>
 	);
