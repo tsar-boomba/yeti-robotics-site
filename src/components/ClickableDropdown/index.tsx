@@ -62,29 +62,38 @@ const ClickableDropdown: React.FC<ClickableDropdownProps> = ({ items }) => {
 
 	//animation variants
 	const menu = {
-		open: { height: 'auto' },
-		closed: { height: 0 },
+		open: {
+			transition: {
+				staggerChildren: 0.1,
+				delayChildren: 0.2,
+			},
+		},
+		closed: {
+			transition: {
+				staggerChildren: 0.1,
+				staggerDirection: 1,
+			},
+		},
 	};
 
 	const title = {
-		open: { height: 'auto' },
-		closed: { height: 0 },
+		open: { y: 0, opacity: 1, transition: { y: { stiffness: 1000, velocity: -100 } } },
+		closed: { y: 50, opacity: 0, transition: { y: { stiffness: 1000 } } },
 	};
 	return (
 		<>
 			<DropdownButtonWrapper ref={buttonRef}>
 				<FontAwesomeIcon icon={faBars} size='2x' onClick={menuClick} />
 			</DropdownButtonWrapper>
-			<AnimatePresence>
-				<DropdownWrapper ref={menuRef} onClick={menuClick}>
+			<DropdownWrapper ref={menuRef} onClick={menuClick}>
+				<AnimatePresence initial={false}>
 					{visible && (
 						<DropdownMenu>
-							<motion.menu
+							<motion.div
 								initial='closed'
 								animate='open'
 								exit='closed'
 								variants={menu}
-								transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
 								style={{ padding: 0, margin: 0 }}
 							>
 								{items.map((item, index) => {
@@ -105,11 +114,11 @@ const ClickableDropdown: React.FC<ClickableDropdownProps> = ({ items }) => {
 										</motion.div>
 									);
 								})}
-							</motion.menu>
+							</motion.div>
 						</DropdownMenu>
 					)}
-				</DropdownWrapper>
-			</AnimatePresence>
+				</AnimatePresence>
+			</DropdownWrapper>
 		</>
 	);
 };
