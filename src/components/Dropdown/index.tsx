@@ -48,12 +48,12 @@ const Dropdown: React.FC<DropdownProps> = ({ title, href, items }) => {
 		open: {
 			transition: {
 				staggerChildren: 0.05,
-				delayChildren: 0.2,
+				delayChildren: 0.1,
 			},
 		},
 		closed: {
 			transition: {
-				duration: 0.85,
+				duration: 0.4,
 				staggerChildren: 0.1,
 				staggerDirection: -1,
 			},
