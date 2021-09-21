@@ -60,14 +60,7 @@ const Header: React.FC = () => {
 				{/* Changes header based on window's width */}
 				{windowWidth >= 1400 ? (
 					<>
-						<Dropdown
-							title='About YETI'
-							href='/about'
-							items={[
-								{ title: 'What is YETI?', href: '/about/who-we-are' },
-								{ title: 'Join The Team', href: '/about/join' },
-							]}
-						/>
+						<Dropdown title='About YETI' href='/about' items={[]} />
 						<Dropdown
 							title='Our Leadership'
 							href='/leaders'
