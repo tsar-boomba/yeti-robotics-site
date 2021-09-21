@@ -5,6 +5,7 @@ import { BorderTop, DropdownButton, DropdownWrapper, Menu } from './DropdownStyl
 import { Link } from 'gatsby';
 import DropdownItem from './DropdownItem';
 import Icicles from '../Icicles';
+import { AnimatePresence, motion, Variants } from 'framer-motion';
 
 interface DropdownProps {
 	title: string;
@@ -42,6 +43,32 @@ const Dropdown: React.FC<DropdownProps> = ({ title, href, items }) => {
 		}
 	}, [href, items]);
 
+	// animation variants
+	const menu: Variants = {
+		open: {
+			transition: {
+				staggerChildren: 0.05,
+				delayChildren: 0.2,
+			},
+		},
+		closed: {
+			transition: {
+				duration: 0.85,
+				staggerChildren: 0.1,
+				staggerDirection: -1,
+			},
+		},
+	};
+
+	const childTitle: Variants = {
+		open: {
+			opacity: 1,
+		},
+		closed: {
+			opacity: 0,
+		},
+	};
+
 	return (
 		<>
 			<DropdownWrapper
@@ -56,25 +83,37 @@ const Dropdown: React.FC<DropdownProps> = ({ title, href, items }) => {
 
 					<DropdownButton>{title}</DropdownButton>
 				</Link>
-				{visible && (
-					<Menu ref={menuIciclesRef}>
-						<BorderTop
-							onMouseEnter={() => setVisible(true)}
-							onMouseLeave={() => setVisible(false)}
-						/>
-						{items.map((item, index) => {
-							return (
-								<DropdownItem
-									href={item.href}
-									title={item.title}
-									parentState={[visible, setVisible]}
-									key={index}
-								/>
-							);
-						})}
-						<Icicles parentRef={menuIciclesRef} />
-					</Menu>
-				)}
+				<AnimatePresence>
+					{visible && (
+						<motion.menu
+							initial='closed'
+							animate='open'
+							exit='closed'
+							variants={menu}
+							style={Menu}
+							ref={menuIciclesRef}
+						>
+							<BorderTop
+								onMouseEnter={() => setVisible(true)}
+								onMouseLeave={() => setVisible(false)}
+							/>
+							{items.map((item, index) => {
+								return (
+									<motion.div key={index} variants={childTitle}>
+										<DropdownItem
+											href={item.href}
+											title={item.title}
+											parentState={[visible, setVisible]}
+										/>
+										{items.length == index + 1 ? (
+											<Icicles parentRef={menuIciclesRef} />
+										) : null}
+									</motion.div>
+								);
+							})}
+						</motion.menu>
+					)}
+				</AnimatePresence>
 			</DropdownWrapper>
 		</>
 	);

@@ -1,3 +1,4 @@
+import { MotionStyle } from 'framer-motion';
 import styled from 'styled-components';
 import { colors } from '../../styles/colors';
 
@@ -44,15 +45,17 @@ export const BorderTop = styled.div`
 	z-index: 4;
 `;
 
-export const Menu = styled.div`
-	display: flex;
-	flex-flow: column;
-	position: absolute;
-	top: 100%;
-	color: ${colors.secondary};
-	justify-content: center;
-	z-index: 3;
-`;
+export const Menu: MotionStyle = {
+	margin: 0,
+	padding: 0,
+	display: 'flex',
+	flexFlow: 'column',
+	position: 'absolute',
+	top: '100%',
+	color: colors.secondary,
+	justifyContent: 'center',
+	zIndex: 3,
+};
 
 export const MenuItemWrapper = styled.div`
 	display: flex;
