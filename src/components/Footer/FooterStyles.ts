@@ -1,3 +1,4 @@
+import { MotionStyle } from 'framer-motion';
 import styled from 'styled-components';
 import { colors } from '../../styles/colors';
 
@@ -42,3 +43,14 @@ export const SocialMediaIconWrapper = styled.a`
 		color: ${colors.secondaryHovered};
 	}
 `;
+
+export const DonateButtonStyle: MotionStyle = {
+	backgroundColor: colors.primaryHovered,
+	color: colors.secondary,
+	padding: 10,
+	borderRadius: 10,
+	marginLeft: '2vw',
+	cursor: 'pointer',
+	fontSize: '15px',
+	fontWeight: 'bold',
+};

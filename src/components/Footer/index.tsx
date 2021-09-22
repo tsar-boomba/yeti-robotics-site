@@ -6,9 +6,11 @@ import {
 	CommunicationsText,
 	SocialMediaWrapper,
 	SocialMediaIconWrapper,
+	DonateButtonStyle,
 } from './FooterStyles';
 import { faTwitter, faFacebook, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { motion } from 'framer-motion';
 
 const Footer: React.FC = () => {
 	return (
@@ -43,6 +45,13 @@ const Footer: React.FC = () => {
 						</SocialMediaIconWrapper>
 					</SocialMediaWrapper>
 				</CommunicationsWrapper>
+				<motion.a
+					whileTap={{ scale: 0.9 }}
+					whileHover={{ scale: 1.1 }}
+					style={DonateButtonStyle}
+				>
+					Donate
+				</motion.a>
 			</FooterWrapper>
 		</>
 	);

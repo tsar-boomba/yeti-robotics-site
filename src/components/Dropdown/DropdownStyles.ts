@@ -24,8 +24,8 @@ export const DropdownButton = styled.div`
 	height: 100%;
 	width: 100%;
 	justify-content: center;
-	padding-top: 2rem;
-	padding-bottom: 2rem;
+	padding-top: 2.1vh;
+	padding-bottom: 2.1vh;
 	font-size: 24px;
 	font-weight: bold;
 	color: ${colors.secondary};

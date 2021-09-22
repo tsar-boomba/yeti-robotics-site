@@ -3,13 +3,13 @@ import { colors } from '../../styles/colors';
 
 export const DonateButtonStyle: MotionStyle = {
 	position: 'absolute',
-	top: 60,
-	right: 40,
+	top: '3vw',
+	right: '2vw',
 	backgroundColor: colors.primary,
 	color: colors.secondary,
 	padding: 10,
 	borderRadius: 10,
 	cursor: 'pointer',
-	fontSize: 48,
+	fontSize: '2vw',
 	fontWeight: 'bold',
 };
