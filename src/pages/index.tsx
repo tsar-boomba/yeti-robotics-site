@@ -4,7 +4,7 @@ import Layout from '../components/Layout';
 import { graphql } from 'gatsby';
 import EventsDisplay from '../components/EventsDisplay';
 
-const Home: React.FC<PageProps> = ({ data }) => {
+const Home: React.FC<PageProps> = () => {
 	return (
 		<Layout>
 			<h1>Hello World</h1>
@@ -12,20 +12,5 @@ const Home: React.FC<PageProps> = ({ data }) => {
 		</Layout>
 	);
 };
-
-export const query = graphql`
-	query {
-		allMdx {
-			nodes {
-				frontmatter {
-					date
-					title
-				}
-				id
-				body
-			}
-		}
-	}
-`;
 
 export default Home;

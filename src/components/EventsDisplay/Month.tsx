@@ -1,3 +1,4 @@
+import { Link } from 'gatsby';
 import React, { useEffect, useState } from 'react';
 import { MonthWrapper } from './EventsDisplayStyles';
 
@@ -59,11 +60,10 @@ const Month: React.FC<MonthProps> = ({ month, events }) => {
 				) : null}
 				<h1>{new Date(`${month}/1/2000`).toLocaleString(undefined, { month: 'long' })}</h1>
 				{monthEvents.map((event) => {
-					console.log(event);
 					return (
-						<a href={`/events/${event.slug}`} key={event.id}>
+						<Link to={`/events/${event.slug}`} key={event.id}>
 							{event.frontmatter.title}
-						</a>
+						</Link>
 					);
 				})}
 			</MonthWrapper>

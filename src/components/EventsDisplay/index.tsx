@@ -20,7 +20,18 @@ const EventsDisplay = () => {
 			}
 		}
 	`);
-	const [events, setEvents] = useState(
+	const [events, setEvents] = useState<
+		{
+			frontmatter: {
+				title: string;
+				date: string;
+				time: string;
+				location: string;
+			};
+			id: string;
+			slug: string;
+		}[]
+	>(
 		allMdx.nodes.filter(
 			(event) => new Date(event.frontmatter.date).valueOf() > Date.now().valueOf(),
 		),

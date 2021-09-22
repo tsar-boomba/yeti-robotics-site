@@ -25,6 +25,8 @@ export const query = graphql`
 			frontmatter {
 				title
 				date
+				time
+				location
 			}
 			body
 		}
