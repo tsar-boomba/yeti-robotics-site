@@ -45,7 +45,7 @@ export const SocialMediaIconWrapper = styled.a`
 `;
 
 export const DonateButtonStyle: MotionStyle = {
-	backgroundColor: colors.primaryHovered,
+	backgroundColor: colors.secondaryPrimay,
 	color: colors.secondary,
 	padding: 10,
 	borderRadius: 10,

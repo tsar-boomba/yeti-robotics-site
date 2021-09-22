@@ -3,7 +3,6 @@ import {
 	FooterWrapper,
 	CommunicationsWrapper,
 	CommunicationsTitle,
-	CommunicationsText,
 	SocialMediaWrapper,
 	SocialMediaIconWrapper,
 	DonateButtonStyle,
