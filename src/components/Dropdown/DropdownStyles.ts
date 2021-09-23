@@ -1,4 +1,5 @@
 import { MotionStyle } from 'framer-motion';
+import { CSSProperties } from 'react';
 import styled from 'styled-components';
 import { colors } from '../../styles/colors';
 
@@ -18,20 +19,21 @@ export const DropdownWrapper = styled.div`
 	}
 `;
 
-export const DropdownButton = styled.div`
-	position: relative;
-	display: flex;
-	height: 100%;
-	width: 100%;
-	justify-content: center;
-	padding-top: 2.1vh;
-	padding-bottom: 2.1vh;
-	font-size: 24px;
-	font-weight: bold;
-	color: ${colors.secondary};
-	z-index: 2;
-	cursor: pointer;
-`;
+export const DropdownButton: CSSProperties = {
+	position: 'relative',
+	display: 'flex',
+	height: '100%',
+	width: '100%',
+	justifyContent: 'center',
+	paddingTop: '2.1vh',
+	paddingBottom: '2.1vh',
+	fontSize: '24px',
+	fontWeight: 'bold',
+	flexGrow: 1,
+	color: colors.secondary,
+	zIndex: 2,
+	cursor: 'pointer',
+};
 
 export const BorderTop = styled.div`
 	position: absolute;

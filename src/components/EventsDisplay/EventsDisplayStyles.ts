@@ -27,4 +27,9 @@ export const EventWrapper: MotionStyle = {
 	padding: '5px',
 	margin: '10px',
 };
-export const EventText = styled.h2``;
+export const EventText = styled.div`
+	p {
+		font-weight: bold;
+		font-size: clamp(20px, 30px, 40px);
+	}
+`;

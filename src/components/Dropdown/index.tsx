@@ -75,13 +75,13 @@ const Dropdown: React.FC<DropdownProps> = ({ title, href, items }) => {
 				onMouseOver={() => setVisible(true)}
 				onMouseLeave={() => setVisible(false)}
 			>
-				<Link to={href}>
-					<BorderTop
-						ref={parentButtonRef}
-						style={{ height: 0, backgroundColor: colors.secondary }}
-					/>
+				<BorderTop
+					ref={parentButtonRef}
+					style={{ height: 0, backgroundColor: colors.secondary }}
+				/>
 
-					<DropdownButton>{title}</DropdownButton>
+				<Link to={href} style={DropdownButton}>
+					{title}
 				</Link>
 				<AnimatePresence>
 					{visible && (

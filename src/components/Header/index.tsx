@@ -76,12 +76,11 @@ const Header: React.FC = () => {
 							]}
 						/>
 						<Dropdown
-							title='Leadership'
-							href='/leaders'
+							title='Mentors'
+							href='/mentors'
 							items={[
-								{ title: 'Student Leaders', href: '/leaders/student-leaders' },
-								{ title: 'Technical Mentors', href: '/leaders/technical-mentors' },
-								{ title: 'Business Mentors', href: '/leaders/business-mentors' },
+								{ title: 'Technical Mentors', href: '/mentors/technical-mentors' },
+								{ title: 'Business Mentors', href: '/mentors/business-mentors' },
 							]}
 						/>
 						<Dropdown title='Sponsors' href='/sponsors' items={[]} />
@@ -122,20 +121,16 @@ const Header: React.FC = () => {
 									],
 								},
 								{
-									title: 'Our Leadership',
-									href: '/leaders',
+									title: 'Mentors',
+									href: '/mentors',
 									children: [
 										{
-											title: 'Student Leaders',
-											href: '/leaders/student-leaders',
-										},
-										{
 											title: 'Technical Mentors',
-											href: '/leaders/tech-mentors',
+											href: '/mentors/tech-mentors',
 										},
 										{
 											title: 'Business Mentors',
-											href: '/leaders/business-mentors',
+											href: '/mentors/business-mentors',
 										},
 									],
 								},

@@ -25,7 +25,13 @@ const Event: React.FC<EventProps> = ({ event }) => {
 				style={EventWrapper}
 			>
 				<EventText>
-					{event.frontmatter.date} {event.frontmatter.title}
+					<p>
+						{new Date(event.frontmatter.date).toLocaleDateString(undefined, {
+							day: '2-digit',
+						})}
+						{'   '}
+						{event.frontmatter.title}
+					</p>
 				</EventText>
 			</motion.div>
 		</Link>

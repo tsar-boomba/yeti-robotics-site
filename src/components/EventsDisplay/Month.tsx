@@ -73,14 +73,15 @@ const Month: React.FC<MonthProps> = ({ month, events, id }) => {
 		open: {
 			height: 'auto',
 			transition: {
+				type: 'tween',
 				staggerChildren: 0.1,
 			},
 		},
 		closed: {
 			height: 0,
 			transition: {
-				duration: 0.3,
-				staggerChildren: 0.05,
+				type: 'tween',
+				staggerChildren: 0.1,
 				staggerDirection: -1,
 			},
 		},
