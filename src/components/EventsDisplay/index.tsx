@@ -4,6 +4,7 @@ import { DisplayWrapper } from './EventsDisplayStyles';
 import Month from './Month';
 
 const EventsDisplay = () => {
+	// getting data
 	const { allMdx } = useStaticQuery(graphql`
 		query {
 			allMdx {
@@ -20,6 +21,8 @@ const EventsDisplay = () => {
 			}
 		}
 	`);
+
+	// typing and setting data fetched from filesystem
 	const [events, setEvents] = useState<
 		{
 			frontmatter: {
@@ -37,7 +40,11 @@ const EventsDisplay = () => {
 		),
 	);
 	const currentMonth = new Date().getMonth() + 1;
+
+	// how many months we show
 	const months = Array.from(Array(12).keys());
+
+	// mkaes sure we don't go out of bounds on months (december -> january)
 	const wrapMonths = (currMonth: number) => {
 		if (currMonth > 12) {
 			return currMonth - 12;
@@ -46,6 +53,7 @@ const EventsDisplay = () => {
 		}
 	};
 
+	// re-setting data, just to make sure we got it
 	useEffect(() => {
 		setEvents(
 			allMdx.nodes.filter(

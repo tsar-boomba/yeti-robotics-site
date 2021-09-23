@@ -17,6 +17,7 @@ interface MonthProps {
 }
 
 const Month: React.FC<MonthProps> = ({ month, events }) => {
+	// removing events not in this month
 	const [monthEvents, setMonthEvents] = useState(
 		events.filter(
 			(event) =>
@@ -25,6 +26,7 @@ const Month: React.FC<MonthProps> = ({ month, events }) => {
 		),
 	);
 
+	// re-removing, just in case
 	useEffect(
 		() =>
 			setMonthEvents(
