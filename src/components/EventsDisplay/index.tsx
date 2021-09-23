@@ -64,6 +64,7 @@ const EventsDisplay = () => {
 
 	return (
 		<>
+			<h1>Events</h1>
 			<DisplayWrapper>
 				{months.map((_, index) => {
 					return (
