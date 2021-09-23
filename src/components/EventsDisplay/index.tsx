@@ -69,6 +69,7 @@ const EventsDisplay = () => {
 					return (
 						<Month
 							key={index}
+							id={index}
 							month={wrapMonths(currentMonth + index)}
 							events={events}
 						/>
