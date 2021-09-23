@@ -12,13 +12,19 @@ export const DisplayWrapper = styled.div`
 export const MonthWrapper: MotionStyle = {
 	border: '4px solid #000000',
 	borderLeft: `7px solid ${colors.primary}`,
-	borderTop: 0,
 	borderRadius: '10px',
 	padding: '5px',
+	margin: '10px',
 	cursor: 'pointer',
 };
 export const EventsWrapper: MotionStyle = {};
 
 // event styles
-export const EventWrapper = styled.div``;
+export const EventWrapper: MotionStyle = {
+	border: '4px solid #000000',
+	borderLeft: `7px solid ${colors.secondaryPrimay}`,
+	borderRadius: '10px',
+	padding: '5px',
+	margin: '10px',
+};
 export const EventText = styled.h2``;

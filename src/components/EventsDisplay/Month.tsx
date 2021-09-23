@@ -19,13 +19,24 @@ interface MonthProps {
 }
 
 const Month: React.FC<MonthProps> = ({ month, events, id }) => {
-	// removing events not in this month
+	// removing events not in this month and sorting so closer events are at the top
 	const [monthEvents, setMonthEvents] = useState(
-		events.filter(
-			(event) =>
-				new Date(event.frontmatter.date).toLocaleString(undefined, { month: 'long' }) ===
-				new Date(`${month}/1/2000`).toLocaleString(undefined, { month: 'long' }),
-		),
+		events
+			.filter(
+				(event) =>
+					new Date(event.frontmatter.date).toLocaleString(undefined, {
+						month: 'long',
+					}) === new Date(`${month}/1/2000`).toLocaleString(undefined, { month: 'long' }),
+			)
+			.sort((a, b) => {
+				if (
+					new Date(a.frontmatter.date).valueOf() <= new Date(b.frontmatter.date).valueOf()
+				) {
+					return -1;
+				} else {
+					return 1;
+				}
+			}),
 	);
 	const [open, setOpen] = useState(id === 0 ? true : false);
 
@@ -33,13 +44,26 @@ const Month: React.FC<MonthProps> = ({ month, events, id }) => {
 	useEffect(
 		() =>
 			setMonthEvents(
-				events.filter(
-					(event) =>
-						new Date(event.frontmatter.date).toLocaleString(undefined, {
-							month: 'long',
-						}) ===
-						new Date(`${month}/1/2000`).toLocaleString(undefined, { month: 'long' }),
-				),
+				events
+					.filter(
+						(event) =>
+							new Date(event.frontmatter.date).toLocaleString(undefined, {
+								month: 'long',
+							}) ===
+							new Date(`${month}/1/2000`).toLocaleString(undefined, {
+								month: 'long',
+							}),
+					)
+					.sort((a, b) => {
+						if (
+							new Date(a.frontmatter.date).valueOf() <=
+							new Date(b.frontmatter.date).valueOf()
+						) {
+							return -1;
+						} else {
+							return 1;
+						}
+					}),
 			),
 		[],
 	);
@@ -90,18 +114,10 @@ const Month: React.FC<MonthProps> = ({ month, events, id }) => {
 			) : null}
 			{monthEvents.length ? (
 				<motion.div
-					whileHover={{ scale: 1.05, borderTop: '4px solid #000000', zIndex: 2 }}
-					whileTap={{ scale: 0.95, borderTop: '4px solid #000000', zIndex: 2 }}
+					whileHover={{ scale: 1.05, zIndex: 2 }}
+					whileTap={{ scale: 0.95, zIndex: 2 }}
 					onClick={() => setOpen(!open)}
-					style={{
-						...MonthWrapper,
-						borderTop:
-							month === 1
-								? '4px solid #000000'
-								: id === 0
-								? '4px solid #000000'
-								: '0',
-					}}
+					style={MonthWrapper}
 				>
 					{/* Turns number month into word month */}
 					<h1>

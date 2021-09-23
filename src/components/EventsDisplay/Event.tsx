@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { Link } from 'gatsby';
 import React from 'react';
 import { EventText, EventWrapper } from './EventsDisplayStyles';
@@ -18,11 +19,15 @@ interface EventProps {
 const Event: React.FC<EventProps> = ({ event }) => {
 	return (
 		<Link to={`/events/${event.slug}`}>
-			<EventWrapper>
+			<motion.div
+				whileTap={{ scale: 0.95, zIndex: 3 }}
+				whileHover={{ scale: 1.02, zIndex: 3 }}
+				style={EventWrapper}
+			>
 				<EventText>
 					{event.frontmatter.date} {event.frontmatter.title}
 				</EventText>
-			</EventWrapper>
+			</motion.div>
 		</Link>
 	);
 };

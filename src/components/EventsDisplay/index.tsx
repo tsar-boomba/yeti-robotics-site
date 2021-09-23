@@ -7,7 +7,7 @@ const EventsDisplay = () => {
 	// getting data
 	const { allMdx } = useStaticQuery(graphql`
 		query {
-			allMdx {
+			allMdx(sort: { fields: frontmatter___date, order: DESC }, limit: 50) {
 				nodes {
 					frontmatter {
 						title
