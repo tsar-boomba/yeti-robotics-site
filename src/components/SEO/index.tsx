@@ -25,7 +25,7 @@ const query = graphql`
 const SEO: React.FC<SEOProps> = ({ title, description, image }) => {
 	const { site } = useStaticQuery(query);
 	let pathname = '';
-	if (location) pathname = location.pathname;
+	if (typeof location !== 'undefined') pathname = location.pathname;
 
 	const { defaultTitle, titleTemplate, defaultDescription, siteUrl, defaultImage } =
 		site.siteMetadata;
