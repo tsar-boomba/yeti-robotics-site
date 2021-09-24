@@ -3,8 +3,9 @@ import styled from 'styled-components';
 import { colors } from '../../styles/colors';
 
 //ClickableDropdown Styles
-export const DropdownButtonWrapper = styled.button`
+export const DropdownButtonWrapper = styled.div`
 	border: 0;
+	padding: 1rem;
 	flex-grow: 1;
 	background: transparent;
 `;

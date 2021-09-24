@@ -24,10 +24,11 @@ export const EventWrapper: MotionStyle = {
 	display: 'flex',
 	alignItems: 'center',
 	border: '4px solid #000000',
-	borderLeft: `7px solid ${colors.secondaryPrimay}`,
 	borderRadius: '10px',
 	padding: '5px',
 	margin: '10px',
+	color: '#eeeeee',
+	backgroundColor: colors.primary,
 };
 export const EventText = styled.div`
 	p {

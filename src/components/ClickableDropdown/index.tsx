@@ -29,7 +29,7 @@ const ClickableDropdown: React.FC<ClickableDropdownProps> = ({ items }) => {
 	const visible = useAppSelector((state) => state.dropdown.clickable.shown);
 	const [visibleId, setVisibleId] = useState(-1);
 	const [prevVisible, setPrevVisible] = useState(false);
-	const buttonRef = useRef<HTMLButtonElement>(null);
+	const buttonRef = useRef<HTMLDivElement>(null);
 	const menuRef = useClickedOutside<HTMLMenuElement>(undefined, (e) => {
 		if (buttonRef.current.contains(e.target)) return;
 		dispatch(hideClickableDropdown());
@@ -65,15 +65,16 @@ const ClickableDropdown: React.FC<ClickableDropdownProps> = ({ items }) => {
 		open: {
 			height: 'auto',
 			transition: {
-				staggerChildren: 0.1,
-				delayChildren: 0.2,
+				duration: 0.13,
+				staggerChildren: 0.05,
+				delayChildren: 0.1,
 			},
 		},
 		closed: {
 			height: 0,
 			transition: {
-				duration: 0.85,
-				staggerChildren: 0.1,
+				duration: 0.1,
+				staggerChildren: 0.0166666666666666666666666666666666666666666666666666666,
 				staggerDirection: -1,
 			},
 		},
@@ -92,8 +93,8 @@ const ClickableDropdown: React.FC<ClickableDropdownProps> = ({ items }) => {
 
 	return (
 		<>
-			<DropdownButtonWrapper ref={buttonRef}>
-				<FontAwesomeIcon icon={faBars} size='2x' onClick={menuClick} />
+			<DropdownButtonWrapper ref={buttonRef} onClick={menuClick} aria-label='Menu Button'>
+				<FontAwesomeIcon icon={faBars} size='2x' />
 			</DropdownButtonWrapper>
 			<DropdownWrapper ref={menuRef} onClick={menuClick}>
 				<AnimatePresence initial={false}>

@@ -4,22 +4,23 @@ import { colors } from '../../styles/colors';
 
 export const SlideshowWrapper = styled.div`
 	display: flex;
-	position: relative;
+	align-items: center;
 	justify-content: center;
-	width: clamp(300px, 400px, 100%);
-	height: clamp(200px, 500px, 700px);
+	position: relative;
+	width: clamp(300px, 70%, 100%);
+	height: 40vh;
 `;
 
 export const Image: MotionStyle = {
-	height: 'clamp(300px, 600px, 100%)',
-	width: 'clamp(300px, 400px, 100%)',
+	placeSelf: 'center',
+	objectFit: 'scale-down',
+	height: '40vh',
 };
 
 // controls styles
 export const ControlsStyles: MotionStyle = {
-	display: 'flex',
-	justifyContent: 'center',
-	alignItems: 'center',
+	display: 'grid',
+	placeItems: 'center',
 	position: 'absolute',
 	top: '50%',
 	zIndex: 2,

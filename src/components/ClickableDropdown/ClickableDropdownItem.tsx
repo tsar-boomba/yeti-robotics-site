@@ -48,15 +48,16 @@ const ClickableDropdownItem: React.FC<ClickableDropDownItemProps> = ({ item, cur
 		open: {
 			height: 'auto',
 			transition: {
-				staggerChildren: 0.1,
-				delayChildren: 0.2,
+				duration: 0.13,
+				staggerChildren: 0.05,
+				delayChildren: 0.1,
 			},
 		},
 		closed: {
 			height: 0,
 			transition: {
-				duration: 0.85,
-				staggerChildren: 0.1,
+				duration: 0.1,
+				staggerChildren: 0.0166666666666666666666666666666666666666666666666666666,
 				staggerDirection: -1,
 			},
 		},

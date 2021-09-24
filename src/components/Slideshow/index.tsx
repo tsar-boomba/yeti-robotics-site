@@ -77,7 +77,7 @@ const Slideshow: React.FC<SlideshowProps> = ({ images }) => {
 	return (
 		<>
 			<SlideshowWrapper>
-				<AnimatePresence initial={false} custom={direction}>
+				<AnimatePresence initial={false} exitBeforeEnter={true} custom={direction}>
 					<motion.img
 						key={imageIndex}
 						src={images[imageIndex]}
