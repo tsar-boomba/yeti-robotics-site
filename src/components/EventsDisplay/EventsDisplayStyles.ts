@@ -21,6 +21,8 @@ export const EventsWrapper: MotionStyle = {};
 
 // event styles
 export const EventWrapper: MotionStyle = {
+	display: 'flex',
+	alignItems: 'center',
 	border: '4px solid #000000',
 	borderLeft: `7px solid ${colors.secondaryPrimay}`,
 	borderRadius: '10px',
@@ -28,6 +30,12 @@ export const EventWrapper: MotionStyle = {
 	margin: '10px',
 };
 export const EventText = styled.div`
-	font-weight: bold;
-	font-size: clamp(20px, 30px, 40px);
+	p {
+		font-weight: bold;
+		font-size: clamp(20px, 30px, 40px);
+		strong {
+			font-size: clamp(25px, 35px, 45px);
+			margin-right: clamp(0px, 10px, 15px);
+		}
+	}
 `;

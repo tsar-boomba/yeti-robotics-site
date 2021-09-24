@@ -91,11 +91,6 @@ const Header: React.FC = () => {
 						<ClickableDropdown
 							items={[
 								{
-									title: 'About YETI',
-									href: '/about',
-									children: [],
-								},
-								{
 									title: 'About',
 									href: '/about',
 									children: [],
