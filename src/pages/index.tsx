@@ -5,7 +5,7 @@ import EventsDisplay from '../components/EventsDisplay';
 
 const Home: React.FC<PageProps> = () => {
 	return (
-		<Layout>
+		<Layout title='Home' description='Home page for YETI Robotics'>
 			<h1>Hello World</h1>
 			<EventsDisplay />
 		</Layout>

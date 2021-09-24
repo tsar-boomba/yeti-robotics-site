@@ -1,6 +1,10 @@
 module.exports = {
 	siteMetadata: {
 		title: 'YETI Robotics',
+		titleTemplate: '%s | YETI Robtics',
+		description: 'Website for FIRST Robotics team 3506, YETI.',
+		url: 'https://www.yetirobotics.org',
+		image: '/images/yeti-logo-with-text.png',
 	},
 	plugins: [
 		'gatsby-plugin-gatsby-cloud',
@@ -17,5 +21,6 @@ module.exports = {
 			},
 		},
 		'gatsby-plugin-mdx',
+		'gatsby-plugin-react-helmet',
 	],
 };
