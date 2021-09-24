@@ -32,7 +32,7 @@ const SEO: React.FC<SEOProps> = ({ title, description, image }) => {
 		title: title || defaultTitle,
 		description: description || defaultDescription,
 		image: `${siteUrl}${image || defaultImage}`,
-		url: `${siteUrl}${location.pathname}`,
+		url: `${siteUrl}${location ? location.pathname : ''}`,
 	};
 
 	return (

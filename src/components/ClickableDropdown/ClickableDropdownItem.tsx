@@ -75,10 +75,10 @@ const ClickableDropdownItem: React.FC<ClickableDropDownItemProps> = ({ item, cur
 
 	return (
 		<>
-			<TitleWrapper>
+			<TitleWrapper onClick={(e) => e.stopPropagation()}>
 				<InteractiveWrapper>
-					<Link to={item.href}>
-						<Title onClick={(e) => e.stopPropagation()}>{item.title}</Title>
+					<Link to={item.href} style={{ flexGrow: 1 }}>
+						<Title>{item.title}</Title>
 					</Link>
 					{item.children.length ? (
 						<ExpandButton onClick={handleOpen}>{thisOpen ? '-' : '+'}</ExpandButton>
