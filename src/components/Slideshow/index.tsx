@@ -1,4 +1,3 @@
-import { useDimensions } from '../../hooks/useDimensions';
 import { AnimatePresence, motion, Variants } from 'framer-motion';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { Image, SlideshowWrapper } from './SlideshowStyles';

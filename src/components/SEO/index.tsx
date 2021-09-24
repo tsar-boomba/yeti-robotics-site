@@ -24,6 +24,8 @@ const query = graphql`
 
 const SEO: React.FC<SEOProps> = ({ title, description, image }) => {
 	const { site } = useStaticQuery(query);
+	let pathname = '';
+	if (location) pathname = location.pathname;
 
 	const { defaultTitle, titleTemplate, defaultDescription, siteUrl, defaultImage } =
 		site.siteMetadata;
@@ -32,7 +34,7 @@ const SEO: React.FC<SEOProps> = ({ title, description, image }) => {
 		title: title || defaultTitle,
 		description: description || defaultDescription,
 		image: `${siteUrl}${image || defaultImage}`,
-		url: `${siteUrl}${location ? location.pathname : ''}`,
+		url: `${siteUrl}${pathname}`,
 	};
 
 	return (

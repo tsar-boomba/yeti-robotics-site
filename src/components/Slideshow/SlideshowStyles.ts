@@ -17,12 +17,17 @@ export const Image: MotionStyle = {
 
 // controls styles
 export const ControlsStyles: MotionStyle = {
+	display: 'flex',
+	justifyContent: 'center',
+	alignItems: 'center',
 	position: 'absolute',
 	top: '50%',
-	left: '5%',
 	zIndex: 2,
 	width: 40,
 	height: 40,
 	borderRadius: 20,
 	backgroundColor: colors.primary,
+	fontWeight: 900,
+	fontSize: 20,
+	cursor: 'pointer',
 };

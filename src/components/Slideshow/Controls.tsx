@@ -11,10 +11,14 @@ const Controls: React.FC<ControlsProps> = ({ type, onClick }) => {
 	return (
 		<>
 			<motion.div
-				whileTap={{ scale: 0.95 }}
-				whileHover={{ scale: 1.05 }}
+				whileTap={{ scale: 0.9 }}
+				whileHover={{ scale: 1.1 }}
 				onClick={onClick}
-				style={{ ...ControlsStyles, left: type === 'left' ? '5%' : '95%' }}
+				style={{
+					...ControlsStyles,
+					left: type === 'left' ? '20px' : '',
+					right: type === 'right' ? '20px' : '',
+				}}
 			>
 				{type === 'left' ? '<' : '>'}
 			</motion.div>

@@ -47,7 +47,7 @@ const Header: React.FC = () => {
 						<StaticImage
 							src='../../images/yeti-logo-with-text.png'
 							height={82}
-							width={164}
+							width={150}
 							placeholder='blurred'
 							alt='YETI Logo'
 						/>
