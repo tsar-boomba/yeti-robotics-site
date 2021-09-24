@@ -28,8 +28,6 @@ export const EventWrapper: MotionStyle = {
 	margin: '10px',
 };
 export const EventText = styled.div`
-	p {
-		font-weight: bold;
-		font-size: clamp(20px, 30px, 40px);
-	}
+	font-weight: bold;
+	font-size: clamp(20px, 30px, 40px);
 `;
