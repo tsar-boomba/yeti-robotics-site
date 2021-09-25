@@ -4,9 +4,9 @@ import { useState, useEffect } from 'react';
  *
  * @returns windowWidth and windowHeight in an object
  */
-export const useDimensions = () => {
-	const [windowWidth, setWindowWidth] = useState(0);
-	const [windowHeight, setWindowHeight] = useState(0);
+export const useDimensions = (lastDimension = { windowWidth: 0, windowHeight: 0 }) => {
+	const [windowWidth, setWindowWidth] = useState(lastDimension.windowWidth);
+	const [windowHeight, setWindowHeight] = useState(lastDimension.windowHeight);
 
 	const setDimensions = () => {
 		setWindowWidth(window.innerWidth);

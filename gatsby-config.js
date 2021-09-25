@@ -28,5 +28,6 @@ module.exports = {
 		},
 		'gatsby-plugin-mdx',
 		'gatsby-plugin-react-helmet',
+		'gatsby-plugin-preact',
 	],
 };

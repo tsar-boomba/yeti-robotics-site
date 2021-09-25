@@ -12,7 +12,9 @@ import useStore from '../../store';
 const Header: React.FC = () => {
 	const showHeader = useStore((state) => state.showHeader);
 	const clickableDropdownStatus = useStore((state) => state.clickableDropdownShown);
-	const { windowWidth } = useDimensions();
+	const windowDimendions = useStore((state) => state.windowDimensions);
+	const setWindowDimensions = useStore((state) => state.setWindowDimensions);
+	const { windowWidth, windowHeight } = useDimensions(windowDimendions);
 	const showHeaderCB = useCallback(() => {
 		if (!clickableDropdownStatus) {
 			showHeader();
@@ -37,6 +39,11 @@ const Header: React.FC = () => {
 			headerRef.current.style.boxShadow = '';
 		}
 	}, [clickableDropdownStatus, headerRef]);
+
+	//keeping window dimensions between pages, stops flashing of header
+	useEffect(() => {
+		setWindowDimensions({ windowWidth, windowHeight });
+	}, [windowWidth, windowHeight]);
 
 	return (
 		<>
