@@ -46,10 +46,8 @@ export const useHidingHeader = <T extends HTMLElement = HTMLElement>(
 				}
 				if (end <= 0) {
 					//top of page
-					header.style.boxShadow = `0px 0px 0px 0px`;
 				} else {
 					//not top of page
-					header.style.boxShadow = `0px 20px 8px 0px #0000001f`;
 				}
 			} else {
 				//scroll up
@@ -63,7 +61,6 @@ export const useHidingHeader = <T extends HTMLElement = HTMLElement>(
 					header.style.boxShadow = `0px 0px 0px 0px`;
 				} else {
 					//not top of page
-					header.style.boxShadow = `0px 20px 8px 0px #0000001f`;
 				}
 			}
 			lastScroll = end;
