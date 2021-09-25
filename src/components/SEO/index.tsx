@@ -38,10 +38,9 @@ const SEO: React.FC<SEOProps> = ({ title, description, image }) => {
 	};
 
 	return (
-		<Helmet title={seo.title} titleTemplate={titleTemplate}>
+		<Helmet title={seo.title} titleTemplate={titleTemplate} htmlAttributes={{ lang: 'en' }}>
 			<meta name='description' content={seo.description} />
 			<meta name='image' content={seo.image} />
-			<meta name='robots' content='index' />
 			{seo.url && <meta property='og:url' content={seo.url} />}
 			{seo.title && <meta property='og:title' content={seo.title} />}
 			{seo.description && <meta property='og:description' content={seo.description} />}
