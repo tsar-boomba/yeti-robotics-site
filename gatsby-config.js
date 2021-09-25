@@ -7,6 +7,12 @@ module.exports = {
 		image: '/images/yeti-logo-with-text.png',
 	},
 	plugins: [
+		{
+			resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
+			options: {
+				devMode: true,
+			},
+		},
 		'gatsby-plugin-gatsby-cloud',
 		'gatsby-plugin-styled-components',
 		`gatsby-plugin-image`,

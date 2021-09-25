@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { DropdownWrapper, DropdownMenu, DropdownButtonWrapper } from './ClickableDropdownStyles';
 import ClickableDropdownItem from './ClickableDropdownItem';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useClickedOutside } from '../../hooks/useClickedOutide';
 import { AnimatePresence, motion, Variants } from 'framer-motion';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
@@ -10,7 +9,6 @@ import {
 	setClickableVisible,
 	showClickableDropdown,
 } from '../../store/slices/dropdownSlice';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 interface ClickableDropdownProps {
 	items: {
@@ -94,7 +92,9 @@ const ClickableDropdown: React.FC<ClickableDropdownProps> = ({ items }) => {
 	return (
 		<>
 			<DropdownButtonWrapper ref={buttonRef} onClick={menuClick} aria-label='Menu Button'>
-				<FontAwesomeIcon icon={faBars} size='2x' />
+				<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'>
+					<path d='M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z' />
+				</svg>
 			</DropdownButtonWrapper>
 			<DropdownWrapper ref={menuRef} onClick={menuClick}>
 				<AnimatePresence initial={false}>
