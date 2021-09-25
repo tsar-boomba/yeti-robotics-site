@@ -3,12 +3,7 @@ import { DropdownWrapper, DropdownMenu, DropdownButtonWrapper } from './Clickabl
 import ClickableDropdownItem from './ClickableDropdownItem';
 import { useClickedOutside } from '../../hooks/useClickedOutide';
 import { AnimatePresence, motion, Variants } from 'framer-motion';
-import { useAppDispatch, useAppSelector } from '../../store/hooks';
-import {
-	hideClickableDropdown,
-	setClickableVisible,
-	showClickableDropdown,
-} from '../../store/slices/dropdownSlice';
+import useStore from '../../store';
 
 interface ClickableDropdownProps {
 	items: {
@@ -22,41 +17,27 @@ interface ClickableDropdownProps {
 }
 
 const ClickableDropdown: React.FC<ClickableDropdownProps> = ({ items }) => {
-	const dispatch = useAppDispatch();
-	const headerShown = useAppSelector((state) => state.header.shown);
-	const visible = useAppSelector((state) => state.dropdown.clickable.shown);
+	const visible = useStore((state) => state.clickableDropdownShown);
+	const show = useStore((state) => state.showClickableDropdown);
+	const hide = useStore((state) => state.hideClickableDropdown);
 	const [visibleId, setVisibleId] = useState(-1);
-	const [prevVisible, setPrevVisible] = useState(false);
 	const buttonRef = useRef<HTMLDivElement>(null);
 	const menuRef = useClickedOutside<HTMLMenuElement>(undefined, (e) => {
 		if (buttonRef.current.contains(e.target)) return;
-		dispatch(hideClickableDropdown());
+		hide();
 	});
 
 	const menuClick = (e: React.MouseEvent) => {
 		e.preventDefault();
 		if (visible) {
-			dispatch(hideClickableDropdown());
+			hide();
 		} else if (!visible) {
-			dispatch(showClickableDropdown());
+			show();
 		}
 	};
 
-	//hides menu when header disappears, but retains previous state
-	useEffect(() => {
-		if (headerShown) {
-			dispatch(setClickableVisible(prevVisible));
-		}
-		if (!headerShown) {
-			if (visible) {
-				dispatch(hideClickableDropdown());
-				setPrevVisible(true);
-			} else {
-				setPrevVisible(false);
-			}
-		}
-	}, [headerShown]);
-	// Reccomended deps break this logic
+	// hides menu if it unrenders
+	useEffect(() => hide, []);
 
 	//animation variants
 	const menu: Variants = {

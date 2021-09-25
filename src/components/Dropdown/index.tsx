@@ -1,6 +1,5 @@
 import { colors } from '../../styles/colors';
-import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
-import { useAppSelector } from '../../store/hooks';
+import React, { useLayoutEffect, useRef, useState } from 'react';
 import { BorderTop, DropdownButton, DropdownWrapper, Menu } from './DropdownStyles';
 import { Link } from 'gatsby';
 import DropdownItem from './DropdownItem';
@@ -17,16 +16,9 @@ interface DropdownProps {
 }
 
 const Dropdown: React.FC<DropdownProps> = ({ title, href, items }) => {
-	const headerShown = useAppSelector((state) => state.header.shown);
 	const menuIciclesRef = useRef<HTMLDivElement>(null);
 	const parentButtonRef = useRef<HTMLDivElement>(null);
 	const [visible, setVisible] = useState(false);
-
-	useEffect(() => {
-		if (visible && !headerShown) {
-			setVisible(false);
-		}
-	}, [headerShown]);
 
 	//This adds the border over a dropdown when it's pages are active
 	useLayoutEffect(() => {

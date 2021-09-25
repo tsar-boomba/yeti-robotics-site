@@ -1,6 +1,4 @@
 import React, { useCallback, useEffect } from 'react';
-import { useAppDispatch, useAppSelector } from '../../store/hooks';
-import { showHeader } from '../../store/slices/headerSlice';
 import { HeaderWrapper, LogoWrapper } from './HeaderStyles';
 import Dropdown from '../Dropdown';
 import ClickableDropdown from '../ClickableDropdown';
@@ -9,18 +7,19 @@ import { useHidingHeader } from '../../hooks/useHidingHeader';
 import Icicles from '../Icicles';
 import { StaticImage } from 'gatsby-plugin-image';
 import { Link } from 'gatsby';
+import useStore from '../../store';
 
 const Header: React.FC = () => {
-	const dispatch = useAppDispatch();
-	const clickableDropdownStatus = useAppSelector((state) => state.dropdown.clickable.shown);
+	const showHeader = useStore((state) => state.showHeader);
+	const clickableDropdownStatus = useStore((state) => state.clickableDropdownShown);
 	const { windowWidth } = useDimensions();
 	const showHeaderCB = useCallback(() => {
 		if (!clickableDropdownStatus) {
-			dispatch(showHeader());
+			showHeader();
 			return true;
 		}
 		return false;
-	}, [clickableDropdownStatus, dispatch]);
+	}, [clickableDropdownStatus]);
 	const hideHeaderCB = useCallback(() => {
 		if (!clickableDropdownStatus) {
 			return true;
