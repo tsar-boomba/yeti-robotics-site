@@ -2,6 +2,11 @@
 	"parser": "@typescript-eslint/parser",
 	"extends": ["plugin:@typescript-eslint/recommended", "plugin:prettier/recommended", "prettier"],
 	"plugins": ["@typescript-eslint", "prettier"],
+	"settings": {
+		"import/resolver": {
+			"alias": [["@", "./src"]]
+		}
+	},
 	"parserOptions": {
 		"ecmaVersion": 2018,
 		"sourceType": "module"
