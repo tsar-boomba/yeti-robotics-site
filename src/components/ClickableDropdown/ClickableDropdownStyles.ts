@@ -3,12 +3,14 @@ import styled from 'styled-components';
 import { colors } from '../../styles/colors';
 
 //ClickableDropdown Styles
-export const DropdownButtonWrapper = styled.div`
-	border: 0;
-	padding: 1rem;
-	flex-grow: 1;
-	background: transparent;
-`;
+export const DropdownButtonWrapper = {
+	display: 'grid',
+	placeItems: 'center',
+	border: 0,
+	padding: '1rem',
+	flexGrow: 1,
+	background: 'transparent',
+};
 
 export const DropdownWrapper = styled.menu`
 	position: relative;

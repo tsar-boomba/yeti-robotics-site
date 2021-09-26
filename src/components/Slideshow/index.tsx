@@ -1,7 +1,8 @@
 import { AnimatePresence, motion, Variants } from 'framer-motion';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { Image, SlideshowWrapper } from './SlideshowStyles';
+import { Image, IndicatorsWrapper, SlideshowWrapper } from './SlideshowStyles';
 import Controls from './Controls';
+import PositionIndicator from './PositionIndicator';
 
 interface SlideshowProps {
 	images: string[];
@@ -94,6 +95,17 @@ const Slideshow: React.FC<SlideshowProps> = ({ images }) => {
 					></motion.img>
 				</AnimatePresence>
 				<Controls type='left' onClick={() => onControlsClick('left')} />
+				<IndicatorsWrapper>
+					{images.map((image, index) => (
+						<PositionIndicator
+							key={index}
+							id={index}
+							state={[imageIndex, setImageIndex]}
+							directionState={[direction, setDirection]}
+							resetTimeout={resetTimeout}
+						/>
+					))}
+				</IndicatorsWrapper>
 				<Controls type='right' onClick={() => onControlsClick('right')} />
 			</SlideshowWrapper>
 		</>

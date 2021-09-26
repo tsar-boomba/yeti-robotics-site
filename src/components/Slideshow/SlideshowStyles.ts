@@ -9,6 +9,7 @@ export const SlideshowWrapper = styled.div`
 	position: relative;
 	width: clamp(300px, 70%, 100%);
 	height: 40vh;
+	margin-bottom: 40px;
 `;
 
 export const Image: MotionStyle = {
@@ -16,6 +17,15 @@ export const Image: MotionStyle = {
 	objectFit: 'scale-down',
 	height: '40vh',
 };
+
+export const IndicatorsWrapper = styled.div`
+	display: flex;
+	z-index: 2;
+	position: absolute;
+	bottom: -40px;
+	align-items: center;
+	justify-content: space-around;
+`;
 
 // controls styles
 export const ControlsStyles: MotionStyle = {
@@ -32,3 +42,15 @@ export const ControlsStyles: MotionStyle = {
 	fontSize: 20,
 	cursor: 'pointer',
 };
+
+// PositionIndicator style
+export const PositionIndicatorStyles = styled.div`
+	width: 5px;
+	height: 5px;
+	border-radius: 15px;
+	background-color: black;
+	border: 0px solid #000000;
+	margin: 5px;
+	padding: 10px;
+	cursor: pointer;
+`;

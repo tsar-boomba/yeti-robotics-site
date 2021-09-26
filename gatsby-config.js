@@ -4,14 +4,12 @@ module.exports = {
 		titleTemplate: '%s | YETI Robtics',
 		description: 'Website for FIRST Robotics team 3506, YETI.',
 		url: 'https://www.yetirobotics.org',
-		image: '/images/yeti-logo-with-text.png',
+		image: 'src/images/yeti-logo-with-text.png',
 	},
 	plugins: [
 		{
+			// allows analyzing of the build bundle, for optimizing bundle size
 			resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
-			options: {
-				devMode: true,
-			},
 		},
 		'gatsby-plugin-gatsby-cloud',
 		'gatsby-plugin-styled-components',
@@ -19,6 +17,7 @@ module.exports = {
 		`gatsby-plugin-sharp`,
 		`gatsby-transformer-sharp`,
 		{
+			// allows access to files through graphql queries
 			resolve: 'gatsby-source-filesystem',
 			options: {
 				name: 'events',
@@ -30,11 +29,15 @@ module.exports = {
 		'gatsby-plugin-react-helmet',
 		'gatsby-plugin-preact',
 		{
+			// set-up for icon and PWA
 			resolve: 'gatsby-plugin-manifest',
 			options: {
 				name: 'YETI Robotics',
 				short_name: 'YETI',
 				start_url: '/',
+				display: 'minimal-ui',
+				background_color: '#54B6E5',
+				theme_color: '#54B6E5',
 				icon: 'src/images/icon.png',
 			},
 		},
