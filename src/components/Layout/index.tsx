@@ -12,12 +12,13 @@ interface LayoutProps {
 	title?: string;
 	description?: string;
 	image?: string;
+	article?: boolean;
 }
 
-const Layout: React.FC<LayoutProps> = ({ children, style, title, description, image }) => {
+const Layout: React.FC<LayoutProps> = ({ children, style, title, description, image, article }) => {
 	return (
 		<>
-			<SEO title={title} description={description} image={image} />
+			<SEO title={title} description={description} image={image} article={article} />
 			<PageContainer>
 				<Header />
 				<MainContainer style={style}>
