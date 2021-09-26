@@ -40,6 +40,7 @@ const SEO: React.FC<SEOProps> = ({ title, description, image, article }) => {
 
 	return (
 		<Helmet title={seo.title} titleTemplate={titleTemplate} htmlAttributes={{ lang: 'en' }}>
+			<link rel='icon' type='image/ico' href='/images/icon.png' />
 			<meta name='description' content={seo.description} />
 			<meta name='image' content={seo.image} />
 			{seo.url && <meta property='og:url' content={seo.url} />}

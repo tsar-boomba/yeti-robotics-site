@@ -51,7 +51,7 @@ const Header: React.FC = () => {
 				<LogoWrapper>
 					<Link to='/'>
 						<StaticImage
-							src='../../images/yeti-logo-with-text.png'
+							src='../../images/yeti-logo-with-text2.png'
 							height={82}
 							width={150}
 							placeholder='blurred'

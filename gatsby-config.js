@@ -29,5 +29,14 @@ module.exports = {
 		'gatsby-plugin-mdx',
 		'gatsby-plugin-react-helmet',
 		'gatsby-plugin-preact',
+		{
+			resolve: 'gatsby-plugin-manifest',
+			options: {
+				name: 'YETI Robotics',
+				short_name: 'YETI',
+				start_url: '/',
+				icon: 'src/images/icon.png',
+			},
+		},
 	],
 };
