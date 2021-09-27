@@ -64,7 +64,7 @@ const EventsDisplay = () => {
 
 	return (
 		<>
-			<h1>Events</h1>
+			<h1 style={{ fontSize: 40, marginTop: 80 }}>Events</h1>
 			<DisplayWrapper>
 				{months.map((_, index) => {
 					return (

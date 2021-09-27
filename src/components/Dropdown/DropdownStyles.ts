@@ -27,7 +27,7 @@ export const DropdownButton: CSSProperties = {
 	justifyContent: 'center',
 	paddingTop: '2.1vh',
 	paddingBottom: '2.1vh',
-	fontSize: '24px',
+	fontSize: '1.5vw',
 	fontWeight: 'bold',
 	flexGrow: 1,
 	color: colors.secondary,

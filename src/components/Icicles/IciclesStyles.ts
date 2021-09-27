@@ -20,5 +20,5 @@ export const IcicleWrapper = styled.div`
 	flex-flow: row;
 	align-items: flex-start;
 	justify-content: space-around;
-	z-index: -1;
+	z-index: 0;
 `;

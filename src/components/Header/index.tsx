@@ -149,8 +149,16 @@ const Header: React.FC = () => {
 						/>
 					</>
 				)}
-				<Icicles parentRef={headerRef} />
-				<Icicles parentRef={headerRef} />
+				<Icicles
+					parentRef={headerRef}
+					widthConstrains={{ max: 20, min: 15 }}
+					heightConstrains={{ max: 100, min: 70 }}
+				/>
+				<Icicles
+					parentRef={headerRef}
+					widthConstrains={{ max: 20, min: 15 }}
+					heightConstrains={{ max: 100, min: 70 }}
+				/>
 			</HeaderWrapper>
 		</>
 	);

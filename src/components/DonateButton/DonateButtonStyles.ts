@@ -2,8 +2,8 @@ import { MotionStyle } from 'framer-motion';
 import { colors } from '../../styles/colors';
 
 export const DonateButtonStyle: MotionStyle = {
-	position: 'absolute',
-	top: '3vw',
+	position: 'fixed',
+	top: '15vh',
 	right: '2vw',
 	backgroundColor: colors.primary,
 	color: colors.secondary,

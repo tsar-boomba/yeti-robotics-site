@@ -4,7 +4,7 @@ module.exports = {
 		titleTemplate: '%s | YETI Robtics',
 		description: 'Website for FIRST Robotics team 3506, YETI.',
 		url: 'https://www.yetirobotics.org',
-		image: 'src/images/yeti-logo-with-text.png',
+		image: './src/images/yeti-logo-with-text.png',
 	},
 	plugins: [
 		{

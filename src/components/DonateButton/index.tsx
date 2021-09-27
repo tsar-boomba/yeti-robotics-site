@@ -21,9 +21,9 @@ const DonateButton = () => {
 					Donate
 					<Icicles
 						parentRef={buttonRef}
-						heightConstrains={{ max: 70, min: 35 }}
+						heightConstrains={{ max: 50, min: 35 }}
 						widthConstrains={{ max: 10, min: 5 }}
-						top='80%'
+						top='85%'
 					/>
 				</motion.a>
 			) : null}

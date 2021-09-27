@@ -43,11 +43,11 @@ const Slideshow: React.FC<SlideshowProps> = ({ images }) => {
 		if (direction === 'left') {
 			resetTimeout();
 			setDirection(1);
-			wrapImageIndex();
+			wrapImageIndex(-1);
 		} else {
 			resetTimeout();
 			setDirection(-1);
-			wrapImageIndex(-1);
+			wrapImageIndex();
 		}
 	};
 
@@ -99,7 +99,6 @@ const Slideshow: React.FC<SlideshowProps> = ({ images }) => {
 							image={images[imageIndex].childImageSharp.gatsbyImageData}
 							objectFit='scale-down'
 							style={ImageWrapper}
-							imgStyle={{ objectFit: 'scale-down' }}
 							alt={`slideshow image ${imageIndex + 1}`}
 						/>
 					</motion.div>

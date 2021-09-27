@@ -5,7 +5,7 @@ import Layout from '../../components/Layout';
 const Outrach: React.FC<PageProps> = () => {
 	return (
 		<Layout>
-			<h1>Outrach</h1>
+			<h1>Outreach</h1>
 		</Layout>
 	);
 };

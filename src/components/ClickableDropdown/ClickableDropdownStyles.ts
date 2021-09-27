@@ -19,9 +19,8 @@ export const DropdownWrapper = styled.menu`
 	width: 100%;
 	font-size: 16px;
 	font-weight: bold;
-	color: ${colors.secondary};
 	border-color: black;
-	background-color: #4bcdd5;
+	background-color: ${colors.primary};
 	z-index: 999;
 	padding: 0;
 	margin: 0;
@@ -74,7 +73,8 @@ export const InteractiveWrapper = styled.div`
 	flex-flow: row;
 	border-bottom: 2px solid black;
 	width: 100%;
-	background-color: #4bcdd5;
+	background-color: ${colors.secondary};
+	color: #000000;
 `;
 
 export const ChildrenMenu = styled.div`
@@ -88,5 +88,6 @@ export const Child = styled.div`
 	top: 100%;
 	padding: 5px;
 	border-bottom: 1px solid black;
-	background-color: ${colors.primary};
+	background-color: ${colors.secondary};
+	color: #000000;
 `;

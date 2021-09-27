@@ -45,12 +45,13 @@ export const SocialMediaIconWrapper = styled.a`
 `;
 
 export const DonateButtonStyle: MotionStyle = {
+	display: 'grid',
+	placeItems: 'center',
 	backgroundColor: colors.secondaryPrimay,
 	color: colors.secondary,
 	padding: 10,
 	borderRadius: 10,
-	marginLeft: '2vw',
-	cursor: 'pointer',
+	marginLeft: '5px',
 	fontSize: '15px',
 	fontWeight: 'bold',
 };
