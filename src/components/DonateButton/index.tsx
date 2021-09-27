@@ -15,6 +15,7 @@ const DonateButton = () => {
 					whileTap={{ scale: 0.9 }}
 					whileHover={{ scale: 1.1 }}
 					ref={buttonRef}
+					href='https://www.paypal.com'
 					style={DonateButtonStyle}
 				>
 					Donate

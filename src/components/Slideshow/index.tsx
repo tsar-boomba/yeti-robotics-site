@@ -1,12 +1,12 @@
 import { AnimatePresence, motion, Variants } from 'framer-motion';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { Image, IndicatorsWrapper, SlideshowWrapper } from './SlideshowStyles';
+import { ImageWrapper, IndicatorsWrapper, SlideshowWrapper } from './SlideshowStyles';
 import Controls from './Controls';
 import PositionIndicator from './PositionIndicator';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 interface SlideshowProps {
-	images: string[];
-	style?: React.CSSProperties;
+	images: any[];
 }
 
 const Slideshow: React.FC<SlideshowProps> = ({ images }) => {
@@ -14,12 +14,14 @@ const Slideshow: React.FC<SlideshowProps> = ({ images }) => {
 	const [direction, setDirection] = useState(0);
 	const timeoutRef = useRef(null);
 
+	// allows resetting the slide timer from anywhere
 	const resetTimeout = () => {
 		if (timeoutRef.current) {
 			clearTimeout(timeoutRef.current);
 		}
 	};
 
+	// allows for indexing through images, without worrying about going out of bounds
 	const wrapImageIndex = (amount = 1) => {
 		if (imageIndex + amount > images.length - 1) {
 			setImageIndex(0);
@@ -30,6 +32,8 @@ const Slideshow: React.FC<SlideshowProps> = ({ images }) => {
 		}
 	};
 
+	// function that indexes by 1, sending image to the left
+	// is given as callback to the timeout
 	const naturalSlide = useCallback(() => {
 		setDirection(1);
 		wrapImageIndex();
@@ -49,6 +53,7 @@ const Slideshow: React.FC<SlideshowProps> = ({ images }) => {
 
 	useEffect(() => {
 		resetTimeout();
+		// allows timeout to be reset, no matter what instance of timeout it is
 		timeoutRef.current = setTimeout(naturalSlide, 5000);
 		return () => resetTimeout();
 	}, [imageIndex]);
@@ -79,10 +84,8 @@ const Slideshow: React.FC<SlideshowProps> = ({ images }) => {
 		<>
 			<SlideshowWrapper>
 				<AnimatePresence initial={false} exitBeforeEnter={true} custom={direction}>
-					<motion.img
+					<motion.div
 						key={imageIndex}
-						src={images[imageIndex]}
-						alt={images[imageIndex]}
 						initial='enter'
 						animate='center'
 						exit='exit'
@@ -91,8 +94,15 @@ const Slideshow: React.FC<SlideshowProps> = ({ images }) => {
 						}}
 						custom={direction}
 						variants={variants}
-						style={Image}
-					></motion.img>
+					>
+						<GatsbyImage
+							image={images[imageIndex].childImageSharp.gatsbyImageData}
+							objectFit='scale-down'
+							style={ImageWrapper}
+							imgStyle={{ objectFit: 'scale-down' }}
+							alt={`slideshow image ${imageIndex + 1}`}
+						/>
+					</motion.div>
 				</AnimatePresence>
 				<Controls type='left' onClick={() => onControlsClick('left')} />
 				<IndicatorsWrapper>
@@ -114,7 +124,6 @@ const Slideshow: React.FC<SlideshowProps> = ({ images }) => {
 
 Slideshow.defaultProps = {
 	images: [],
-	style: null,
 };
 
 export default Slideshow;

@@ -1,4 +1,5 @@
 import { MotionStyle } from 'framer-motion';
+import { CSSProperties } from 'react';
 import styled from 'styled-components';
 import { colors } from '../../styles/colors';
 
@@ -12,9 +13,7 @@ export const SlideshowWrapper = styled.div`
 	margin-bottom: 40px;
 `;
 
-export const Image: MotionStyle = {
-	placeSelf: 'center',
-	objectFit: 'scale-down',
+export const ImageWrapper: CSSProperties = {
 	height: '40vh',
 };
 

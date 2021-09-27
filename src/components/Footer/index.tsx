@@ -78,6 +78,7 @@ const Footer: React.FC = () => {
 					aria-label='donate to yeti'
 					whileTap={{ scale: 0.9 }}
 					whileHover={{ scale: 1.1 }}
+					href='https://www.paypal.com'
 					style={DonateButtonStyle}
 				>
 					Donate

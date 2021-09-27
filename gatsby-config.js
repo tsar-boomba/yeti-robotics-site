@@ -14,7 +14,14 @@ module.exports = {
 		'gatsby-plugin-gatsby-cloud',
 		'gatsby-plugin-styled-components',
 		`gatsby-plugin-image`,
-		`gatsby-plugin-sharp`,
+		{
+			resolve: `gatsby-plugin-sharp`,
+			options: {
+				defaults: {
+					placeholder: 'blurred',
+				},
+			},
+		},
 		`gatsby-transformer-sharp`,
 		{
 			// allows access to files through graphql queries
@@ -23,6 +30,13 @@ module.exports = {
 				name: 'events',
 				path: `${__dirname}/events`,
 				ignore: ['**/.*'],
+			},
+		},
+		{
+			resolve: 'gatsby-source-filesystem',
+			options: {
+				name: 'images',
+				path: `${__dirname}/src/images`,
 			},
 		},
 		'gatsby-plugin-mdx',

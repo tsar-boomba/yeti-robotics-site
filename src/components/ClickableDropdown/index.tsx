@@ -83,7 +83,7 @@ const ClickableDropdown: React.FC<ClickableDropdownProps> = ({ items }) => {
 				ref={buttonRef}
 				onClick={menuClick}
 				role='button'
-				aria-aria-expanded={visible ? 'Menu expanded' : 'Menu collapsed'}
+				aria-expanded={visible ? 'true' : 'false'}
 				style={DropdownButtonWrapper}
 			>
 				<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'>
