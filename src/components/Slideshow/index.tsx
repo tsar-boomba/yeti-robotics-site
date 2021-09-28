@@ -35,11 +35,11 @@ const Slideshow: React.FC<SlideshowProps> = ({ images }) => {
 	// function that indexes by 1, sending image to the left
 	// is given as callback to the timeout
 	const naturalSlide = useCallback(() => {
-		setDirection(1);
+		setDirection(-1);
 		wrapImageIndex();
 	}, [imageIndex]);
 
-	const onControlsClick = (direction: string) => {
+	const onControlsClick = (direction: 'left' | 'right') => {
 		if (direction === 'left') {
 			resetTimeout();
 			setDirection(1);

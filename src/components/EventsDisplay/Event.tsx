@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'gatsby';
 import React from 'react';
+import { extractDay } from './date-helpers';
 import { EventText, EventWrapper } from './EventsDisplayStyles';
 
 interface EventProps {
@@ -26,11 +27,7 @@ const Event: React.FC<EventProps> = ({ event }) => {
 			>
 				<EventText>
 					<p>
-						<strong>
-							{new Date(event.frontmatter.date).toLocaleDateString(undefined, {
-								day: '2-digit',
-							})}
-						</strong>
+						<strong>{extractDay(event.frontmatter.date)}</strong>
 						{'   '}
 						{event.frontmatter.title}
 					</p>

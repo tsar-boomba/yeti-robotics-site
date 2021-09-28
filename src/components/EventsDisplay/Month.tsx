@@ -2,6 +2,7 @@ import Event from './Event';
 import React, { useEffect, useState } from 'react';
 import { MonthWrapper } from './EventsDisplayStyles';
 import { AnimatePresence, motion, Variants } from 'framer-motion';
+import { extractMonth, extractYear } from './date-helpers';
 
 interface MonthProps {
 	month: number;
@@ -23,10 +24,7 @@ const Month: React.FC<MonthProps> = ({ month, events, id }) => {
 	const [monthEvents, setMonthEvents] = useState(
 		events
 			.filter(
-				(event) =>
-					new Date(event.frontmatter.date).toLocaleString(undefined, {
-						month: 'long',
-					}) === new Date(`${month}/1/2000`).toLocaleString(undefined, { month: 'long' }),
+				(event) => extractMonth(event.frontmatter.date) === extractMonth(`${month}/1/2000`),
 			)
 			.sort((a, b) => {
 				if (
@@ -47,12 +45,8 @@ const Month: React.FC<MonthProps> = ({ month, events, id }) => {
 				events
 					.filter(
 						(event) =>
-							new Date(event.frontmatter.date).toLocaleString(undefined, {
-								month: 'long',
-							}) ===
-							new Date(`${month}/1/2000`).toLocaleString(undefined, {
-								month: 'long',
-							}),
+							extractMonth(event.frontmatter.date) ===
+							extractMonth(`${month}/1/2000`),
 					)
 					.sort((a, b) => {
 						if (
@@ -102,15 +96,9 @@ const Month: React.FC<MonthProps> = ({ month, events, id }) => {
 		<>
 			{month === 1 ? (
 				new Date().getMonth() === 0 ? (
-					<h1>
-						{Number.parseInt(new Date().toLocaleString(undefined, { year: 'numeric' }))}
-					</h1>
+					<h1>{Number.parseInt(extractYear(new Date().toString()))}</h1>
 				) : (
-					<h1>
-						{Number.parseInt(
-							new Date().toLocaleString(undefined, { year: 'numeric' }),
-						) + 1}
-					</h1>
+					<h1>{Number.parseInt(extractYear(new Date().toString())) + 1}</h1>
 				)
 			) : null}
 			{monthEvents.length ? (
@@ -121,9 +109,7 @@ const Month: React.FC<MonthProps> = ({ month, events, id }) => {
 					style={MonthWrapper}
 				>
 					{/* Turns number month into word month */}
-					<h1>
-						{new Date(`${month}/1/2000`).toLocaleString(undefined, { month: 'long' })}
-					</h1>
+					<h1>{extractMonth(`${month}/1/2000`)}</h1>
 					<AnimatePresence initial={false}>
 						{open && (
 							<motion.div

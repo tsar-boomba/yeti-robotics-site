@@ -41,7 +41,7 @@ const EventsDisplay = () => {
 	);
 	const currentMonth = new Date().getMonth() + 1;
 
-	// how many months we show
+	// how many months we show      v
 	const months = Array.from(Array(12).keys());
 
 	// mkaes sure we don't go out of bounds on months (december -> january)
