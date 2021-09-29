@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { MonthWrapper } from './EventsDisplayStyles';
 import { AnimatePresence, motion, Variants } from 'framer-motion';
 import { extractMonth, extractYear } from './date-helpers';
+import { colors } from '@/styles/colors';
 
 interface MonthProps {
 	month: number;
@@ -68,14 +69,15 @@ const Month: React.FC<MonthProps> = ({ month, events, id }) => {
 			height: 'auto',
 			transition: {
 				type: 'tween',
-				staggerChildren: 0.1,
+				staggerChildren: 0.05,
+				delayChildren: 0.2,
 			},
 		},
 		closed: {
 			height: 0,
 			transition: {
 				type: 'tween',
-				staggerChildren: 0.1,
+				staggerChildren: 0.05,
 				staggerDirection: -1,
 			},
 		},
@@ -83,13 +85,15 @@ const Month: React.FC<MonthProps> = ({ month, events, id }) => {
 
 	const EventAnimation: Variants = {
 		open: {
+			scale: 1,
 			y: 0,
 			opacity: 1,
 		},
-		closed: {
-			y: -10,
+		closed: (index) => ({
+			scale: 0,
+			y: -30 * index,
 			opacity: 0,
-		},
+		}),
 	};
 
 	return (
@@ -103,6 +107,14 @@ const Month: React.FC<MonthProps> = ({ month, events, id }) => {
 			) : null}
 			{monthEvents.length ? (
 				<motion.div
+					animate='animate'
+					custom={open}
+					variants={{
+						animate: (open: boolean) => ({
+							backgroundColor: open ? 'transparent' : colors.primary,
+							color: open ? 'black' : colors.secondary,
+						}),
+					}}
 					whileHover={{ scale: 1.05, zIndex: 2 }}
 					whileTap={{ scale: 0.95, zIndex: 2 }}
 					onClick={() => setOpen(!open)}
@@ -120,7 +132,11 @@ const Month: React.FC<MonthProps> = ({ month, events, id }) => {
 							>
 								{monthEvents.map((event, index) => {
 									return (
-										<motion.div key={index} variants={EventAnimation}>
+										<motion.div
+											key={index}
+											custom={index}
+											variants={EventAnimation}
+										>
 											<Event event={event} />
 										</motion.div>
 									);

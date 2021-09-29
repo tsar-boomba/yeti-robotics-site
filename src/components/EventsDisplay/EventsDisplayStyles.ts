@@ -11,11 +11,11 @@ export const DisplayWrapper = styled.div`
 // month styles
 export const MonthWrapper: MotionStyle = {
 	border: '4px solid #000000',
-	borderLeft: `7px solid ${colors.primary}`,
 	borderRadius: '10px',
 	padding: '5px',
 	margin: '10px',
 	cursor: 'pointer',
+	color: colors.secondary,
 };
 export const EventsWrapper: MotionStyle = {};
 
@@ -27,7 +27,7 @@ export const EventWrapper: MotionStyle = {
 	borderRadius: '10px',
 	padding: '5px',
 	margin: '10px',
-	color: '#eeeeee',
+	color: colors.secondary,
 	backgroundColor: colors.primary,
 };
 export const EventText = styled.div`

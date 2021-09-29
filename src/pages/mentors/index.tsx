@@ -1,6 +1,6 @@
 import { PageProps } from 'gatsby';
 import React from 'react';
-import Layout from '../../components/Layout';
+import Layout from '@/components/Layout';
 
 const Mentors: React.FC<PageProps> = () => {
 	return (
