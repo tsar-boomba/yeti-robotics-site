@@ -1,5 +1,5 @@
 import Event from './Event';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { MonthWrapper } from './EventsDisplayStyles';
 import { AnimatePresence, motion, Variants } from 'framer-motion';
 import { extractMonth, extractYear } from './date-helpers';
@@ -22,7 +22,7 @@ interface MonthProps {
 
 const Month: React.FC<MonthProps> = ({ month, events, id }) => {
 	// removing events not in this month and sorting so closer events are at the top
-	const [monthEvents, setMonthEvents] = useState(
+	const [monthEvents] = useState(
 		events
 			.filter(
 				(event) => extractMonth(event.frontmatter.date) === extractMonth(`${month}/1/2000`),
@@ -38,30 +38,6 @@ const Month: React.FC<MonthProps> = ({ month, events, id }) => {
 			}),
 	);
 	const [open, setOpen] = useState(id === 0 ? true : false);
-
-	// re-removing, just in case
-	useEffect(
-		() =>
-			setMonthEvents(
-				events
-					.filter(
-						(event) =>
-							extractMonth(event.frontmatter.date) ===
-							extractMonth(`${month}/1/2000`),
-					)
-					.sort((a, b) => {
-						if (
-							new Date(a.frontmatter.date).valueOf() <=
-							new Date(b.frontmatter.date).valueOf()
-						) {
-							return -1;
-						} else {
-							return 1;
-						}
-					}),
-			),
-		[],
-	);
 
 	// animation variants
 	const EventsAnimation: Variants = {

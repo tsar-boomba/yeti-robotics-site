@@ -5,7 +5,7 @@ export const MainContainer = styled.main`
 	flex-direction: column;
 	align-items: center;
 	align-self: center;
-	margin: 150px 0;
+	margin: 189px 0;
 	position: relative;
 	bottom: 100%;
 	flex-grow: 1;

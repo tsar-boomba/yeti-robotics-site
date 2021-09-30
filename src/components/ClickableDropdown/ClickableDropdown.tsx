@@ -21,17 +21,22 @@ const ClickableDropdown: React.FC<ClickableDropdownProps> = ({ items }) => {
 	const show = useStore((state) => state.showClickableDropdown);
 	const hide = useStore((state) => state.hideClickableDropdown);
 	const [visibleId, setVisibleId] = useState(-1);
+	const prevScroll = useRef(0);
 	const buttonRef = useRef<HTMLDivElement>(null);
 	const menuRef = useClickedOutside<HTMLMenuElement>(undefined, (e) => {
 		if (buttonRef.current.contains(e.target)) return;
+		window.scrollTo({ top: prevScroll.current });
 		hide();
 	});
 
 	const menuClick = (e: React.MouseEvent) => {
 		e.preventDefault();
 		if (visible) {
+			window.scrollTo({ top: prevScroll.current });
 			hide();
-		} else if (!visible) {
+		} else {
+			prevScroll.current = window.scrollY;
+			window.scrollTo({ top: 0 });
 			show();
 		}
 	};

@@ -6,6 +6,6 @@ export const GridStyle = styled.div`
 	align-items: center;
 	justify-content: center;
 	flex-wrap: wrap;
-	max-width: 800px;
+	width: 800px;
 	margin-top: 3rem;
 `;

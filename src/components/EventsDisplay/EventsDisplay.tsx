@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { DisplayWrapper } from './EventsDisplayStyles';
 import Month from './Month';
@@ -23,7 +23,7 @@ const EventsDisplay = () => {
 	`);
 
 	// typing and setting data fetched from filesystem
-	const [events, setEvents] = useState<
+	const [events] = useState<
 		{
 			frontmatter: {
 				title: string;
@@ -36,7 +36,8 @@ const EventsDisplay = () => {
 		}[]
 	>(
 		allMdx.nodes.filter(
-			(event) => new Date(event.frontmatter.date).valueOf() > Date.now().valueOf(),
+			(event) =>
+				new Date(event.frontmatter.date).valueOf() >= new Date().valueOf() - 129600000,
 		),
 	);
 	const currentMonth = new Date().getMonth() + 1;
@@ -52,15 +53,6 @@ const EventsDisplay = () => {
 			return currMonth;
 		}
 	};
-
-	// re-setting data, just to make sure we got it
-	useEffect(() => {
-		setEvents(
-			allMdx.nodes.filter(
-				(event) => new Date(event.frontmatter.date).valueOf() > Date.now().valueOf(),
-			),
-		);
-	}, []);
 
 	return (
 		<>

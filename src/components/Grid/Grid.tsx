@@ -2,7 +2,7 @@ import React from 'react';
 import { GridStyle } from './GridStyles';
 
 interface GridProps {
-	children?: (string | JSX.Element)[] | JSX.Element;
+	children?: React.ReactNode;
 	style?: React.CSSProperties;
 }
 

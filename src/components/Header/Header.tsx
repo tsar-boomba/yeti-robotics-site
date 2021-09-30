@@ -54,6 +54,7 @@ const Header: React.FC = () => {
 							src='../../images/yeti-logo-with-text2.png'
 							height={82}
 							width={150}
+							loading='eager'
 							placeholder='blurred'
 							alt='YETI Logo'
 						/>

@@ -1,17 +1,24 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import Layout from '../components/Layout';
 import EventsDisplay from '../components/EventsDisplay';
 import Slideshow from '@/components/Slideshow';
 import Section from '@/components/Section';
-
-// importing slideshow images
+import { StaticImage } from 'gatsby-plugin-image';
+import { colors } from '@/styles/colors';
+import Grid from '@/components/Grid';
+import { motion } from 'framer-motion';
 
 const Home = ({ data }) => {
 	return (
 		<Layout title='Home' description='Home page for YETI Robotics'>
-			<h1>YETI Robotics</h1>
-			<h1>Team 3506</h1>
+			<StaticImage
+				src='../images/yeti-logo-with-text.png'
+				style={{ margin: '0 0 20px 0', maxWidth: 1000 }}
+				loading='eager'
+				placeholder='tracedSVG'
+				alt='YETI logo with text'
+			/>
 			<Slideshow images={data.allFile.nodes} />
 			<Section>
 				<h1 style={{ fontSize: 60, margin: '10px 0 10px 0' }}>
@@ -25,11 +32,71 @@ const Home = ({ data }) => {
 					applications of engineering, technology, marketing, presentation, and design.
 				</h2>
 			</Section>
+			<Grid
+				style={{
+					boxShadow: `0px 0px 16px 4px ${colors.shadow}`,
+					width: 'clamp(300px, 890px, 100%)',
+				}}
+			>
+				<div
+					style={{
+						display: 'flex',
+						justifyContent: 'center',
+						flexGrow: 1,
+						backgroundColor: colors.primary,
+					}}
+				>
+					<StaticImage
+						src='../images/polaris-cad.webp'
+						alt='Polaris CAD image'
+						style={{ backgroundColor: colors.primary }}
+					/>
+				</div>
+				<div
+					style={{
+						display: 'flex',
+						flexFlow: 'column',
+						alignItems: 'center',
+						justifyContent: 'center',
+						textAlign: 'center',
+						width: 'clamp(300px, 300px, 100%)',
+						height: 574,
+						flexGrow: 100,
+						padding: 10,
+						backgroundColor: `${colors.primary}80`,
+					}}
+				>
+					<div>
+						<h1>Polaris</h1>
+						<h3>
+							Check out our most recent robot and read more about our previous seasons
+							and robots on our "Robots" page.
+						</h3>
+
+						<Link to='/robots' style={{ textAlign: 'center' }}>
+							<motion.div
+								whileTap={{ scale: 0.95 }}
+								whileHover={{ scale: 1.05 }}
+								style={{
+									backgroundColor: colors.primary,
+									color: colors.secondary,
+									padding: 10,
+									borderRadius: 6,
+									fontSize: 20,
+								}}
+							>
+								Learn More
+							</motion.div>
+						</Link>
+					</div>
+				</div>
+			</Grid>
 			<EventsDisplay />
 		</Layout>
 	);
 };
 
+// querying files for images in home folder (out of included folders, events and images)
 export const query = graphql`
 	query {
 		allFile(filter: { relativePath: { regex: "/home/" } }) {
