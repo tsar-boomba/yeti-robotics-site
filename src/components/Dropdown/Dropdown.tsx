@@ -18,7 +18,7 @@ interface DropdownProps {
 const Dropdown: React.FC<DropdownProps> = ({ title, href, items }) => {
 	const menuIciclesRef = useRef<HTMLDivElement>(null);
 	const parentButtonRef = useRef<HTMLDivElement>(null);
-	const [visible, setVisible] = useState(true);
+	const [visible, setVisible] = useState(false);
 
 	//This adds the border over a dropdown when it's pages are active
 	useLayoutEffect(() => {
