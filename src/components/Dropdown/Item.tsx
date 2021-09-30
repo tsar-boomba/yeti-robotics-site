@@ -6,11 +6,11 @@ import { colors } from '../../styles/colors';
 interface DropdownItemProps {
 	href: string;
 	title: string;
-	parentState: [boolean, React.Dispatch<React.SetStateAction<boolean>>];
+	parentState: boolean;
 }
 
 const DropdownItem: React.FC<DropdownItemProps> = ({ href, title, parentState }) => {
-	const [parentVisible, setParentVisible] = parentState;
+	const parentVisible = parentState;
 	const childButtonRef = useRef<HTMLDivElement>(null);
 
 	useLayoutEffect(() => {
@@ -25,14 +25,8 @@ const DropdownItem: React.FC<DropdownItemProps> = ({ href, title, parentState })
 
 	return (
 		<>
-			<Link to={href}>
-				<MenuItemWrapper
-					ref={childButtonRef}
-					onMouseEnter={() => setParentVisible(true)}
-					onMouseLeave={() => setParentVisible(false)}
-				>
-					{title}
-				</MenuItemWrapper>
+			<Link to={href} style={{ position: 'relative' }}>
+				<MenuItemWrapper ref={childButtonRef}>{title}</MenuItemWrapper>
 			</Link>
 		</>
 	);

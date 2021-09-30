@@ -10,7 +10,7 @@ const DonateButton = () => {
 
 	return (
 		<>
-			{windowWidth > 1200 ? (
+			{windowWidth > 1500 ? (
 				<motion.a
 					whileTap={{ scale: 0.9 }}
 					whileHover={{ scale: 1.1 }}

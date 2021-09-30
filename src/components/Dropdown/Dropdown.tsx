@@ -18,7 +18,7 @@ interface DropdownProps {
 const Dropdown: React.FC<DropdownProps> = ({ title, href, items }) => {
 	const menuIciclesRef = useRef<HTMLDivElement>(null);
 	const parentButtonRef = useRef<HTMLDivElement>(null);
-	const [visible, setVisible] = useState(false);
+	const [visible, setVisible] = useState(true);
 
 	//This adds the border over a dropdown when it's pages are active
 	useLayoutEffect(() => {
@@ -85,17 +85,14 @@ const Dropdown: React.FC<DropdownProps> = ({ title, href, items }) => {
 							style={Menu}
 							ref={menuIciclesRef}
 						>
-							<BorderTop
-								onMouseEnter={() => setVisible(true)}
-								onMouseLeave={() => setVisible(false)}
-							/>
+							<BorderTop />
 							{items.map((item, index) => {
 								return (
 									<motion.div key={index} variants={childTitle}>
 										<Item
 											href={item.href}
 											title={item.title}
-											parentState={[visible, setVisible]}
+											parentState={visible}
 										/>
 										{items.length == index + 1 ? (
 											<Icicles parentRef={menuIciclesRef} />

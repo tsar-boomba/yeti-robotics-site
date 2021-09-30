@@ -66,7 +66,7 @@ export const MenuItemWrapper = styled.div`
 	padding: 10px;
 	padding-top: 1rem;
 	padding-bottom: 1rem;
-	font-size: 20px;
+	font-size: 1.5vh;
 	font-weight: bold;
 	border-bottom: 2px solid #000000;
 	transition: background-color 0.15s ease, color 0.15s ease;
