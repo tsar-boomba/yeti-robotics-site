@@ -2,10 +2,17 @@ import Layout from '../../components/Layout';
 import React from 'react';
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
+import { EventData } from '@/components/EventsDisplay/types';
 
-const Event = ({ data }) => {
+interface PageData {
+	data: {
+		mdx: EventData & { body: string };
+	};
+}
+
+const Event = ({ data }: PageData) => {
 	return (
-		<Layout>
+		<Layout title={data.mdx.frontmatter.title} article={true}>
 			<h1>{data.mdx.frontmatter.title}</h1>
 			<h2>
 				{new Date(data.mdx.frontmatter.date).toLocaleString(undefined, {
@@ -28,6 +35,8 @@ export const query = graphql`
 				time
 				location
 			}
+			id
+			slug
 			body
 		}
 	}
