@@ -76,17 +76,14 @@ const Month: React.FC<MonthProps> = ({ month, events, id }) => {
 			{monthEvents.length ? (
 				<motion.div
 					animate='animate'
-					custom={open}
-					variants={{
-						animate: (open: boolean) => ({
-							backgroundColor: open ? 'transparent' : colors.primary,
-							color: open ? 'black' : colors.secondary,
-						}),
-					}}
 					whileHover={{ scale: 1.05, zIndex: 2 }}
 					whileTap={{ scale: 0.95, zIndex: 2 }}
 					onClick={() => setOpen(!open)}
-					style={MonthWrapper}
+					style={{
+						...MonthWrapper,
+						backgroundColor: open ? 'transparent' : colors.primary,
+						color: open ? 'black' : colors.secondary,
+					}}
 				>
 					{/* Turns number month into word month */}
 					<h1>{extractMonth(`${month}/1/2000`)}</h1>
