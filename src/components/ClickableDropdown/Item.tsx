@@ -1,5 +1,5 @@
 import { AnimatePresence, motion, Variants } from 'framer-motion';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Link } from 'gatsby';
 import {
 	TitleWrapper,
@@ -9,6 +9,7 @@ import {
 	ChildrenMenu,
 	Child,
 } from './ClickableDropdownStyles';
+import { colors } from '@/styles/colors';
 
 interface ClickableDropDownItemProps {
 	item: {
@@ -26,6 +27,7 @@ interface ClickableDropDownItemProps {
 const ClickableDropdownItem: React.FC<ClickableDropDownItemProps> = ({ item, currId, id }) => {
 	const [thisOpen, setThisOpen] = useState(false);
 	const [opened, setOpened] = currId;
+	const parentButtonRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
 		if (opened === id) setThisOpen(true);
@@ -42,6 +44,20 @@ const ClickableDropdownItem: React.FC<ClickableDropDownItemProps> = ({ item, cur
 			setOpened(-1);
 		}
 	};
+
+	//This adds the border over a dropdown when it's pages are active
+	useLayoutEffect(() => {
+		if (location.pathname === '/') return;
+		const pathname = location.pathname.substring(1);
+		const formattedPathname = '/' + pathname.slice(0, pathname.lastIndexOf('/'));
+		if (item.href.includes(formattedPathname)) {
+			parentButtonRef.current.style.backgroundColor = colors.primary;
+			parentButtonRef.current.style.color = colors.secondary;
+		} else {
+			parentButtonRef.current.style.backgroundColor = colors.secondary;
+			parentButtonRef.current.style.color = '#000000';
+		}
+	}, [item]);
 
 	//animation variants
 	const childMenu: Variants = {
@@ -77,7 +93,7 @@ const ClickableDropdownItem: React.FC<ClickableDropDownItemProps> = ({ item, cur
 	return (
 		<>
 			<TitleWrapper onClick={(e) => e.stopPropagation()}>
-				<InteractiveWrapper>
+				<InteractiveWrapper ref={parentButtonRef}>
 					<Link to={item.href} style={{ flexGrow: 1 }}>
 						<Title>{item.title}</Title>
 					</Link>

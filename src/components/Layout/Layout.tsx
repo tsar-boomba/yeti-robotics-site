@@ -9,7 +9,7 @@ import SEO from '../SEO';
 interface LayoutProps {
 	children?: React.ReactNode;
 	style?: React.CSSProperties;
-	title?: string;
+	title: string;
 	description?: string;
 	image?: string;
 	article?: boolean;

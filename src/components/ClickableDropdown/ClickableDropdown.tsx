@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { DropdownWrapper, DropdownMenu, DropdownButtonWrapper } from './ClickableDropdownStyles';
 import Item from './Item';
 import { useClickedOutside } from '../../hooks/useClickedOutide';
@@ -23,11 +23,17 @@ const ClickableDropdown: React.FC<ClickableDropdownProps> = ({ items }) => {
 	const [visibleId, setVisibleId] = useState(-1);
 	const prevScroll = useRef(0);
 	const buttonRef = useRef<HTMLDivElement>(null);
-	const menuRef = useClickedOutside<HTMLMenuElement>(undefined, (e) => {
-		if (buttonRef.current.contains(e.target)) return;
-		window.scrollTo({ top: prevScroll.current });
-		hide();
-	});
+	const clickedOut = useCallback(
+		(e) => {
+			if (buttonRef.current.contains(e.target)) return;
+			if (!menuRef.current) return;
+			// scrolling to where they currentlly are without the menu
+			window.scrollTo({ top: window.scrollY - menuRef.current.offsetHeight - 287 });
+			hide();
+		},
+		[visible],
+	);
+	const menuRef = useClickedOutside<HTMLMenuElement>(undefined, clickedOut);
 
 	const menuClick = (e: React.MouseEvent) => {
 		e.preventDefault();
@@ -91,9 +97,9 @@ const ClickableDropdown: React.FC<ClickableDropdownProps> = ({ items }) => {
 					<path d='M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z' />
 				</svg>
 			</motion.div>
-			<DropdownWrapper ref={menuRef} onClick={menuClick}>
-				<AnimatePresence initial={false}>
-					{visible && (
+			<AnimatePresence initial={false}>
+				{visible && (
+					<DropdownWrapper ref={menuRef} onClick={menuClick}>
 						<motion.menu
 							key='menu'
 							initial='closed'
@@ -118,9 +124,9 @@ const ClickableDropdown: React.FC<ClickableDropdownProps> = ({ items }) => {
 								);
 							})}
 						</motion.menu>
-					)}
-				</AnimatePresence>
-			</DropdownWrapper>
+					</DropdownWrapper>
+				)}
+			</AnimatePresence>
 		</>
 	);
 };

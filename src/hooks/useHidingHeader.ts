@@ -17,6 +17,8 @@ export const useHidingHeader = <T extends HTMLElement = HTMLElement>(
 	animationLength = 0.3,
 ) => {
 	const headerRef = useRef<T>(null);
+	const lastState = useRef(false);
+	const lastScroll = useRef(0);
 
 	useEffect(() => {
 		const header = headerRef.current;
@@ -25,10 +27,10 @@ export const useHidingHeader = <T extends HTMLElement = HTMLElement>(
 		header.style.transition = `top ${animationLength}s`;
 
 		//need this to persist between scroll events, self-explanatory
-		let lastScroll = window.scrollY;
+		lastScroll.current = window.scrollY;
 
 		//whether the header was hidden or shown last, cuts down on unnecesarry executions
-		let lastState = false;
+		lastState.current = false;
 
 		//header goes away on scroll down
 		window.addEventListener('scroll', () => {
@@ -37,10 +39,10 @@ export const useHidingHeader = <T extends HTMLElement = HTMLElement>(
 			//where the current scroll went
 			const end = window.scrollY;
 
-			if (end > lastScroll) {
+			if (end > lastScroll.current) {
 				//scroll down
-				if (lastState) {
-					lastState = false;
+				if (lastState.current) {
+					lastState.current = false;
 					const hideIt = headerHidden();
 					if (!hideIt) return;
 				}
@@ -51,8 +53,8 @@ export const useHidingHeader = <T extends HTMLElement = HTMLElement>(
 				}
 			} else {
 				//scroll up
-				if (!lastState) {
-					lastState = true;
+				if (!lastState.current) {
+					lastState.current = true;
 					const showIt = headerShown();
 					if (!showIt) return;
 				}
@@ -63,7 +65,7 @@ export const useHidingHeader = <T extends HTMLElement = HTMLElement>(
 					//not top of page
 				}
 			}
-			lastScroll = end;
+			lastScroll.current = end;
 		});
 	}, []);
 

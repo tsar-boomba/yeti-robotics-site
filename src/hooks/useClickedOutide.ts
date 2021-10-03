@@ -26,9 +26,7 @@ export const useClickedOutside = <T extends HTMLElement = HTMLDivElement>(
 		// add when mounted
 		document.addEventListener('mousedown', handleClick);
 		// return function to be called when unmounted
-		return () => {
-			document.removeEventListener('mousedown', handleClick);
-		};
+		return () => document.removeEventListener('mousedown', handleClick);
 	}, []);
 
 	return ref;
