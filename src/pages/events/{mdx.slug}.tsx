@@ -3,6 +3,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { EventData } from '@/components/EventsDisplay/types';
+import EventLayout from '@/components/Layout/EventLayout';
 
 interface PageData {
 	data: {
@@ -12,17 +13,24 @@ interface PageData {
 
 const Event = ({ data }: PageData) => {
 	return (
-		<Layout title={data.mdx.frontmatter.title} article={true}>
-			<h1>{data.mdx.frontmatter.title}</h1>
-			<h2>
-				{new Date(data.mdx.frontmatter.date).toLocaleString(undefined, {
-					month: 'long',
-					day: '2-digit',
-					year: 'numeric',
-				})}
-			</h2>
-			<MDXRenderer>{data.mdx.body}</MDXRenderer>
-		</Layout>
+		<EventLayout title={data.mdx.frontmatter.title} article={true}>
+			<summary>
+				<div>
+					<h1>{data.mdx.frontmatter.title}</h1>
+					<h2>
+						{new Date(data.mdx.frontmatter.date).toLocaleString(undefined, {
+							month: 'long',
+							day: '2-digit',
+							year: 'numeric',
+						})}
+					</h2>
+					<h2>Location: {data.mdx.frontmatter.location}</h2>
+				</div>
+			</summary>
+			<main>
+				<MDXRenderer>{data.mdx.body}</MDXRenderer>
+			</main>
+		</EventLayout>
 	);
 };
 
