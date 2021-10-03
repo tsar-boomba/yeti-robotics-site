@@ -11,7 +11,7 @@ interface EventProps {
 
 const Event: React.FC<EventProps> = ({ event }) => {
 	return (
-		<Link to={`/events/${event.slug}`}>
+		<Link to={`/events/${event.slug}`} onClick={(e) => e.stopPropagation()}>
 			<motion.div
 				whileTap={{ scale: 0.95, zIndex: 3 }}
 				whileHover={{ scale: 1.02, zIndex: 3 }}
