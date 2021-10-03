@@ -4,7 +4,7 @@ import React from 'react';
 
 const Events = () => {
 	return (
-		<Layout>
+		<Layout title='Events' description='YETI Robotics events'>
 			<EventsDisplay />
 		</Layout>
 	);
