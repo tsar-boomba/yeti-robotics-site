@@ -4,20 +4,12 @@ import { MonthWrapper } from './EventsDisplayStyles';
 import { AnimatePresence, motion, Variants } from 'framer-motion';
 import { extractMonth, extractYear } from './date-helpers';
 import { colors } from '@/styles/colors';
+import { EventData } from './types';
 
 interface MonthProps {
 	month: number;
 	id: number;
-	events: {
-		frontmatter: {
-			title: string;
-			date: string;
-			time: string;
-			location: string;
-		};
-		id: string;
-		slug: string;
-	}[];
+	events: EventData[];
 }
 
 const Month: React.FC<MonthProps> = ({ month, events, id }) => {

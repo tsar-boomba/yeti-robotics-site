@@ -3,18 +3,10 @@ import { Link } from 'gatsby';
 import React from 'react';
 import { extractDay } from './date-helpers';
 import { EventText, EventWrapper } from './EventsDisplayStyles';
+import { EventData } from './types';
 
 interface EventProps {
-	event: {
-		frontmatter: {
-			title: string;
-			date: string;
-			time: string;
-			location: string;
-		};
-		id: string;
-		slug: string;
-	};
+	event: EventData;
 }
 
 const Event: React.FC<EventProps> = ({ event }) => {

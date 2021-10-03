@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { DisplayWrapper } from './EventsDisplayStyles';
 import Month from './Month';
+import { EventData } from './types';
 
 const EventsDisplay = () => {
 	// getting data
@@ -23,18 +24,7 @@ const EventsDisplay = () => {
 	`);
 
 	// typing and setting data fetched from filesystem
-	const [events] = useState<
-		{
-			frontmatter: {
-				title: string;
-				date: string;
-				time: string;
-				location: string;
-			};
-			id: string;
-			slug: string;
-		}[]
-	>(
+	const [events] = useState<EventData[]>(
 		allMdx.nodes.filter(
 			(event) =>
 				new Date(event.frontmatter.date).valueOf() >= new Date().valueOf() - 129600000,
