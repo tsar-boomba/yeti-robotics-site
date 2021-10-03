@@ -18,7 +18,6 @@ const DropdownItem: React.FC<DropdownItemProps> = ({ href, title, parentState })
 			if (location.pathname.includes(href)) {
 				childButtonRef.current.style.color = colors.primary;
 				childButtonRef.current.style.backgroundColor = colors.secondary;
-				childButtonRef.current;
 			}
 		}
 	}, [parentVisible, childButtonRef, href]);

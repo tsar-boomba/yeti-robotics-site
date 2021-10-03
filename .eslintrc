@@ -1,21 +1,52 @@
 {
 	"parser": "@typescript-eslint/parser",
-	"extends": ["plugin:@typescript-eslint/recommended", "plugin:prettier/recommended", "prettier"],
+	"extends": [
+		"eslint:recommended",
+		"plugin:mdx/recommended",
+		"plugin:@typescript-eslint/eslint-recommended",
+		"plugin:@typescript-eslint/recommended",
+		"plugin:prettier/recommended",
+		"prettier"
+	],
 	"plugins": ["@typescript-eslint", "prettier"],
 	"settings": {
+		"mdx/code-blocks": true,
 		"import/resolver": {
 			"alias": [["@", "./src"]]
 		}
 	},
 	"parserOptions": {
-		"ecmaVersion": 2018,
+		"ecmaVersion": "latest",
 		"sourceType": "module"
 	},
 	"env": {
 		"browser": true,
 		"node": true
 	},
+	"overrides": [
+		{
+			"files": ["*.md"],
+			"extends": "plugin:mdx/recommended",
+			"rules": {
+				"prettier/prettier": [
+					2,
+					{
+						"parser": "markdown"
+					}
+				]
+			}
+		},
+		{
+			"files": ["*.mdx"],
+			"extends": "plugin:mdx/overrides"
+		},
+		{
+			"files": "**/*.{md,mdx}/**",
+			"extends": "plugin:mdx/code-blocks"
+		}
+	],
 	"rules": {
+		"no-constant-condition": "off",
 		"quotes": "off",
 		"@typescript-eslint/quotes": [
 			0,
