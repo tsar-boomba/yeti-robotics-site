@@ -12,7 +12,7 @@ interface SlideshowProps {
 const Slideshow: React.FC<SlideshowProps> = ({ images }) => {
 	const [imageIndex, setImageIndex] = useState(0);
 	const [direction, setDirection] = useState(0);
-	const timeoutRef = useRef(null);
+	const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
 	// allows resetting the slide timer from anywhere
 	const resetTimeout = () => {

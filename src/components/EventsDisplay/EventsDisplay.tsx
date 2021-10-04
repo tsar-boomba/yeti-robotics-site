@@ -6,7 +6,7 @@ import { EventData } from './types';
 
 const EventsDisplay = () => {
 	// getting data
-	const { allMdx } = useStaticQuery(graphql`
+	const { allMdx }: { allMdx: { nodes: EventData[] } } = useStaticQuery(graphql`
 		query {
 			allMdx(sort: { fields: frontmatter___date, order: DESC }, limit: 50) {
 				nodes {
