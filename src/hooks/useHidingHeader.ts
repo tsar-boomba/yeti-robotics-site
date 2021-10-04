@@ -20,7 +20,8 @@ export const useHidingHeader = <T extends HTMLElement = HTMLElement>(
 	const lastState = useRef(false);
 	const lastScroll = useRef(0);
 
-	useEffect(() => {
+	const handleScroll = () => {
+		if (headerRef.current === null) return;
 		const header = headerRef.current;
 		//making sure transition and position are correct
 		header.style.position = 'fixed';
@@ -67,6 +68,11 @@ export const useHidingHeader = <T extends HTMLElement = HTMLElement>(
 			}
 			lastScroll.current = end;
 		});
+	};
+
+	useEffect(() => {
+		handleScroll();
+		return () => window.removeEventListener('scroll', handleScroll);
 	}, []);
 
 	return { headerRef };
