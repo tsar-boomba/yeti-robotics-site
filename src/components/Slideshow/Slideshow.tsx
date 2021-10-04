@@ -3,10 +3,12 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { ImageWrapper, IndicatorsWrapper, SlideshowWrapper } from './SlideshowStyles';
 import Controls from './Controls';
 import PositionIndicator from './PositionIndicator';
-import { GatsbyImage } from 'gatsby-plugin-image';
+import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 
 interface SlideshowProps {
-	images: any[];
+	images: {
+		childImageSharp: { gatsbyImageData: IGatsbyImageData };
+	}[];
 }
 
 const Slideshow: React.FC<SlideshowProps> = ({ images }) => {

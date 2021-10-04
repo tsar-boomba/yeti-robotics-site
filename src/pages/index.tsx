@@ -4,12 +4,22 @@ import Layout from '../components/Layout';
 import EventsDisplay from '../components/EventsDisplay';
 import Slideshow from '@/components/Slideshow';
 import Section from '@/components/Section';
-import { StaticImage } from 'gatsby-plugin-image';
+import { IGatsbyImageData, StaticImage } from 'gatsby-plugin-image';
 import { colors } from '@/styles/colors';
 import Grid from '@/components/Grid';
 import { motion } from 'framer-motion';
 
-const Home = ({ data }) => {
+interface HomeProps {
+	data: {
+		allFile: {
+			nodes: {
+				childImageSharp: { gatsbyImageData: IGatsbyImageData };
+			}[];
+		};
+	};
+}
+
+const Home: React.FC<HomeProps> = ({ data }) => {
 	return (
 		<Layout title='Home' description='Home page for YETI Robotics'>
 			<StaticImage
