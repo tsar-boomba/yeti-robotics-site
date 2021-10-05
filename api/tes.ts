@@ -1,4 +1,4 @@
-import { APIHandler } from './declarations';
+import { APIHandler } from './types';
 
 const handler: APIHandler = (_req, res) => {
 	res.status(200).json({ message: 'gogogingon' });
