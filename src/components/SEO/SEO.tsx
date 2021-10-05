@@ -53,9 +53,9 @@ const SEO: React.FC<SEOProps> = ({ title, description, image, article }) => {
 };
 
 SEO.defaultProps = {
-	title: null,
-	description: null,
-	image: null,
+	title: '',
+	description: '',
+	image: '',
 	article: false,
 };
 
