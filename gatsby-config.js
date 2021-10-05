@@ -52,7 +52,7 @@ module.exports = {
 				display: 'minimal-ui',
 				background_color: '#54B6E5',
 				theme_color: '#54B6E5',
-				icon: './src/images/icon.png',
+				icon: 'src/images/icon.png',
 			},
 		},
 	],
