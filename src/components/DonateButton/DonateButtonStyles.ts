@@ -3,7 +3,7 @@ import { colors } from '../../styles/colors';
 
 export const DonateButtonStyle: MotionStyle = {
 	position: 'fixed',
-	top: '15vh',
+	top: 200,
 	right: '2vw',
 	backgroundColor: colors.primary,
 	color: colors.secondary,

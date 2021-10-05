@@ -28,7 +28,17 @@ export const EventWrapper = styled.div`
 		padding: 10px;
 		width: clamp(300px, 800px, 100%);
 
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			text-decoration: underline;
+		}
+
 		p {
+			font-size: 22px;
 			margin: 1rem 0 2rem 0;
 		}
 

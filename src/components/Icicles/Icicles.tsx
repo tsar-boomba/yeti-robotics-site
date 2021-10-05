@@ -3,7 +3,7 @@ import Icicle from './Icicle';
 import { IcicleWrapper } from './IciclesStyles';
 
 interface IciclesProps {
-	parentRef: React.MutableRefObject<HTMLElement>;
+	parentRef: React.MutableRefObject<any>;
 	heightConstrains?: { min: number; max: number };
 	widthConstrains?: { min: number; max: number };
 	top?: number | string;

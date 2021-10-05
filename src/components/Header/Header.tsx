@@ -31,6 +31,7 @@ const Header: React.FC = () => {
 	const { headerRef } = useHidingHeader(showHeaderCB, hideHeaderCB);
 
 	useEffect(() => {
+		if (headerRef.current === null) return;
 		if (clickableDropdownStatus) {
 			headerRef.current.style.position = 'relative';
 			headerRef.current.style.boxShadow = '0px 0px 0px 0px';
@@ -154,11 +155,13 @@ const Header: React.FC = () => {
 					parentRef={headerRef}
 					widthConstrains={{ max: 20, min: 15 }}
 					heightConstrains={{ max: 100, min: 70 }}
+					top='99%'
 				/>
 				<Icicles
 					parentRef={headerRef}
 					widthConstrains={{ max: 20, min: 15 }}
 					heightConstrains={{ max: 100, min: 70 }}
+					top='99%'
 				/>
 			</HeaderWrapper>
 		</>

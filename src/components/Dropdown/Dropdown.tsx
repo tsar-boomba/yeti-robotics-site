@@ -22,6 +22,7 @@ const Dropdown: React.FC<DropdownProps> = ({ title, href, items }) => {
 
 	//This adds the border over a dropdown when it's pages are active
 	useLayoutEffect(() => {
+		if (parentButtonRef.current === null) return;
 		if (location.pathname === '/') {
 			parentButtonRef.current.style.height = '0';
 			return;
