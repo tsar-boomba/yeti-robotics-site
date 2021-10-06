@@ -44,7 +44,7 @@ const Home: React.FC<HomeProps> = ({ data }) => {
 			</Section>
 			<Grid
 				style={{
-					boxShadow: `0px 0px 16px 4px ${colors.shadow}`,
+					boxShadow: colors.defaultShadow,
 					width: 'clamp(300px, 890px, 100%)',
 				}}
 			>
@@ -73,7 +73,7 @@ const Home: React.FC<HomeProps> = ({ data }) => {
 						height: 574,
 						flexGrow: 100,
 						padding: 10,
-						backgroundColor: `${colors.primary}80`,
+						backgroundColor: colors.primaryTransparent,
 					}}
 				>
 					<div>

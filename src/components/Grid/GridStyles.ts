@@ -3,9 +3,9 @@ import styled from 'styled-components';
 export const GridStyle = styled.div`
 	display: flex;
 	flex-direction: row;
-	align-items: center;
 	justify-content: center;
 	flex-wrap: wrap;
-	width: 800px;
+	width: clamp(300px, 1200px, 100%);
 	margin-top: 3rem;
+	overflow: hidden;
 `;
