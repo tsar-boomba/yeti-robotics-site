@@ -113,19 +113,19 @@ const About: React.FC<PageProps> = () => {
 						<StaticImage
 							src='../../images/first/vert-frc-logo.png'
 							alt='FIRST Robotics Competition Logo'
-							width={100}
+							height={120}
 							objectFit='scale-down'
 						/>
 						<StaticImage
 							src='../../images/first/vert-ftc-logo.png'
 							alt='FIRST Tech Challenge Logo'
-							width={100}
+							height={120}
 							objectFit='scale-down'
 						/>
 						<StaticImage
 							src='../../images/first/vert-fll-logo.png'
 							alt='FIRST Lego League Logo'
-							width={100}
+							height={120}
 							objectFit='scale-down'
 						/>
 					</div>
