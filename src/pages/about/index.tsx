@@ -122,24 +122,30 @@ const About: React.FC<PageProps> = () => {
 							padding: '0 0 10px 0',
 						}}
 					>
-						<StaticImage
-							src='../../images/first/vert-frc-logo.png'
-							alt='FIRST Robotics Competition Logo'
-							width={100}
-							objectFit='scale-down'
-						/>
-						<StaticImage
-							src='../../images/first/vert-ftc-logo.png'
-							alt='FIRST Tech Challenge Logo'
-							width={100}
-							objectFit='scale-down'
-						/>
-						<StaticImage
-							src='../../images/first/vert-fll-logo.png'
-							alt='FIRST Lego League Logo'
-							width={100}
-							objectFit='scale-down'
-						/>
+						<a href='https://www.firstinspires.org/robotics/frc'>
+							<StaticImage
+								src='../../images/first/vert-frc-logo.png'
+								alt='FIRST Robotics Competition Logo'
+								width={100}
+								objectFit='scale-down'
+							/>
+						</a>
+						<a href='https://www.firstinspires.org/robotics/ftc'>
+							<StaticImage
+								src='../../images/first/vert-ftc-logo.png'
+								alt='FIRST Tech Challenge Logo'
+								width={100}
+								objectFit='scale-down'
+							/>
+						</a>
+						<a href='https://www.firstlegoleague.org/'>
+							<StaticImage
+								src='../../images/first/vert-fll-logo.png'
+								alt='FIRST Lego League Logo'
+								width={100}
+								objectFit='scale-down'
+							/>
+						</a>
 					</div>
 					<p style={{ fontSize: 20 }}>
 						To find out more about FIRST® Robotics programs, which are available for
