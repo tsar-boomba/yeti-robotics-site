@@ -22,13 +22,15 @@ interface HomeProps {
 const Home: React.FC<HomeProps> = ({ data }) => {
 	return (
 		<Layout title='Home' description='Home page for YETI Robotics'>
-			<StaticImage
-				src='../images/yeti-logo-with-text.png'
-				style={{ margin: '0 0 20px 0', maxWidth: 1000 }}
-				loading='eager'
-				placeholder='tracedSVG'
-				alt='YETI logo with text'
-			/>
+			<div style={{ margin: '0 0 4rem 0' }}>
+				<StaticImage
+					src='../images/yeti-logo-with-text.png'
+					width={800}
+					loading='eager'
+					placeholder='tracedSVG'
+					alt='YETI logo with text'
+				/>
+			</div>
 			<Slideshow images={data.allFile.nodes} />
 			<Section>
 				<h1 style={{ fontSize: 60, margin: '10px 0 10px 0' }}>
