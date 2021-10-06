@@ -28,8 +28,8 @@ const About: React.FC<PageProps> = () => {
 					}}
 				>
 					<h1>Our Team</h1>
-					<p>YETI...Set...Go!!!</p>
-					<p>
+					<p style={{ fontSize: 20 }}>YETI...Set...Go!!!</p>
+					<p style={{ fontSize: 20 }}>
 						YETI began ten years ago with only 16 students and 7 mentors in Charlotte,
 						North Carolina. YETI won multiple Chairman’s awards for their efforts to
 						engage the Charlotte community in STEM. YETI has founded many FIRST Tech
@@ -61,7 +61,7 @@ const About: React.FC<PageProps> = () => {
 						flexGrow: 1,
 					}}
 				>
-					<p>
+					<p style={{ fontSize: 20 }}>
 						The Queen City Robotics Alliance (QCRA) is a non-profit 501(c)(3) charitable
 						organization founded in 2014. QCRA was founded by Lia Schwinghammer
 						initially as an umbrella fundraising entity for FIRST® teams and events in
@@ -90,7 +90,19 @@ const About: React.FC<PageProps> = () => {
 						flexGrow: 1,
 					}}
 				>
-					<p>
+					<StaticImage src='../../images/first/vert-first-logo.png' alt='FIRST Logo' />
+				</div>
+				<div
+					style={{
+						display: 'grid',
+						placeItems: 'center',
+						width: 300,
+						padding: 10,
+						backgroundColor: colors.primaryTransparent,
+						flexGrow: 1,
+					}}
+				>
+					<p style={{ fontSize: 20 }}>
 						“Our mission is to inspire young people to be science and technology
 						leaders, by engaging them in exciting mentor-based programs that build
 						science, engineering and technology skills, that inspire innovation, and
@@ -129,18 +141,10 @@ const About: React.FC<PageProps> = () => {
 							objectFit='scale-down'
 						/>
 					</div>
-				</div>
-				<div
-					style={{
-						display: 'grid',
-						placeItems: 'center',
-						width: 300,
-						padding: 10,
-						backgroundColor: colors.primaryTransparent,
-						flexGrow: 1,
-					}}
-				>
-					<StaticImage src='../../images/first/vert-first-logo.png' alt='FIRST Logo' />
+					<p style={{ fontSize: 20 }}>
+						To find out more about FIRST® Robotics programs, which are available for
+						kindergarten through high school, follow the links above.
+					</p>
 				</div>
 			</Grid>
 		</Layout>
