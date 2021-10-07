@@ -104,6 +104,11 @@ const Header: React.FC = () => {
 									children: [],
 								},
 								{
+									title: 'Join Us',
+									href: '/join',
+									children: [],
+								},
+								{
 									title: 'Outreach',
 									href: '/outreach',
 									children: [],
