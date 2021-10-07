@@ -9,18 +9,18 @@ const Sponsors: React.FC<PageProps> = () => {
 	return (
 		<Layout title='Sponsors' description='Sponsors of YETI Robotics'>
 			<Title>Sponsors</Title>
-			<Grid style={{ marginTop: 0, width: '100%' }}>
-				<h1
-					style={{
-						fontSize: '4rem',
-						backgroundColor: '#E5E4E2',
-						width: '100vw',
-						textAlign: 'center',
-						padding: 30,
-					}}
-				>
-					Platinum Sponsors
-				</h1>
+			<h1
+				style={{
+					fontSize: '4rem',
+					backgroundColor: '#E5E4E2',
+					width: '100vw',
+					textAlign: 'center',
+					padding: 30,
+				}}
+			>
+				Platinum Sponsors
+			</h1>
+			<Grid style={{ marginTop: 0 }}>
 				<a href='https://www.superficiamerica.com/' style={{ padding: 30 }}>
 					<StaticImage
 						src='../../images/sponsors/superfici-logo.webp'
@@ -41,18 +41,18 @@ const Sponsors: React.FC<PageProps> = () => {
 					/>
 				</a>
 			</Grid>
-			<Grid style={{ width: '100%' }}>
-				<h1
-					style={{
-						fontSize: '4rem',
-						backgroundColor: '#FFD700',
-						width: '100vw',
-						textAlign: 'center',
-						padding: 30,
-					}}
-				>
-					Gold Sponsors
-				</h1>
+			<h1
+				style={{
+					fontSize: '4rem',
+					backgroundColor: '#FFD700',
+					width: '100vw',
+					textAlign: 'center',
+					padding: 30,
+				}}
+			>
+				Gold Sponsors
+			</h1>
+			<Grid>
 				<div style={{ padding: 30 }}>
 					<StaticImage
 						src='../../images/sponsors/asg-logo.png'
@@ -73,18 +73,18 @@ const Sponsors: React.FC<PageProps> = () => {
 					/>
 				</a>
 			</Grid>
-			<Grid style={{ width: '100%' }}>
-				<h1
-					style={{
-						fontSize: '4rem',
-						backgroundColor: '#DDDCDC',
-						width: '100vw',
-						textAlign: 'center',
-						padding: 30,
-					}}
-				>
-					Silver Sponsors
-				</h1>
+			<h1
+				style={{
+					fontSize: '4rem',
+					backgroundColor: '#DDDCDC',
+					width: '100vw',
+					textAlign: 'center',
+					padding: 30,
+				}}
+			>
+				Silver Sponsors
+			</h1>
+			<Grid>
 				<a href='https://www.orthocarolina.com/' style={{ padding: 30 }}>
 					<StaticImage
 						src='../../images/sponsors/ortho-carolina-logo.webp'
@@ -134,18 +134,18 @@ const Sponsors: React.FC<PageProps> = () => {
 					/>
 				</a>
 			</Grid>
-			<Grid style={{ width: '100%' }}>
-				<h1
-					style={{
-						fontSize: '4rem',
-						backgroundColor: '#CD7F32',
-						width: '100vw',
-						textAlign: 'center',
-						padding: 30,
-					}}
-				>
-					Bronze Sponsors
-				</h1>
+			<h1
+				style={{
+					fontSize: '4rem',
+					backgroundColor: '#CD7F32',
+					width: '100vw',
+					textAlign: 'center',
+					padding: 30,
+				}}
+			>
+				Bronze Sponsors
+			</h1>
+			<Grid>
 				<a href='https://www.aig.com/' style={{ padding: 30 }}>
 					<StaticImage src='../../images/sponsors/aig-logo.webp' alt='AIG Logo' />
 				</a>
