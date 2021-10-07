@@ -7,14 +7,14 @@ import { StaticImage } from 'gatsby-plugin-image';
 
 const Sponsors: React.FC<PageProps> = () => {
 	return (
-		<Layout title='Sponsors'>
+		<Layout title='Sponsors' description='Sponsors of YETI Robotics'>
 			<Title>Sponsors</Title>
-			<Grid style={{ width: '100%', marginTop: 0 }}>
+			<Grid style={{ marginTop: 0, width: '100%' }}>
 				<h1
 					style={{
 						fontSize: '4rem',
 						backgroundColor: '#E5E4E2',
-						width: '100%',
+						width: '100vw',
 						textAlign: 'center',
 						padding: 30,
 					}}
@@ -34,7 +34,7 @@ const Sponsors: React.FC<PageProps> = () => {
 						height={300}
 					/>
 				</a>
-				<a href='https://www.collinsaerospace.com/'>
+				<a href='https://www.collinsaerospace.com/' style={{ padding: 30 }}>
 					<StaticImage
 						src='../../images/sponsors/collins-logo.webp'
 						alt='Collins AeroSpace Logo'
@@ -46,7 +46,7 @@ const Sponsors: React.FC<PageProps> = () => {
 					style={{
 						fontSize: '4rem',
 						backgroundColor: '#FFD700',
-						width: '100%',
+						width: '100vw',
 						textAlign: 'center',
 						padding: 30,
 					}}
@@ -78,7 +78,7 @@ const Sponsors: React.FC<PageProps> = () => {
 					style={{
 						fontSize: '4rem',
 						backgroundColor: '#DDDCDC',
-						width: '100%',
+						width: '100vw',
 						textAlign: 'center',
 						padding: 30,
 					}}
@@ -139,7 +139,7 @@ const Sponsors: React.FC<PageProps> = () => {
 					style={{
 						fontSize: '4rem',
 						backgroundColor: '#CD7F32',
-						width: '100%',
+						width: '100vw',
 						textAlign: 'center',
 						padding: 30,
 					}}
@@ -150,7 +150,10 @@ const Sponsors: React.FC<PageProps> = () => {
 					<StaticImage src='../../images/sponsors/aig-logo.webp' alt='AIG Logo' />
 				</a>
 				<a href='https://www.bankofamerica.com/' style={{ padding: 30 }}>
-					<StaticImage src='../../images/sponsors/bank-of-america-logo.webp' alt='Bank of America Logo' />
+					<StaticImage
+						src='../../images/sponsors/bank-of-america-logo.webp'
+						alt='Bank of America Logo'
+					/>
 				</a>
 				<a href='https://www.carotek.com/' style={{ padding: 30 }}>
 					<StaticImage src='../../images/sponsors/carotek-logo.webp' alt='Carotek Logo' />
@@ -159,7 +162,10 @@ const Sponsors: React.FC<PageProps> = () => {
 					<StaticImage src='../../images/sponsors/tiaa-logo.webp' alt='TIAA Logo' />
 				</a>
 				<a href='https://www.womblebonddickinson.com/us' style={{ padding: 30 }}>
-					<StaticImage src='../../images/sponsors/womble-bond-dickinson-logo.webp' alt='Womble bond Dickinson Logo' />
+					<StaticImage
+						src='../../images/sponsors/womble-bond-dickinson-logo.webp'
+						alt='Womble Bond Dickinson Logo'
+					/>
 				</a>
 			</Grid>
 		</Layout>

@@ -7,5 +7,4 @@ export const GridStyle = styled.div`
 	flex-wrap: wrap;
 	width: clamp(300px, 1200px, 100%);
 	margin-top: 3rem;
-	overflow: hidden;
 `;
