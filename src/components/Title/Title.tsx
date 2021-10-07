@@ -1,11 +1,12 @@
 import React from 'react';
+import { TitleStyles } from './TitleStyles';
 
-const Title: React.FC = ({ children }) => {
-	return (
-		<h1 style={{ fontSize: 48, padding: '0 15px 0 15px', borderBottom: '5px solid #000000' }}>
-			{children}
-		</h1>
-	);
+interface TitleProps {
+	style?: React.CSSProperties;
+}
+
+const Title: React.FC<TitleProps> = ({ style, children }) => {
+	return <TitleStyles style={style}>{children}</TitleStyles>;
 };
 
 export default Title;
