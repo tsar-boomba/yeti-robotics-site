@@ -47,6 +47,7 @@ const ClickableDropdownItem: React.FC<ClickableDropDownItemProps> = ({ item, cur
 
 	//This adds the border over a dropdown when it's pages are active
 	useLayoutEffect(() => {
+		if (parentButtonRef.current === null) return;
 		if (location.pathname === '/') return;
 		const pathname = location.pathname.substring(1);
 		const formattedPathname = '/' + pathname.slice(0, pathname.lastIndexOf('/'));
@@ -93,7 +94,14 @@ const ClickableDropdownItem: React.FC<ClickableDropDownItemProps> = ({ item, cur
 	return (
 		<>
 			<TitleWrapper onClick={(e) => e.stopPropagation()}>
-				<InteractiveWrapper ref={parentButtonRef}>
+				<InteractiveWrapper
+					ref={parentButtonRef}
+					style={{
+						backgroundColor:
+							item.title === 'Donate' ? colors.primary : colors.secondary,
+						color: item.title === 'Donate' ? colors.secondary : colors.primary,
+					}}
+				>
 					<Link to={item.href} style={{ flexGrow: 1 }}>
 						<Title>{item.title}</Title>
 					</Link>

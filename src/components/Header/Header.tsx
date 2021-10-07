@@ -147,6 +147,11 @@ const Header: React.FC = () => {
 									href: '/contact',
 									children: [],
 								},
+								{
+									title: 'Donate',
+									href: 'https://paypal.com',
+									children: [],
+								},
 							]}
 						/>
 					</>
