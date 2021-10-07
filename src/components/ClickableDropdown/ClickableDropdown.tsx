@@ -1,9 +1,9 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useContext, useEffect, useRef, useState } from 'react';
 import { DropdownWrapper, DropdownMenu, DropdownButtonWrapper } from './ClickableDropdownStyles';
 import Item from './Item';
 import { useClickedOutside } from '../../hooks/useClickedOutide';
 import { AnimatePresence, motion, Variants } from 'framer-motion';
-import useStore from '../../store';
+import { HeaderContext } from '../Header/Context';
 
 interface ClickableDropdownProps {
 	items: {
@@ -17,38 +17,37 @@ interface ClickableDropdownProps {
 }
 
 const ClickableDropdown: React.FC<ClickableDropdownProps> = ({ items }) => {
-	const visible = useStore((state) => state.clickableDropdownShown);
-	const show = useStore((state) => state.showClickableDropdown);
-	const hide = useStore((state) => state.hideClickableDropdown);
+	const { clickableDropdownShown, showClickableDropdown, hideClickableDropdown } =
+		useContext(HeaderContext);
 	const [visibleId, setVisibleId] = useState(-1);
 	const prevScroll = useRef(0);
 	const buttonRef = useRef<HTMLDivElement>(null);
 	const clickedOut = useCallback(
 		(e) => {
-			if (buttonRef.current.contains(e.target)) return;
+			if (buttonRef.current && buttonRef.current.contains(e.target)) return;
 			if (!menuRef.current) return;
 			// scrolling to where they currentlly are without the menu
 			window.scrollTo({ top: window.scrollY - menuRef.current.offsetHeight - 287 });
-			hide();
+			hideClickableDropdown();
 		},
-		[visible],
+		[clickableDropdownShown],
 	);
 	const menuRef = useClickedOutside<HTMLMenuElement>(undefined, clickedOut);
 
 	const menuClick = (e: React.MouseEvent) => {
 		e.preventDefault();
-		if (visible) {
+		if (clickableDropdownShown) {
 			window.scrollTo({ top: prevScroll.current });
-			hide();
+			hideClickableDropdown();
 		} else {
 			prevScroll.current = window.scrollY;
 			window.scrollTo({ top: 0 });
-			show();
+			showClickableDropdown();
 		}
 	};
 
 	// hides menu if it unrenders
-	useEffect(() => hide, []);
+	useEffect(() => hideClickableDropdown, []);
 
 	//animation variants
 	const menu: Variants = {
@@ -85,7 +84,7 @@ const ClickableDropdown: React.FC<ClickableDropdownProps> = ({ items }) => {
 		<>
 			<motion.div
 				animate='animate'
-				custom={visible}
+				custom={clickableDropdownShown}
 				variants={{
 					animate: (visible: boolean) => ({ rotate: visible ? 90 : 0 }),
 				}}
@@ -98,7 +97,7 @@ const ClickableDropdown: React.FC<ClickableDropdownProps> = ({ items }) => {
 				</svg>
 			</motion.div>
 			<AnimatePresence initial={false}>
-				{visible && (
+				{clickableDropdownShown && (
 					<DropdownWrapper ref={menuRef} onClick={menuClick}>
 						<motion.menu
 							key='menu'

@@ -55,6 +55,7 @@
 				"avoidEscape": true
 			}
 		],
+		"@typescript-eslint/no-empty-function": "off",
 		"@typescript-eslint/explicit-module-boundary-types": "off",
 		"indent": "off",
 		"prettier/prettier": [

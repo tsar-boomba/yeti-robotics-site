@@ -1,7 +1,7 @@
 import React from 'react';
 import Footer from '../Footer';
-import Header from '../Header/Header';
-import DonateButton from '../DonateButton/DonateButton';
+import Header from '../Header';
+import DonateButton from '../DonateButton';
 import PageContainer from '../PageContainer';
 import { MainContainer } from './LayoutStyles';
 import SEO from '../SEO';
@@ -32,9 +32,9 @@ const Layout: React.FC<LayoutProps> = ({ children, style, title, description, im
 };
 
 Layout.defaultProps = {
-	title: null,
-	description: null,
-	image: null,
+	title: '',
+	description: '',
+	image: '',
 };
 
 export default Layout;

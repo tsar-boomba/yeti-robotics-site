@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from 'react';
+import React, { useCallback, useContext, useEffect } from 'react';
 import { HeaderWrapper, LogoWrapper } from './HeaderStyles';
 import Dropdown from '../Dropdown';
 import ClickableDropdown from '../ClickableDropdown';
@@ -8,38 +8,38 @@ import Icicles from '../Icicles';
 import { StaticImage } from 'gatsby-plugin-image';
 import { Link } from 'gatsby';
 import useStore from '../../store';
+import { HeaderContext } from './Context';
 
 const Header: React.FC = () => {
-	const showHeader = useStore((state) => state.showHeader);
-	const clickableDropdownStatus = useStore((state) => state.clickableDropdownShown);
+	const { showHeader, clickableDropdownShown } = useContext(HeaderContext);
 	const windowDimendions = useStore((state) => state.windowDimensions);
 	const setWindowDimensions = useStore((state) => state.setWindowDimensions);
 	const { windowWidth, windowHeight } = useDimensions(windowDimendions);
 	const showHeaderCB = useCallback(() => {
-		if (!clickableDropdownStatus) {
+		if (!clickableDropdownShown) {
 			showHeader();
 			return true;
 		}
 		return false;
-	}, [clickableDropdownStatus]);
+	}, [clickableDropdownShown]);
 	const hideHeaderCB = useCallback(() => {
-		if (!clickableDropdownStatus) {
+		if (!clickableDropdownShown) {
 			return true;
 		}
 		return false;
-	}, [clickableDropdownStatus]);
+	}, [clickableDropdownShown]);
 	const { headerRef } = useHidingHeader(showHeaderCB, hideHeaderCB);
 
 	useEffect(() => {
 		if (headerRef.current === null) return;
-		if (clickableDropdownStatus) {
+		if (clickableDropdownShown) {
 			headerRef.current.style.position = 'relative';
 			headerRef.current.style.boxShadow = '0px 0px 0px 0px';
 		} else {
 			headerRef.current.style.position = 'fixed';
 			headerRef.current.style.boxShadow = '';
 		}
-	}, [clickableDropdownStatus, headerRef]);
+	}, [clickableDropdownShown, headerRef]);
 
 	//keeping window dimensions between pages, stops flashing of header
 	useEffect(() => {
