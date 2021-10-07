@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql, Link, PageProps } from 'gatsby';
 import Layout from '../components/Layout';
 import EventsDisplay from '../components/EventsDisplay';
 import Slideshow from '@/components/Slideshow';
@@ -9,17 +9,15 @@ import { colors } from '@/styles/colors';
 import Grid from '@/components/Grid';
 import { motion } from 'framer-motion';
 
-interface HomeProps {
-	data: {
-		allFile: {
-			nodes: {
-				childImageSharp: { gatsbyImageData: IGatsbyImageData };
-			}[];
-		};
+interface QueryType {
+	allFile: {
+		nodes: {
+			childImageSharp: { gatsbyImageData: IGatsbyImageData };
+		}[];
 	};
 }
 
-const Home: React.FC<HomeProps> = ({ data }) => {
+const Home: React.FC<PageProps<QueryType>> = ({ data }) => {
 	return (
 		<Layout title='Home' description='Home page for YETI Robotics'>
 			<div style={{ margin: '0 0 4rem 0' }}>
