@@ -3,7 +3,7 @@ import { PageProps } from 'gatsby';
 import Layout from '@/components/Layout';
 
 const NotFound: React.FC<PageProps> = () => (
-	<Layout>
+	<Layout title='Not Found'>
 		<h1>Sorry, page not found.</h1>
 	</Layout>
 );
