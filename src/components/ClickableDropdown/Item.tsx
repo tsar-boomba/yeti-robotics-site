@@ -28,6 +28,7 @@ const ClickableDropdownItem: React.FC<ClickableDropDownItemProps> = ({ item, cur
 	const [thisOpen, setThisOpen] = useState(false);
 	const [opened, setOpened] = currId;
 	const parentButtonRef = useRef<HTMLDivElement>(null);
+	const isDonate = item.title === 'Donate';
 
 	useEffect(() => {
 		if (opened === id) setThisOpen(true);
@@ -47,7 +48,8 @@ const ClickableDropdownItem: React.FC<ClickableDropDownItemProps> = ({ item, cur
 
 	//This adds the border over a dropdown when it's pages are active
 	useLayoutEffect(() => {
-		if (parentButtonRef.current === null) return;
+		if (isDonate) return;
+		if (!parentButtonRef.current) return;
 		if (location.pathname === '/') return;
 		const pathname = location.pathname.substring(1);
 		const formattedPathname = '/' + pathname.slice(0, pathname.lastIndexOf('/'));
@@ -97,9 +99,8 @@ const ClickableDropdownItem: React.FC<ClickableDropDownItemProps> = ({ item, cur
 				<InteractiveWrapper
 					ref={parentButtonRef}
 					style={{
-						backgroundColor:
-							item.title === 'Donate' ? colors.primary : colors.secondary,
-						color: item.title === 'Donate' ? colors.secondary : colors.primary,
+						backgroundColor: isDonate ? colors.primary : colors.secondary,
+						color: isDonate ? colors.secondary : colors.primary,
 					}}
 				>
 					<Link to={item.href} style={{ flexGrow: 1 }}>
