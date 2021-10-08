@@ -9,7 +9,7 @@ import { colors } from '@/styles/colors';
 const Join: React.FC<PageProps> = () => {
 	return (
 		<Layout title='Join Us'>
-			<Title>Join Out Team!</Title>
+			<Title>Join Our Team!</Title>
 			<Grid style={{ justifyContent: 'space-around' }}>
 				<div
 					style={{
