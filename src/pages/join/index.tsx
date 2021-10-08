@@ -106,7 +106,7 @@ const Join: React.FC<PageProps> = () => {
 			</Grid>
 			<Grid>
 				{/* Put recruitment night image here when we recuitin again */}
-				<div>
+				<div style={{ padding: 10 }}>
 					<Title style={{ textAlign: 'center' }}>Steps for joining:</Title>
 					<ol style={{ fontSize: '2rem' }}>
 						<li style={{ padding: '0 0 1rem 0' }}>
