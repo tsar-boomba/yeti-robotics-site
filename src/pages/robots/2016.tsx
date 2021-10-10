@@ -12,9 +12,9 @@ const TwentySixteen = () => {
 			description='The 2016 season for tem 3506, YETI.'
 			article={true}
 		>
-			<Title>2011 Season</Title>
-			<StaticImage src='../../images/team-pics/2011-team.webp' alt='2011 team' width={512} />
-			<p style={{ marginTop: 0, fontSize: '1.5rem' }}>The 2011 YETI team</p>
+			<Title>2016 Season</Title>
+			<StaticImage src='../../images/team-pics/2016-team.webp' alt='2016 team' width={512} />
+			<p style={{ marginTop: 0, fontSize: '1.5rem' }}>The 2016 YETI team</p>
 			<Section>
 				<Grid style={{ margin: 0 }}>
 					<div
