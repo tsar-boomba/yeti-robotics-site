@@ -57,7 +57,7 @@ const Home: React.FC<PageProps<QueryType>> = ({ data }) => {
 					}}
 				>
 					<StaticImage
-						src='../images/polaris-cad.webp'
+						src='../images/robots/polaris-cad.webp'
 						alt='Polaris CAD image'
 						style={{ backgroundColor: colors.primary }}
 					/>

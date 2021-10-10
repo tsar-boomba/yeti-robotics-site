@@ -9,4 +9,5 @@ export const SectionStyles = styled.section`
 	display: flex;
 	flex-flow: column;
 	align-items: center;
+	text-align: center;
 `;
