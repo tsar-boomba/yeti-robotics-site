@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import { GlobalContext } from '@/GlobalContext';
+import React, { useContext, useEffect, useState } from 'react';
 import Icicle from './Icicle';
 import { IcicleWrapper } from './IciclesStyles';
 
@@ -18,6 +19,7 @@ const defaultProps: IciclesProps = {
 
 const Icicles: React.FC<IciclesProps> = ({ parentRef, heightConstrains, widthConstrains, top }) => {
 	const getParentWidth = () => parentRef.current?.offsetWidth;
+	const { windowDimensions } = useContext(GlobalContext);
 	const [icicles, setIcicles] = useState<{ height: number; width: number }[]>([]);
 
 	const createIcicles = () => {
@@ -49,10 +51,14 @@ const Icicles: React.FC<IciclesProps> = ({ parentRef, heightConstrains, widthCon
 		setIcicles(icicleValues);
 	};
 
+	const handleResize = () => {
+		createIcicles();
+	};
+
 	useEffect(() => {
 		createIcicles();
-		window.addEventListener('resize', createIcicles);
-		return () => window.removeEventListener('resize', createIcicles);
+		window.addEventListener('resize', handleResize);
+		return () => window.removeEventListener('resize', handleResize);
 	}, [parentRef]);
 
 	return (
