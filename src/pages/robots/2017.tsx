@@ -12,9 +12,9 @@ const TwentySeventeen = () => {
 			description='The 2017 season for tem 3506, YETI.'
 			article={true}
 		>
-			<Title>2012 Season</Title>
-			<StaticImage src='../../images/team-pics/2012-team.webp' alt='2012 team' width={512} />
-			<p style={{ marginTop: 0, fontSize: '1.5rem' }}>The 2012 YETI team</p>
+			<Title>2017 Season</Title>
+			<StaticImage src='../../images/team-pics/2017-team.webp' alt='2017 team' width={512} />
+			<p style={{ marginTop: 0, fontSize: '1.5rem' }}>The 2017 YETI team</p>
 			<Section>
 				<Grid style={{ margin: 0 }}>
 					<div
@@ -35,7 +35,7 @@ const TwentySeventeen = () => {
 				</Grid>
 			</Section>
 			<Section style={{ borderTop: 0 }}>
-				<Title>Our 2012 Robot: PERMAFROST</Title>
+				<Title>Our 2017 Robot: PERMAFROST</Title>
 				<Grid style={{ margin: 0, alignItems: 'center' }}>
 					<div style={{ margin: '0 15px 15px 15px' }}>
 						<StaticImage
