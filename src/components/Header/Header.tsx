@@ -86,7 +86,7 @@ const Header: React.FC = () => {
 						<Dropdown title='Sponsors' href='/sponsors' items={[]} />
 						<Dropdown title='Contact' href='/contact' items={[]} />
 					</>
-				) : (
+				) : windowDimensions.width > 0 ? (
 					<>
 						<ClickableDropdown
 							items={[
@@ -152,7 +152,7 @@ const Header: React.FC = () => {
 							]}
 						/>
 					</>
-				)}
+				) : null}
 				<Icicles
 					parentRef={headerRef}
 					widthConstrains={{ max: 20, min: 15 }}
