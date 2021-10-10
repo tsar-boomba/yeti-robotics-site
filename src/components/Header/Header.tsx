@@ -2,19 +2,16 @@ import React, { useCallback, useContext, useEffect } from 'react';
 import { HeaderWrapper, LogoWrapper } from './HeaderStyles';
 import Dropdown from '../Dropdown';
 import ClickableDropdown from '../ClickableDropdown';
-import { useDimensions } from '../../hooks/useDimensions';
 import { useHidingHeader } from '../../hooks/useHidingHeader';
 import Icicles from '../Icicles';
 import { StaticImage } from 'gatsby-plugin-image';
 import { Link } from 'gatsby';
-import useStore from '../../store';
 import { HeaderContext } from './Context';
+import { GlobalContext } from '@/GlobalContext';
 
 const Header: React.FC = () => {
 	const { showHeader, clickableDropdownShown } = useContext(HeaderContext);
-	const windowDimendions = useStore((state) => state.windowDimensions);
-	const setWindowDimensions = useStore((state) => state.setWindowDimensions);
-	const { windowWidth, windowHeight } = useDimensions(windowDimendions);
+	const { windowDimensions } = useContext(GlobalContext);
 	const showHeaderCB = useCallback(() => {
 		if (!clickableDropdownShown) {
 			showHeader();
@@ -41,11 +38,6 @@ const Header: React.FC = () => {
 		}
 	}, [clickableDropdownShown, headerRef]);
 
-	//keeping window dimensions between pages, stops flashing of header
-	useEffect(() => {
-		setWindowDimensions({ windowWidth, windowHeight });
-	}, [windowWidth, windowHeight]);
-
 	return (
 		<>
 			<HeaderWrapper ref={headerRef}>
@@ -63,7 +55,7 @@ const Header: React.FC = () => {
 				</LogoWrapper>
 
 				{/* Changes header based on window's width */}
-				{windowWidth >= 1250 ? (
+				{windowDimensions.width >= 1250 ? (
 					<>
 						<Dropdown title='About' href='/about' items={[]} />
 						<Dropdown title='Join Us' href='/join' items={[]} />

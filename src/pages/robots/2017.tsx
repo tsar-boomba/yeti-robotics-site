@@ -13,6 +13,7 @@ const TwentySeventeen = () => {
 			article={true}
 		>
 			<Title>2017 Season</Title>
+			{/* TODO find actual 2017 team pic */}
 			<StaticImage src='../../images/team-pics/2017-team.webp' alt='2017 team' width={512} />
 			<p style={{ marginTop: 0, fontSize: '1.5rem' }}>The 2017 YETI team</p>
 			<Section>
