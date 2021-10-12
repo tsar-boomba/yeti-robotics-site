@@ -24,7 +24,7 @@ const Sponsors: React.FC<PageProps> = () => {
 				<a
 					href='https://www.superficiamerica.com/'
 					target='_blank'
-					rel='noopener'
+					rel='noreffer'
 					style={{ padding: 30 }}
 				>
 					<StaticImage
@@ -35,7 +35,7 @@ const Sponsors: React.FC<PageProps> = () => {
 				<a
 					href='https://www.microsoft.com/en-us/'
 					target='_blank'
-					rel='noopener'
+					rel='noreffer'
 					style={{ padding: 30 }}
 				>
 					<StaticImage
@@ -47,7 +47,7 @@ const Sponsors: React.FC<PageProps> = () => {
 				<a
 					href='https://www.collinsaerospace.com/'
 					target='_blank'
-					rel='noopener'
+					rel='noreffer'
 					style={{ padding: 30 }}
 				>
 					<StaticImage
@@ -77,7 +77,7 @@ const Sponsors: React.FC<PageProps> = () => {
 				<a
 					href='https://www.basf.com/us/en.html'
 					target='_blank'
-					rel='noopener'
+					rel='noreffer'
 					style={{ padding: 30 }}
 				>
 					<StaticImage
@@ -89,7 +89,7 @@ const Sponsors: React.FC<PageProps> = () => {
 				<a
 					href='https://frontiercapital.com/'
 					target='_blank'
-					rel='noopener'
+					rel='noreffer'
 					style={{ padding: 30 }}
 				>
 					<StaticImage
@@ -113,7 +113,7 @@ const Sponsors: React.FC<PageProps> = () => {
 				<a
 					href='https://www.orthocarolina.com/'
 					target='_blank'
-					rel='noopener'
+					rel='noreffer'
 					style={{ padding: 30 }}
 				>
 					<StaticImage
@@ -124,7 +124,7 @@ const Sponsors: React.FC<PageProps> = () => {
 				<a
 					href='https://www.drjosephinc.com/'
 					target='_blank'
-					rel='noopener'
+					rel='noreffer'
 					style={{ padding: 30 }}
 				>
 					<StaticImage
@@ -135,7 +135,7 @@ const Sponsors: React.FC<PageProps> = () => {
 				<a
 					href='https://www.solidworks.com/'
 					target='_blank'
-					rel='noopener'
+					rel='noreffer'
 					style={{ padding: 30 }}
 				>
 					<StaticImage
@@ -146,7 +146,7 @@ const Sponsors: React.FC<PageProps> = () => {
 				<a
 					href='https://fab-tec.com/'
 					target='_blank'
-					rel='noopener'
+					rel='noreffer'
 					style={{ padding: 30 }}
 				>
 					<StaticImage src='../../images/sponsors/fabtech-logo.webp' alt='Fab-Tec Logo' />
@@ -154,7 +154,7 @@ const Sponsors: React.FC<PageProps> = () => {
 				<a
 					href='https://piedmontng.com/'
 					target='_blank'
-					rel='noopener'
+					rel='noreffer'
 					style={{ padding: 30 }}
 				>
 					<StaticImage
@@ -165,7 +165,7 @@ const Sponsors: React.FC<PageProps> = () => {
 				<a
 					href='https://www.deere.com/en/index.html'
 					target='_blank'
-					rel='noopener'
+					rel='noreffer'
 					style={{ padding: 30 }}
 				>
 					<StaticImage
@@ -176,7 +176,7 @@ const Sponsors: React.FC<PageProps> = () => {
 				<a
 					href='https://www.transbotics.com/'
 					target='_blank'
-					rel='noopener'
+					rel='noreffer'
 					style={{ padding: 30 }}
 				>
 					<StaticImage
@@ -187,7 +187,7 @@ const Sponsors: React.FC<PageProps> = () => {
 				<a
 					href='https://new.siemens.com/us/en.html'
 					target='_blank'
-					rel='noopener'
+					rel='noreffer'
 					style={{ padding: 30 }}
 				>
 					<StaticImage src='../../images/sponsors/siemens-logo.webp' alt='Siemens Logo' />
@@ -195,7 +195,7 @@ const Sponsors: React.FC<PageProps> = () => {
 				<a
 					href='https://www.vanburenlaw.com/'
 					target='_blank'
-					rel='noopener'
+					rel='noreffer'
 					style={{ padding: 30 }}
 				>
 					<StaticImage
@@ -219,7 +219,7 @@ const Sponsors: React.FC<PageProps> = () => {
 				<a
 					href='https://www.aig.com/'
 					target='_blank'
-					rel='noopener'
+					rel='noreffer'
 					style={{ padding: 30 }}
 				>
 					<StaticImage src='../../images/sponsors/aig-logo.webp' alt='AIG Logo' />
@@ -227,7 +227,7 @@ const Sponsors: React.FC<PageProps> = () => {
 				<a
 					href='https://www.bankofamerica.com/'
 					target='_blank'
-					rel='noopener'
+					rel='noreffer'
 					style={{ padding: 30 }}
 				>
 					<StaticImage
@@ -238,7 +238,7 @@ const Sponsors: React.FC<PageProps> = () => {
 				<a
 					href='https://www.carotek.com/'
 					target='_blank'
-					rel='noopener'
+					rel='noreffer'
 					style={{ padding: 30 }}
 				>
 					<StaticImage src='../../images/sponsors/carotek-logo.webp' alt='Carotek Logo' />
@@ -246,7 +246,7 @@ const Sponsors: React.FC<PageProps> = () => {
 				<a
 					href='https://www.tiaa.org/public/index.html'
 					target='_blank'
-					rel='noopener'
+					rel='noreffer'
 					style={{ padding: 30 }}
 				>
 					<StaticImage src='../../images/sponsors/tiaa-logo.webp' alt='TIAA Logo' />
@@ -254,7 +254,7 @@ const Sponsors: React.FC<PageProps> = () => {
 				<a
 					href='https://www.womblebonddickinson.com/us'
 					target='_blank'
-					rel='noopener'
+					rel='noreffer'
 					style={{ padding: 30 }}
 				>
 					<StaticImage
