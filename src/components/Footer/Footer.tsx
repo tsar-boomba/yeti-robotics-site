@@ -13,6 +13,7 @@ const Footer: React.FC = () => {
 	return (
 		<>
 			<FooterWrapper>
+				<h2>© 2021 by Isaiah Gamble</h2>
 				<CommunicationsWrapper>
 					<CommunicationsTitle>Follow us on Social Media</CommunicationsTitle>
 					<SocialMediaWrapper>
@@ -83,6 +84,7 @@ const Footer: React.FC = () => {
 						</motion.a>
 					</SocialMediaWrapper>
 				</CommunicationsWrapper>
+				<h2>900 Pressley Road, Charlotte, NC 28217</h2>
 			</FooterWrapper>
 		</>
 	);
