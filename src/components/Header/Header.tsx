@@ -58,7 +58,7 @@ const Header: React.FC = () => {
 				{windowDimensions.width >= 1250 ? (
 					<>
 						<Dropdown title='About' href='/about' items={[]} />
-						<Dropdown title='Join Us' href='/join' items={[]} />
+						<Dropdown title='Join Us' href='/join-us' items={[]} />
 						<Dropdown title='Outreach' href='/outreach' items={[]} />
 						<Dropdown
 							title='Robots'
@@ -97,7 +97,7 @@ const Header: React.FC = () => {
 								},
 								{
 									title: 'Join Us',
-									href: '/join',
+									href: '/join-us',
 									children: [],
 								},
 								{
