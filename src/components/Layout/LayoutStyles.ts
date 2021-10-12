@@ -10,4 +10,5 @@ export const MainContainer = styled.main`
 	bottom: 100%;
 	flex-grow: 1;
 	width: 100%;
+	padding: 0 5px 0 5px;
 `;
