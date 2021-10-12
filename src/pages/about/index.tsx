@@ -28,17 +28,17 @@ const About: React.FC<PageProps> = () => {
 					}}
 				>
 					<h1>Our Team</h1>
-					<p style={{ fontSize: 20 }}>YETI...Set...Go!!!</p>
-					<p style={{ fontSize: 20 }}>
+					<p style={{ fontSize: '1.5rem' }}>YETI...Set...Go!!!</p>
+					<p style={{ fontSize: '1.5rem' }}>
 						YETI began ten years ago with only 16 students and 7 mentors in Charlotte,
 						North Carolina. YETI won multiple Chairman’s awards for their efforts to
 						engage the Charlotte community in STEM. YETI has founded many FIRST Tech
 						Challenge and FIRST Lego League teams to continuously encourage students to
 						join the team. YETI Robotics also co-founded the Queen City Robotics
 						Alliance, a 501(c)3 organization, with BOW 4290, T-Rex 4935, and Royal
-						Robotics 3701. During the summer of 2019 in partnership with our very own
-						PREPARE a 501(c)3 formed by our Business Co-Captain, we started an FLL team
-						and an FTC team in southern INDIA
+						Robotics 3701. During the summer of '1.5rem'19 in partnership with our very
+						own PREPARE a 501(c)3 formed by our Business Co-Captain, we started an FLL
+						team and an FTC team in southern INDIA
 					</p>
 				</div>
 			</Grid>
@@ -61,13 +61,13 @@ const About: React.FC<PageProps> = () => {
 						flexGrow: 1,
 					}}
 				>
-					<p style={{ fontSize: 20 }}>
+					<p style={{ fontSize: '1.5rem' }}>
 						The Queen City Robotics Alliance (QCRA) is a non-profit 501(c)(3) charitable
-						organization founded in 2014. QCRA was founded by Lia Schwinghammer
+						organization founded in '1.5rem'14. QCRA was founded by Lia Schwinghammer
 						initially as an umbrella fundraising entity for FIRST® teams and events in
 						Charlotte, NC. Lia has volunteered with FIRST® in various capacities since
-						2008 and upon arriving in Charlotte in 2009 found only a handful of
-						elementary FIRST® teams (FIRST® LEGO® ), no events and no high school
+						'1.5rem'08 and upon arriving in Charlotte in '1.5rem'09 found only a handful
+						of elementary FIRST® teams (FIRST® LEGO® ), no events and no high school
 						(FIRST® Robotics) teams. By bringing coaches and teams together, QCRA
 						established the remarkable trendsetting FIRST© Zone, garnering national
 						attention from FIRST teams. Over the past five years, the efforts and
@@ -102,7 +102,7 @@ const About: React.FC<PageProps> = () => {
 						flexGrow: 1,
 					}}
 				>
-					<p style={{ fontSize: 20 }}>
+					<p style={{ fontSize: '1.5rem' }}>
 						“Our mission is to inspire young people to be science and technology
 						leaders, by engaging them in exciting mentor-based programs that build
 						science, engineering and technology skills, that inspire innovation, and
@@ -147,7 +147,7 @@ const About: React.FC<PageProps> = () => {
 							/>
 						</a>
 					</div>
-					<p style={{ fontSize: 20 }}>
+					<p style={{ fontSize: '1.5rem' }}>
 						To find out more about FIRST® Robotics programs, which are available for
 						kindergarten through high school, follow the links above.
 					</p>
