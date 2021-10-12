@@ -25,8 +25,18 @@ const TwentyEighteen = () => {
 							margin: 15,
 						}}
 					>
-						<h1>Game</h1>
-						<p style={{ fontSize: '1.5rem', textAlign: 'center' }}>about game</p>
+						<h1>The 2018 FRC Game: FIRST POWER UP</h1>
+						<p style={{ fontSize: '1.5rem', textAlign: 'center' }}>
+							FIRST Power Up, is the FIRST Robotics Competition game for the 2018
+							season. It involves two alliances of three teams each, with each team
+							controlling a robot and performing specific tasks on a field to score
+							points. The game has a retro 8-bit theme and teams are required to place
+							milk crates, or "power cubes", on large balancing scales to tip the
+							scale and gain ownership. Alliances can also trade power cubes for power
+							ups, giving them a temporary advantage in a match. At the end of the
+							match, robots can climb the tower attached to the centre balancing scale
+							using a rung attached to the tower, giving them additional points.
+						</p>
 					</div>
 					<div
 						style={{
@@ -36,15 +46,14 @@ const TwentyEighteen = () => {
 							margin: 15,
 						}}
 					>
-						<a href='https://www.youtube.com/watch?v=93Tygo0_O5c'>
+						<a href='https://www.youtube.com/watch?v=HZbdwYiCY74'>
 							<StaticImage
-								src='../../images/game-logos/2011-game-logo.webp'
-								alt='Logo Motion Logo'
-								width={300}
+								src='../../images/game-logos/2018-game-logo.webp'
+								alt='Power Up Logo'
 							/>
 						</a>
 						<a
-							href='https://www.youtube.com/watch?v=93Tygo0_O5c'
+							href='https://www.youtube.com/watch?v=HZbdwYiCY74'
 							style={{ marginTop: 30, textDecoration: 'underline' }}
 						>
 							Link to game reveal.
@@ -53,7 +62,7 @@ const TwentyEighteen = () => {
 				</Grid>
 			</Section>
 			<Section style={{ borderTop: 0 }}>
-				<Title>Our 2011 Robot: WAMPA</Title>
+				<Title>Our 2011 Robot: AVALANCHE</Title>
 				<Grid style={{ margin: 0, alignItems: 'center' }}>
 					<div
 						style={{
@@ -64,13 +73,13 @@ const TwentyEighteen = () => {
 						}}
 					>
 						<StaticImage
-							src='../../images/robots/wampa-pic.webp'
-							alt='Wampa Pic'
+							src='../../images/robots/avalanche-pic.webp'
+							alt='Avalanche Pic'
 							width={300}
 						/>
 						<iframe
 							width='300'
-							src='https://www.youtube.com/embed/6ZE9XD22MnU'
+							src='https://www.youtube-nocookie.com/embed/NUO2ZuJFXYg'
 							title='YouTube video player'
 							allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
 							style={{ marginTop: 30 }}
@@ -80,26 +89,30 @@ const TwentyEighteen = () => {
 						<h1>Robot Info:</h1>
 						<ul style={{ lineHeight: 1.5, fontSize: '1.5rem', textAlign: 'left' }}>
 							<li>
-								Mecanum drive driven by 4 AndyMark CIMpleboxs one CIM motor each
-								(top speed 15 ft/sec)
-							</li>
-							<li>Scope gripper using a 4 bar linkage connected to a Denso motor</li>
-							<li>Arm driven by a single Denso door motor, spring assisted</li>
-							<li>
-								Three stage lift driven by Fisher Price gearbox winch and industrial
-								door slides
+								6in pneumatic 8WD West Coast Style tank drive, 6 CIMS with pneumatic
+								shifters 22ft/s.
 							</li>
 							<li>
-								BB rs380 motor on a belt drive to place game pieces faster
-								(installed later)
+								Variable intake arm which is laser cut from ¼in aluminum sheet
+								pivots by one rs775 motor with a VersaPlanetary Gearbox 330:1.
 							</li>
 							<li>
-								Mini-bot deployment using stretched rubber tubing and drawer slides
-								released by a servo
+								Roller bar built into pivoting arm to grab power cube using two
+								rs775 motors with a 50:1 VersaPlanetary Gearbox.{' '}
 							</li>
 							<li>
-								Mini-bot speed approximately 1 second climb using hard drive magnets
-								and two motors
+								Each roller bar contains two 4 35A durometer compliant wheels which
+								are chained to motors.
+							</li>
+							<li>Capable of picking up power cubes from any orientation.</li>
+							<li>
+								Continuous elevator enables the intake arm to raise 7ft in 2
+								seconds.
+							</li>
+							<li>Elevator controlled with encoders and limit switches.</li>
+							<li>
+								Winch made from 2 rs775 motors with Vex VersaPlanetary Gearbox 28:1
+								which spools dyneema cord.
 							</li>
 						</ul>
 					</div>

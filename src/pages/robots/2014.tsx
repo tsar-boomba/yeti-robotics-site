@@ -69,11 +69,7 @@ const TwentyFourteen = () => {
 							alignItems: 'center',
 						}}
 					>
-						<StaticImage
-							src='../../images/robots/fluffy-pic.webp'
-							alt='fluffy Pic'
-							width={300}
-						/>
+						<StaticImage src='../../images/robots/fluffy-pic.webp' alt='fluffy Pic' />
 						<iframe
 							width='300'
 							src='https://www.youtube.com/embed/6ZE9XD22MnU'

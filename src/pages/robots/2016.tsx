@@ -25,8 +25,13 @@ const TwentySixteen = () => {
 							margin: 15,
 						}}
 					>
-						<h1>Game</h1>
-						<p style={{ fontSize: '1.5rem', textAlign: 'center' }}>about game</p>
+						<h1>The 2016 FRC Game: FIRST STRONGHOLD</h1>
+						<p style={{ fontSize: '1.5rem', textAlign: 'center' }}>
+							The 2016 FIRST Robotics Competition, Stronghold, was played by two
+							alliances of three teams each. The goal was to breach their opponents’
+							defenses, known as outer works, and capture the tower by firing
+							'boulders' and surrounding or scaling the tower using rungs.
+						</p>
 					</div>
 					<div
 						style={{
@@ -36,15 +41,15 @@ const TwentySixteen = () => {
 							margin: 15,
 						}}
 					>
-						<a href='https://www.youtube.com/watch?v=93Tygo0_O5c'>
+						<a href='https://www.youtube.com/watch?v=VqOKzoHJDjA'>
 							<StaticImage
-								src='../../images/game-logos/2011-game-logo.webp'
-								alt='Logo Motion Logo'
+								src='../../images/game-logos/2016-game-logo.webp'
+								alt='Stronghold Logo'
 								width={300}
 							/>
 						</a>
 						<a
-							href='https://www.youtube.com/watch?v=93Tygo0_O5c'
+							href='https://www.youtube.com/watch?v=VqOKzoHJDjA'
 							style={{ marginTop: 30, textDecoration: 'underline' }}
 						>
 							Link to game reveal.
@@ -53,7 +58,7 @@ const TwentySixteen = () => {
 				</Grid>
 			</Section>
 			<Section style={{ borderTop: 0 }}>
-				<Title>Our 2011 Robot: WAMPA</Title>
+				<Title>Our 2011 Robot: BLACK ICE</Title>
 				<Grid style={{ margin: 0, alignItems: 'center' }}>
 					<div
 						style={{
@@ -64,13 +69,12 @@ const TwentySixteen = () => {
 						}}
 					>
 						<StaticImage
-							src='../../images/robots/wampa-pic.webp'
-							alt='Wampa Pic'
-							width={300}
+							src='../../images/robots/black-ice-pic.webp'
+							alt='Black Ice Pic'
 						/>
 						<iframe
 							width='300'
-							src='https://www.youtube.com/embed/6ZE9XD22MnU'
+							src='https://www.youtube-nocookie.com/embed/-IKIAGBdE98'
 							title='YouTube video player'
 							allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
 							style={{ marginTop: 30 }}
@@ -80,27 +84,36 @@ const TwentySixteen = () => {
 						<h1>Robot Info:</h1>
 						<ul style={{ lineHeight: 1.5, fontSize: '1.5rem', textAlign: 'left' }}>
 							<li>
-								Mecanum drive driven by 4 AndyMark CIMpleboxs one CIM motor each
-								(top speed 15 ft/sec)
-							</li>
-							<li>Scope gripper using a 4 bar linkage connected to a Denso motor</li>
-							<li>Arm driven by a single Denso door motor, spring assisted</li>
-							<li>
-								Three stage lift driven by Fisher Price gearbox winch and industrial
-								door slides
+								Pneumatic 6WD West Coast Style tank drive, 6 CIMS with pneumatic
+								shifters19ft/s High, 9ft/s Low
 							</li>
 							<li>
-								BB rs380 motor on a belt drive to place game pieces faster
-								(installed later)
+								Variable intake arm pivoted by one BAG Vex VersaPlanetary Gearbox
+								30:1 to grab ball and damage defenses of Stronghold
 							</li>
 							<li>
-								Mini-bot deployment using stretched rubber tubing and drawer slides
-								released by a servo
+								Roller bar built into intake to suck ball in while pinched against
+								the bumper driven by BAG VexVersaPlanetary Gearbox 10:1
 							</li>
 							<li>
-								Mini-bot speed approximately 1 second climb using hard drive magnets
-								and two motors
+								Shooter driven by 2 Mini CIMS and pivoted by a small gearbox or air
+								cylinder (design changed through the season)
 							</li>
+							<li>
+								Extending scissor lift climber deployed by stretched spear gun
+								tubing, 6 second climb to full 6ft height
+							</li>
+							<li>
+								Climbing Winch made from MiniCim Vex VersaPlanetary Gearbox 60:1 and
+								aluminum spool with air brake to prevent falling. Dyneema winch
+								string that controlled the extension and retraction of the scissor
+								lift
+							</li>
+							<li>
+								Could quickly damage all defenses from the front besides the
+								drawbridge and sally port (could backdoor quickly)
+							</li>
+							<li>Frame 14 inches tall</li>
 						</ul>
 					</div>
 				</Grid>

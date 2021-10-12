@@ -25,7 +25,7 @@ const TwentyTwentyOne = () => {
 							margin: 15,
 						}}
 					>
-						<h1>Game</h1>
+						<h1>The 2013 FRC Game: INFINITE RECHARGE AT HOME</h1>
 						<p style={{ fontSize: '1.5rem', textAlign: 'center' }}>about game</p>
 					</div>
 					<div
@@ -53,7 +53,7 @@ const TwentyTwentyOne = () => {
 				</Grid>
 			</Section>
 			<Section style={{ borderTop: 0 }}>
-				<Title>Our 2011 Robot: WAMPA</Title>
+				<Title>Our 2021 Robot: SUBZERO</Title>
 				<Grid style={{ margin: 0, alignItems: 'center' }}>
 					<div
 						style={{
@@ -64,8 +64,8 @@ const TwentyTwentyOne = () => {
 						}}
 					>
 						<StaticImage
-							src='../../images/robots/wampa-pic.webp'
-							alt='Wampa Pic'
+							src='../../images/robots/subzero-pic.webp'
+							alt='Subzero Pic'
 							width={300}
 						/>
 						<iframe

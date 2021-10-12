@@ -25,8 +25,17 @@ const TwentyNineteen = () => {
 							margin: 15,
 						}}
 					>
-						<h1>Game</h1>
-						<p style={{ fontSize: '1.5rem', textAlign: 'center' }}>about game</p>
+						<h1>The 2019 FRC Game: DEEP SPACE</h1>
+						<p style={{ fontSize: '1.5rem', textAlign: 'center' }}>
+							Destination: Deep Space, is the FIRST Robotics Competition game for the
+							2019 season. It involves two alliances of three teams each, with each
+							team controlling a robot and performing specific tasks on a field to
+							score points. The game centers around an outer space theme involving two
+							alliances consisting of three teams each competing to place
+							poly-carbonate hatch covers and orange rubber balls or "cargo" on
+							rockets and cargo ships before returning to their HAB platform to climb
+							at the end of the match.
+						</p>
 					</div>
 					<div
 						style={{
@@ -36,15 +45,15 @@ const TwentyNineteen = () => {
 							margin: 15,
 						}}
 					>
-						<a href='https://www.youtube.com/watch?v=93Tygo0_O5c'>
+						<a href='https://www.youtube.com/watch?v=Mew6G_og-PI'>
 							<StaticImage
-								src='../../images/game-logos/2011-game-logo.webp'
-								alt='Logo Motion Logo'
+								src='../../images/game-logos/2019-game-logo.webp'
+								alt='Deep Space Logo'
 								width={300}
 							/>
 						</a>
 						<a
-							href='https://www.youtube.com/watch?v=93Tygo0_O5c'
+							href='https://www.youtube.com/watch?v=Mew6G_og-PI'
 							style={{ marginTop: 30, textDecoration: 'underline' }}
 						>
 							Link to game reveal.
@@ -53,7 +62,7 @@ const TwentyNineteen = () => {
 				</Grid>
 			</Section>
 			<Section style={{ borderTop: 0 }}>
-				<Title>Our 2011 Robot: WAMPA</Title>
+				<Title>Our 2011 Robot: POLARIS</Title>
 				<Grid style={{ margin: 0, alignItems: 'center' }}>
 					<div
 						style={{
@@ -63,14 +72,10 @@ const TwentyNineteen = () => {
 							alignItems: 'center',
 						}}
 					>
-						<StaticImage
-							src='../../images/robots/wampa-pic.webp'
-							alt='Wampa Pic'
-							width={300}
-						/>
+						<StaticImage src='../../images/robots/polaris-cad.webp' alt='Polaris Pic' />
 						<iframe
 							width='300'
-							src='https://www.youtube.com/embed/6ZE9XD22MnU'
+							src='https://www.youtube-nocookie.com/embed/YkbfHnbxGzY'
 							title='YouTube video player'
 							allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
 							style={{ marginTop: 30 }}
@@ -80,27 +85,39 @@ const TwentyNineteen = () => {
 						<h1>Robot Info:</h1>
 						<ul style={{ lineHeight: 1.5, fontSize: '1.5rem', textAlign: 'left' }}>
 							<li>
-								Mecanum drive driven by 4 AndyMark CIMpleboxs one CIM motor each
-								(top speed 15 ft/sec)
-							</li>
-							<li>Scope gripper using a 4 bar linkage connected to a Denso motor</li>
-							<li>Arm driven by a single Denso door motor, spring assisted</li>
-							<li>
-								Three stage lift driven by Fisher Price gearbox winch and industrial
-								door slides
+								8WD West Coast Style tank drive 6 Colson and 4 omni, 4 CIMS 2 mini
+								CIMS with pneumatic shifters 13.4ft/s. 9:1 ratio in high and 19:6:1
+								ratio in low.
 							</li>
 							<li>
-								BB rs380 motor on a belt drive to place game pieces faster
-								(installed later)
+								Use of tank drive because of high pushing power and ease when
+								defending.
 							</li>
 							<li>
-								Mini-bot deployment using stretched rubber tubing and drawer slides
-								released by a servo
+								Disk intake inspired by jaws of life which uses a one inch stroke
+								piston and 3d printed claws and linkages. This mechanism grips hatch
+								panels.
 							</li>
 							<li>
-								Mini-bot speed approximately 1 second climb using hard drive magnets
-								and two motors
+								There are two arcade style buttons that when pressed close the
+								listening disk intake and bring back two pistons that extend the
+								mechanism forward.
 							</li>
+							<li>
+								Ball intake that uses 2 roller bars connected by chain. 2in straight
+								flex wheels powered by a rs775 motor with a 5:1 Vex VersaPlanetary
+								Gearbox.
+							</li>
+							<li>
+								Cascade elevator powered with 2 rs775 motors with 350:1 Vex
+								VersaPlanetary gearbox. Elevator is programmed with 4 stages and is
+								able to reach the third level of the rocket.
+							</li>
+							<li>
+								Programming utilized vision, limit switches, encoders, and line
+								followers to create consistent and accurate autonomous routines.
+							</li>
+							<li>Bumpers are made with wood and pool noodles</li>
 						</ul>
 					</div>
 				</Grid>

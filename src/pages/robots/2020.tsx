@@ -25,7 +25,7 @@ const TwentyTwenty = () => {
 							margin: 15,
 						}}
 					>
-						<h1>Game</h1>
+						<h1>The 2013 FRC Game: INFINITE RECHARGE</h1>
 						<p style={{ fontSize: '1.5rem', textAlign: 'center' }}>about game</p>
 					</div>
 					<div
@@ -53,7 +53,7 @@ const TwentyTwenty = () => {
 				</Grid>
 			</Section>
 			<Section style={{ borderTop: 0 }}>
-				<Title>Our 2011 Robot: WAMPA</Title>
+				<Title>Our 2020 Robot: WHITEOUT</Title>
 				<Grid style={{ margin: 0, alignItems: 'center' }}>
 					<div
 						style={{
@@ -64,8 +64,8 @@ const TwentyTwenty = () => {
 						}}
 					>
 						<StaticImage
-							src='../../images/robots/wampa-pic.webp'
-							alt='Wampa Pic'
+							src='../../images/robots/whiteout-pic.webp'
+							alt='Whiteout Pic'
 							width={300}
 						/>
 						<iframe
