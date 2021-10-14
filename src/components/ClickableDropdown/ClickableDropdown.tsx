@@ -1,7 +1,7 @@
 import React, { useCallback, useContext, useEffect, useRef, useState } from 'react';
 import { DropdownWrapper, DropdownMenu, DropdownButtonWrapper } from './ClickableDropdownStyles';
 import Item from './Item';
-import { useClickedOutside } from '../../hooks/useClickedOutide';
+import { useClickedOutside } from '../../hooks/useClickedOutside';
 import { AnimatePresence, motion, Variants } from 'framer-motion';
 import { HeaderContext } from '../Header/Context';
 
