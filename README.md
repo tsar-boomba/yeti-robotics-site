@@ -13,7 +13,4 @@ The website is currently hosted through vercel. [You can go to this link to chec
 
 - [ ] find pictures to fill in various placehodler spots
 - [ ] make store section
-- [ ] scouting
-	- [ ] api routes
-	- [ ] databse
-	- [ ] subdomain 
+- [x] scouting (moved to separate repo)
